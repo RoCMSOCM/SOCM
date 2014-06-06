@@ -11,12 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140602191951) do
+ActiveRecord::Schema.define(version: 20140606165831) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "galaxies", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "measurements", force: true do |t|
+    t.float    "r"
+    t.float    "r_err_min"
+    t.float    "r_err_max"
+    t.float    "vrot_data"
+    t.float    "vrot_data_err_min"
+    t.float    "vrot_data_err_max"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
