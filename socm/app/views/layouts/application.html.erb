@@ -5,7 +5,6 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= stylesheet_link_tag    "bootstrap", :media => "all" %>
     <%= stylesheet_link_tag    "bootstrap-responsive", :media => "all" %>
     <%= javascript_include_tag "application" %>
@@ -41,10 +40,8 @@
       </div>
     </div>
 
-  <div class="container">
-    <%= yield %>
-  </div>
-
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
-
 </html>
