@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>R:</strong>
+  <%= @measurement.r %>
+</p>
+
+<p>
+  <strong>R err min:</strong>
+  <%= @measurement.r_err_min %>
+</p>
+
+<p>
+  <strong>R err max:</strong>
+  <%= @measurement.r_err_max %>
+</p>
+
+<p>
+  <strong>Vrot data:</strong>
+  <%= @measurement.vrot_data %>
+</p>
+
+<p>
+  <strong>Vrot data err min:</strong>
+  <%= @measurement.vrot_data_err_min %>
+</p>
+
+<p>
+  <strong>Vrot data err max:</strong>
+  <%= @measurement.vrot_data_err_max %>
+</p>
+
+<%= link_to 'Edit', edit_measurement_path(@measurement) %> |
+<%= link_to 'Back', measurements_path %>
