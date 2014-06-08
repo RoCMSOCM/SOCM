@@ -1,24 +1,29 @@
 class MeasurementsController < ApplicationController
   before_action :set_measurement, only: [:show, :edit, :update, :destroy]
 
+  before_filter :find_galaxy
+
   # GET /measurements
   # GET /measurements.json
   def index
     @measurements = Measurement.all
+    @galaxy = Galaxy.find(params[:galaxy_id])
   end
 
   # GET /measurements/1
   # GET /measurements/1.json
   def show
+    @measurement = @galaxy.measurements.find(params[:id])
   end
 
   # GET /measurements/new
   def new
-    @measurement = Measurement.new
+    @measurement = @galaxy.measurements.new
   end
 
   # GET /measurements/1/edit
   def edit
+    @measurement = @galaxy.measurements.find(params[:id])
   end
 
   # POST /measurements
@@ -56,7 +61,7 @@ class MeasurementsController < ApplicationController
   def destroy
     @measurement.destroy
     respond_to do |format|
-      format.html { redirect_to measurements_url, notice: 'Measurement was successfully destroyed.' }
+      format.html { redirect_to @galaxy, notice: 'Measurement was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,11 +69,21 @@ class MeasurementsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_measurement
-      @measurement = Measurement.find(params[:id])
+      find_galaxy
+      @measurement = @galaxy.measurements.find(params[:id].to_i)#Measurement.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def measurement_params
-      params.require(:measurement).permit(:r, :r_err_min, :r_err_max, :vrot_data, :vrot_data_err_min, :vrot_data_err_max)
+      params.require(:measurement).permit(:galaxy_id, :r, :r_err_min, :r_err_max, :vrot_data, :vrot_data_err_min, :vrot_data_err_max)
+    end
+
+    def find_galaxy
+      @galaxy = Galaxy.find(params[:galaxy_id])
+    end
+
+    def measurement_url(measurement)
+      url_for :controller => "measurements", :action => "show",
+          :galaxy_id => measurement.galaxy.id, :id => measurement
     end
 end

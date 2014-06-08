@@ -1,8 +1,11 @@
-<h1>Listing measurements</h1>
+<!-- This page is probably not needed -->
+
+<!--<h1>Measurements for Galaxy <%= @measurements.first.galaxy_id%></h1>
 
 <table>
   <thead>
     <tr>
+      <th>Galaxy ID</th>
       <th>R</th>
       <th>R err min</th>
       <th>R err max</th>
@@ -16,15 +19,16 @@
   <tbody>
     <% @measurements.each do |measurement| %>
       <tr>
+        <td><%= measurement.galaxy_id %></td>
         <td><%= measurement.r %></td>
         <td><%= measurement.r_err_min %></td>
         <td><%= measurement.r_err_max %></td>
         <td><%= measurement.vrot_data %></td>
         <td><%= measurement.vrot_data_err_min %></td>
         <td><%= measurement.vrot_data_err_max %></td>
-        <td><%= link_to 'Show', measurement %></td>
-        <td><%= link_to 'Edit', edit_measurement_path(measurement) %></td>
-        <td><%= link_to 'Destroy', measurement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', @galaxy %></td>
+        <!--<td><%= link_to 'Edit', edit_galaxy_measurement(@galaxy.id, measurement) %></td>
+        <!--<td><%= link_to 'Destroy', measurement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -33,3 +37,4 @@
 <br>
 
 <%= link_to 'New Measurement', new_measurement_path %>
+-->

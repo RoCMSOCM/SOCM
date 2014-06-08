@@ -1,3 +1,44 @@
+<% if @measurements.size > 0 %>
+  <h1>Measurements for Galaxy <%= @galaxy.id %></h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Galaxy ID</th>
+        <th>R</th>
+        <th>R err min</th>
+        <th>R err max</th>
+        <th>Vrot data</th>
+        <th>Vrot data err min</th>
+        <th>Vrot data err max</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @measurements.each do |measurement| %>
+        <tr>
+          <td><%= measurement.galaxy_id %></td>
+          <td><%= measurement.r %></td>
+          <td><%= measurement.r_err_min %></td>
+          <td><%= measurement.r_err_max %></td>
+          <td><%= measurement.vrot_data %></td>
+          <td><%= measurement.vrot_data_err_min %></td>
+          <td><%= measurement.vrot_data_err_max %></td>
+          <td><%= link_to 'Show', galaxy_measurement_path(@galaxy, measurement) %></td>
+          <td><%= link_to 'Edit', edit_galaxy_measurement_path(@galaxy, measurement) %></td>
+          <td><%= link_to 'Destroy', galaxy_measurement_path(@galaxy, measurement), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<br>
+
+<%= link_to 'New Measurement', new_galaxy_measurement_path(@galaxy) %>
+
+
 <p id="notice"><%= notice %></p>
 
 <%= link_to 'Edit', edit_galaxy_path(@galaxy) %> |

@@ -10,6 +10,8 @@ class GalaxiesController < ApplicationController
   # GET /galaxies/1
   # GET /galaxies/1.json
   def show
+    @galaxy = Galaxy.find(params[:id].to_i)
+    @measurements = @galaxy.measurements.all
   end
 
   # GET /galaxies/new

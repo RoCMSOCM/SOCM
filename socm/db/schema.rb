@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140606165831) do
+ActiveRecord::Schema.define(version: 20140608202104) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,9 @@ ActiveRecord::Schema.define(version: 20140606165831) do
     t.float    "vrot_data_err_max"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "galaxy_id"
   end
+
+  add_index "measurements", ["galaxy_id"], name: "index_measurements_on_galaxy_id", using: :btree
 
 end

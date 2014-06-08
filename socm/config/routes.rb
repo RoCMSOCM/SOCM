@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :measurements
+  #resources :measurements
 
-  resources :galaxies
+  resources :galaxies do
+    resources :measurements
+  end
 
   root to: "galaxies#index"
   # The priority is based upon order of creation: first created -> highest priority.
