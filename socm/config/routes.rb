@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'welcome/index'
+
   resources :galaxies do
     resources :measurements
     collection do
@@ -7,5 +9,5 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: "galaxies#index"
+  root to: "welcome#index"
 end

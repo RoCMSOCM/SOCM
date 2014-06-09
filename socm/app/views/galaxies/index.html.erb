@@ -17,6 +17,9 @@
           <%= sort_link(@q, :galaxy, "Galaxy") %>
           <%= f.search_field :galaxy_cont, :class => "search-field" %>
         </th>
+        <th>
+          Number of Measurements
+        </th>
         <th colspan="3">
           <%= f.submit "Search" %>
           <%= f.submit "Clear", :id => :q_reset%>
@@ -28,8 +31,9 @@
   <tbody>
     <% @galaxies.each do |galaxy| %>
       <tr>
-        <td><%= galaxy.id %></td>
+        <td><%= link_to "#{galaxy.id}", galaxy_path(galaxy) %></td>
         <td><%= galaxy.galaxy %></td>
+        <td><%= galaxy.measurements.size %></td>
         <td><%= link_to 'Show', galaxy %></td>
         <td><%= link_to 'Edit', edit_galaxy_path(galaxy) %></td>
         <td><%= link_to 'Destroy', galaxy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
