@@ -13,8 +13,10 @@ class GalaxiesController < ApplicationController
   def show
     #@q = Measurement.search(params[:q])
     @galaxy = Galaxy.find(params[:id].to_i)
-    #@measurements = @q.result.includes(:measurements)
-    @measurements = @galaxy.measurements.all
+    @q = @galaxy.measurements.search(params[:q])
+    @measurements = @q.result(distinct: true)
+    #@galaxy = @q.result.includes(:measurements)
+    #@measurements = @galaxy.measurements.all
   end
 
   # GET /galaxies/new
@@ -68,8 +70,19 @@ class GalaxiesController < ApplicationController
 
   #ransack advanced search
   def search
-    index
-    render :index
+    puts "---------------"
+    puts "params = #{params.inspect}"
+    if params[:q].has_key?(:galaxy_id_eq)
+      puts "==============="
+      puts "params has galaxy ID"
+      show
+      render :show
+    else
+      puts "==============="
+      puts "NO galaxy id"
+      index
+      render :index
+    end
   end
 
   private

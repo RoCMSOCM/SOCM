@@ -6,6 +6,10 @@ class MeasurementsController < ApplicationController
   # GET /measurements
   # GET /measurements.json
   def index
+    # @q = Measurement.search(params[:q])
+    # @galaxy = Galaxy.find(params[:galaxy_id])
+    # @measurements = @q.result(distinct: true)
+    #redirect_to galaxy_path(:id => @galaxy.id)
     @measurements = Measurement.all
     @galaxy = Galaxy.find(params[:galaxy_id])
   end
@@ -14,6 +18,7 @@ class MeasurementsController < ApplicationController
   # GET /measurements/1.json
   def show
     @measurement = @galaxy.measurements.find(params[:id])
+    @galaxy = Galaxy.find(params[:galaxy_id])
   end
 
   # GET /measurements/new
@@ -81,8 +86,6 @@ class MeasurementsController < ApplicationController
 
     def find_galaxy
       @galaxy = Galaxy.find(params[:galaxy_id])
-      puts "======================"
-      puts "@galaxy = #{@galaxy.inspect}"
     end
 
     def measurement_url(measurement)
