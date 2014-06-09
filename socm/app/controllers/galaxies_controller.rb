@@ -4,13 +4,16 @@ class GalaxiesController < ApplicationController
   # GET /galaxies
   # GET /galaxies.json
   def index
+    @q = Galaxy.search(params[:q])
     @galaxies = Galaxy.all
   end
 
   # GET /galaxies/1
   # GET /galaxies/1.json
   def show
+    #@q = Measurement.search(params[:q])
     @galaxy = Galaxy.find(params[:id].to_i)
+    #@measurements = @q.result.includes(:measurements)
     @measurements = @galaxy.measurements.all
   end
 
@@ -61,6 +64,12 @@ class GalaxiesController < ApplicationController
       format.html { redirect_to galaxies_url, notice: 'Galaxy was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  #ransack advanced search
+  def search
+    index
+    render :index
   end
 
   private

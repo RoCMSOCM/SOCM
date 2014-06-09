@@ -20,6 +20,28 @@
   <%= link_to 'New Measurement', new_galaxy_measurement_path(@galaxy) %>
 
   <table>
+    <% if !@q.nil? %>
+      @q = <%= @q.inspect %>
+      <%= search_form_for @q do |f| %>
+        <%= f.label :id %>
+        <%= f.search_field :id %>
+        <%= f.label :galaxy_id %>
+        <%= f.search_field :galaxy_id %>
+        <%= f.label :r %>
+        <%= f.search_field :r %>
+        <%= f.label :r_err_min %>
+        <%= f.search_field :r_err_min %>
+        <%= f.label :r_err_max %>
+        <%= f.search_field :r_err_max %>
+        <%= f.label :vrot_data %>
+        <%= f.search_field :vrot_data %>
+        <%= f.label :vrot_data_err_min %>
+        <%= f.search_field :vrot_data_err_min %>
+        <%= f.label :vrot_data_err_max %>
+        <%= f.search_field :vrot_data_err_max %>
+        <%= f.submit %>
+      <% end %>
+    <% end %>
     <thead>
       <tr>
         <th>ID</th>
