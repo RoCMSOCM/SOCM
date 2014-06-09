@@ -5,7 +5,7 @@ class GalaxiesController < ApplicationController
   # GET /galaxies.json
   def index
     @q = Galaxy.search(params[:q])
-    @galaxies = Galaxy.all
+    @galaxies = @q.result(distinct: true)
   end
 
   # GET /galaxies/1

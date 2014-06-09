@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  #resources :measurements
 
   resources :galaxies do
     resources :measurements
