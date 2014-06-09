@@ -6,10 +6,6 @@ class MeasurementsController < ApplicationController
   # GET /measurements
   # GET /measurements.json
   def index
-    # @q = Measurement.search(params[:q])
-    # @galaxy = Galaxy.find(params[:galaxy_id])
-    # @measurements = @q.result(distinct: true)
-    #redirect_to galaxy_path(:id => @galaxy.id)
     @measurements = Measurement.all
     @galaxy = Galaxy.find(params[:galaxy_id])
   end
