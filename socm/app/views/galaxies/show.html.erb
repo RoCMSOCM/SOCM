@@ -1,9 +1,28 @@
+<h1>Galaxy <%= @galaxy.id %></h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Galaxy:</strong>
+  <%= @galaxy.galaxy %>
+</p>
+<!-- TODO: Figure out galaxy column names -->
+
+<br>
+<%= link_to 'Edit', edit_galaxy_path(@galaxy) %> |
+<%= link_to 'Back', galaxies_path %>
+
+<br>
+
 <% if @measurements.size > 0 %>
-  <h1>Measurements for Galaxy <%= @galaxy.id %></h1>
+  <h2>Measurements for Galaxy <%= @galaxy.id %></h2>
+
+  <%= link_to 'New Measurement', new_galaxy_measurement_path(@galaxy) %>
 
   <table>
     <thead>
       <tr>
+        <th>ID</th>
         <th>Galaxy ID</th>
         <th>R</th>
         <th>R err min</th>
@@ -18,6 +37,7 @@
     <tbody>
       <% @measurements.each do |measurement| %>
         <tr>
+          <td><%= link_to "#{measurement.id}", galaxy_measurement_path(@galaxy, measurement) %></td>
           <td><%= measurement.galaxy_id %></td>
           <td><%= measurement.r %></td>
           <td><%= measurement.r_err_min %></td>
@@ -32,14 +52,7 @@
       <% end %>
     </tbody>
   </table>
+<% else %>
+  <br>
+  <%= link_to 'New Measurement', new_galaxy_measurement_path(@galaxy) %>
 <% end %>
-
-<br>
-
-<%= link_to 'New Measurement', new_galaxy_measurement_path(@galaxy) %>
-
-
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_galaxy_path(@galaxy) %> |
-<%= link_to 'Back', galaxies_path %>

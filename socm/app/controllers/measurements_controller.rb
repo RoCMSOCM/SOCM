@@ -29,7 +29,7 @@ class MeasurementsController < ApplicationController
   # POST /measurements
   # POST /measurements.json
   def create
-    @measurement = Measurement.new(measurement_params)
+    @measurement = @galaxy.measurements.new(measurement_params)#Measurement.new(measurement_params)
 
     respond_to do |format|
       if @measurement.save
@@ -45,6 +45,7 @@ class MeasurementsController < ApplicationController
   # PATCH/PUT /measurements/1
   # PATCH/PUT /measurements/1.json
   def update
+    set_measurement
     respond_to do |format|
       if @measurement.update(measurement_params)
         format.html { redirect_to @measurement, notice: 'Measurement was successfully updated.' }
@@ -80,6 +81,8 @@ class MeasurementsController < ApplicationController
 
     def find_galaxy
       @galaxy = Galaxy.find(params[:galaxy_id])
+      puts "======================"
+      puts "@galaxy = #{@galaxy.inspect}"
     end
 
     def measurement_url(measurement)

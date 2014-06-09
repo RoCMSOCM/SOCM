@@ -71,6 +71,6 @@ class GalaxiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def galaxy_params
-      params[:galaxy]
+      params.require(:galaxy).permit(:galaxy)
     end
 end
