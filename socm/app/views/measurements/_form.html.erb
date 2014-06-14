@@ -1,0 +1,45 @@
+<%= form_for [@galaxy, @measurement] do |f| %>
+  <% if @measurement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@measurement.errors.count, "error") %> prohibited this measurement from being saved:</h2>
+
+      <ul>
+      <% @measurement.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    Galaxy: <%= @galaxy.id%><br>
+    <%= f.number_field :galaxy_id, :value => @galaxy.id%>
+  </div>
+  <div class="field">
+    <%= f.label :r %><br>
+    <%= f.text_field :r %>
+  </div>
+  <div class="field">
+    <%= f.label :r_err_min %><br>
+    <%= f.text_field :r_err_min %>
+  </div>
+  <div class="field">
+    <%= f.label :r_err_max %><br>
+    <%= f.text_field :r_err_max %>
+  </div>
+  <div class="field">
+    <%= f.label :vrot_data %><br>
+    <%= f.text_field :vrot_data %>
+  </div>
+  <div class="field">
+    <%= f.label :vrot_data_err_min %><br>
+    <%= f.text_field :vrot_data_err_min %>
+  </div>
+  <div class="field">
+    <%= f.label :vrot_data_err_max %><br>
+    <%= f.text_field :vrot_data_err_max %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
