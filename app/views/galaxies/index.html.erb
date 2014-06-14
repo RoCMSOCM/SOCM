@@ -3,7 +3,7 @@
 <br>
 
 <%= link_to 'New Galaxy', new_galaxy_path %>
-<% if !@galaxies.nil? %>
+<% if @galaxies.size > 0 %>
   <table>
     <thead>
       <tr>
