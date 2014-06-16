@@ -77,13 +77,11 @@ class GalaxiesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_galaxy
       @galaxy = Galaxy.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def galaxy_params
-      params.require(:galaxy).permit(:galaxy)
+      params.require(:galaxy).permit(:galaxy, :galaxy_type, :distance, :luminosity, :scale_length, :mass_hydrogen, :mass_disk, :stars, :vcr)
     end
 end

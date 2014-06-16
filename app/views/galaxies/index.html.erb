@@ -23,6 +23,38 @@
             <%= f.search_field :galaxy_cont, :class => "search-field" %>
           </th>
           <th>
+            <%= sort_link(@q, :galaxy_type, "Galaxy Type") %>
+            <%= f.search_field :galaxy_type_eq, :class => "search-field" %>
+          </th>
+          <th>
+            <%= sort_link(@q, :distance, "Distance") %>
+            <%= f.search_field :distance_eq, :class => "search-field" %>
+          </th>
+          <th>
+            <%= sort_link(@q, :luminosity, "luminosity") %>
+            <%= f.search_field :luminosity_eq, :class => "search-field" %>
+          </th>
+          <th>
+            <%= sort_link(@q, :scale_length, "Scale Length") %>
+            <%= f.search_field :scale_length_eq, :class => "search-field" %>
+          </th>
+          <th>
+            <%= sort_link(@q, :mass_hydrogen, "Hydrogen Mass") %>
+            <%= f.search_field :mass_hydrogen_eq, :class => "search-field" %>
+          </th>
+          <th>
+            <%= sort_link(@q, :mass_disk, "Disk Mass") %>
+            <%= f.search_field :mass_disk_eq, :class => "search-field" %>
+          </th>
+          <th>
+            <%= sort_link(@q, :stars, "Stars") %>
+            <%= f.search_field :stars_eq, :class => "search-field" %>
+          </th>
+          <th>
+            <%= sort_link(@q, :vcr, "VCR") %>
+            <%= f.search_field :vcr_eq, :class => "search-field" %>
+          </th>
+          <th>
             Number of Measurements
           </th>
           <th colspan="3">
@@ -38,6 +70,14 @@
         <tr>
           <td><%= link_to "#{galaxy.id}", galaxy_path(galaxy) %></td>
           <td><%= galaxy.galaxy %></td>
+          <td><%= galaxy.galaxy_type %></td>
+          <td><%= galaxy.distance %></td>
+          <td><%= galaxy.luminosity %></td>
+          <td><%= galaxy.scale_length %></td>
+          <td><%= galaxy.mass_hydrogen %></td>
+          <td><%= galaxy.mass_disk %></td>
+          <td><%= galaxy.stars %></td>
+          <td><%= galaxy.vcr %></td>
           <td><%= galaxy.measurements.size %></td>
           <td><%= link_to 'Show', galaxy %></td>
           <% if current_admin %>
