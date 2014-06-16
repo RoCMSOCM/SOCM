@@ -20,5 +20,6 @@ module Socm
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.assets.precompile += %w(bootstrap.css bootstrap-responsive.css bootstrap.js)
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    config.action_mailer.default_url_options = { host: 'localhost' }
   end
 end
