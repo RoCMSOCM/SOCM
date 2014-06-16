@@ -12,13 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+    Admin email: <%= @admin.email %>
   </div>
-  <div clss="field">
-    <%= f.label :approved %>
-    <%= f.check_box :approved %>
-  </div>
+  <% if current_admin.email != @admin.email %>
+    <div clss="field">
+      <%= f.label :approved %>
+      <%= f.check_box :approved %>
+    </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

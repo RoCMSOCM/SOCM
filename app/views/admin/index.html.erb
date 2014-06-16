@@ -1,5 +1,7 @@
 <h1>Admins</h1>
 
+<p id="notice"><%= notice %></p>
+
 <%= link_to "All Admins", :action => "index" %>
 |
 <%= link_to "Admins awaiting approval", :action => "index", :approved => "false" %>
@@ -8,7 +10,7 @@
     <tr>
         <th>Email</th>
         <th>Approved</th>
-        <th></th>
+        <th colspan="2"></th>
     </tr>
     <% @admins.each do |admin| %>
         <tr>
@@ -24,6 +26,9 @@
             </td>
             <td>
               <%= link_to "Edit", edit_admin_path(id: admin.id) %>
+            </td>
+            <td>
+              <%= link_to 'Destroy', "/admin/#{admin.id}", method: :delete, data: { confirm: 'Are you sure?' } %>
             </td>
         </tr>
     <% end %>
