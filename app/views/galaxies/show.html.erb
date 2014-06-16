@@ -1,4 +1,4 @@
-<h1>Galaxy <%= @galaxy.id %></h1>
+<h1>Galaxy <%= @galaxy.id %> details</h1>
 
 <p id="notice"><%= notice %></p>
 
@@ -9,15 +9,19 @@
 <!-- TODO: Figure out galaxy column names -->
 
 <br>
-<%= link_to 'Edit', edit_galaxy_path(@galaxy) %> |
-<%= link_to 'Back', galaxies_path %>
 
-<br>
+<% if current_admin %>
+  <%= link_to 'Edit', edit_galaxy_path(@galaxy) %>
+  <br>
+  <br>
+<% end %>
 
 <% if @measurements.size > 0 %>
   <h2>Measurements for Galaxy <%= @galaxy.id %></h2>
 
-  <%= link_to 'New Measurement', new_galaxy_measurement_path(@galaxy) %>
+  <% if current_admin %>
+    <%= link_to 'New Measurement', new_galaxy_measurement_path(@galaxy) %>
+  <% end %>
 
   <table>
     <thead>
@@ -76,14 +80,20 @@
           <td><%= measurement.vrot_data_err_min %></td>
           <td><%= measurement.vrot_data_err_max %></td>
           <td><%= link_to 'Show', galaxy_measurement_path(@galaxy, measurement) %></td>
-          <td><%= link_to 'Edit', edit_galaxy_measurement_path(@galaxy, measurement) %></td>
-          <td><%= link_to 'Destroy', galaxy_measurement_path(@galaxy, measurement), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% if current_admin %>
+            <td><%= link_to 'Edit', edit_galaxy_measurement_path(@galaxy, measurement) %></td>
+            <td><%= link_to 'Destroy', galaxy_measurement_path(@galaxy, measurement), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>
   </table>
 <% else %>
   <br>
-  <%= link_to 'New Measurement', new_galaxy_measurement_path(@galaxy) %>
+  <% if current_admin %>
+    <%= link_to 'New Measurement', new_galaxy_measurement_path(@galaxy) %>
+  <% end %>
 <% end %>
  <br>
+
+<%= link_to 'Back', galaxies_path %>

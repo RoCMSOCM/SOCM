@@ -1,8 +1,13 @@
 <h1>Galaxies</h1>
 
+<p id="notice"><%= notice %></p>
+
 <br>
 
-<%= link_to 'New Galaxy', new_galaxy_path %>
+<% if current_admin %>
+  <%= link_to 'New Galaxy', new_galaxy_path %>
+<% end %>
+
 <% if @galaxies.size > 0 %>
   <table>
     <thead>
@@ -35,8 +40,10 @@
           <td><%= galaxy.galaxy %></td>
           <td><%= galaxy.measurements.size %></td>
           <td><%= link_to 'Show', galaxy %></td>
-          <td><%= link_to 'Edit', edit_galaxy_path(galaxy) %></td>
-          <td><%= link_to 'Destroy', galaxy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% if current_admin %>
+            <td><%= link_to 'Edit', edit_galaxy_path(galaxy) %></td>
+            <td><%= link_to 'Destroy', galaxy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>

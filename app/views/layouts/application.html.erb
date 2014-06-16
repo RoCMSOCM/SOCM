@@ -33,6 +33,15 @@
               <li>
                 <a href="/galaxies">Galaxies</a>
               </li>
+              <% if current_admin %>
+                <li>
+                  <a href="/admins/sign_out" data-method="DELETE" rel="nofollow">Logout</a>
+                </li>
+              <% else %>
+                <li>
+                  <a href="/admins/sign_in" data-method="GET" rel="nofollow">Login</a>
+                </li>
+              <% end %>
             </ul>
           </div>
         </div>
