@@ -35,6 +35,12 @@
               </li>
               <% if current_admin %>
                 <li>
+                  <%= link_to "Admin Page", "/admin" %>
+                </li>
+                <li>
+                  <%= link_to "Account", edit_admin_registration_path %>
+                </li>
+                <li>
                   <a href="/admins/sign_out" data-method="DELETE" rel="nofollow">Logout</a>
                 </li>
               <% else %>

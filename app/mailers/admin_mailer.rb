@@ -7,7 +7,7 @@ class AdminMailer < ActionMailer::Base
     mail(to: @admin.email, subject: 'Welcome to SOCM as a site admin.')
   end
 
-  def new_admin_waiting_for_approval admin
+  def new_admin_waiting_for_approval(admin)
     @admin = admin
     mail
   end
