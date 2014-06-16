@@ -1,0 +1,30 @@
+<h1>Admins</h1>
+
+<%= link_to "All Admins", :action => "index" %>
+|
+<%= link_to "Admins awaiting approval", :action => "index", :approved => "false" %>
+
+<table>
+    <tr>
+        <th>Email</th>
+        <th>Approved</th>
+        <th></th>
+    </tr>
+    <% @admins.each do |admin| %>
+        <tr>
+            <td>
+              <%= admin.email %>
+            </td>
+            <td>
+              <% if admin.approved.nil? %>
+                false
+              <% else %>
+                <%= admin.approved %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to "Edit", edit_admin_registration_path(admin) %>
+            </td>
+        </tr>
+    <% end %>
+</table>

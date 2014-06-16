@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   devise_for :admins
+
   get 'welcome/index'
+  match 'admin' => "admin#index", via: [:get]
 
   resources :galaxies do
     resources :measurements
