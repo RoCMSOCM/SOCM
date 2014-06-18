@@ -17,10 +17,29 @@
 @import "bootstrap";
 
 .navbar-inverse {background-image: url('galaxy_navbar.jpg'); background-position: left;}
-.navbar-inverse .container .navbar-header .navbar-brand {color: #58D3F7; font-size: 35px;}
-.navbar-inverse .container .navbar-header .navbar-brand:hover {background-color: #58D3F7; color: #000000;}
-.navbar-inverse .container .navbar-nav>li>a {color: #58D3F7; font-size: 16px;}
-.navbar-inverse .container .navbar-nav>li>a:hover {background-color: #58D3F7; color: #000000;}
+
+
+.navbar-inverse .navbar-header .navbar-nav > :not(.active) > a{
+  color: #58D3F7;
+  font-size: 35px;
+}
+
+.navbar-inverse .navbar-header .navbar-nav > .active > a, .navbar-inverse .navbar-header .navbar-nav > :not(.active) > a:hover{
+  background-color: #58D3F7;
+  color: #000000;
+  font-size: 35px;
+}
+
+.navbar-inverse .navbar-nav > :not(.active) > a{
+  color: #58D3F7;
+  font-size: 16px;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > :not(.active) > a:hover, .navbar-inverse .navbar-nav > .active > a:hover{
+  background-color: #58D3F7;
+  color: #000000;
+  font-size: 16px;
+}
 
 .search-field {width: 50px;}
 td{text-align: center;}
