@@ -15,5 +15,4 @@
 /log/*.log
 /tmp
 
-# Ignore public assets
 public/assets/**
