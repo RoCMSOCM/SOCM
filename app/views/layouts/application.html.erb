@@ -5,10 +5,6 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    "bootstrap", :media => "all" %>
-    <%= stylesheet_link_tag    "bootstrap-responsive", :media => "all" %>
-    <%= javascript_include_tag "application" %>
-    <%= javascript_include_tag "bootstrap" %>
     <style>
       table,th,td{
         border:1px solid black;
@@ -25,26 +21,25 @@
   </head>
 
   <body>
-    <div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+    <div class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-          <div class="collapse nav-collapse bs-navbar-collapse" role="navigation">
-            <a class="brand" href="/">SOCM</a>
-            <ul class="nav navbar-nav">
-              <li>
-                <a href="/galaxies">Galaxies</a>
-              </li>
-              <% if current_admin %>
-                <li>
-                  <a href="/admins/sign_out" data-method="DELETE" rel="nofollow">Logout</a>
-                </li>
-              <% else %>
-                <li>
-                  <a href="/admins/sign_in" data-method="GET" rel="nofollow">Login</a>
-                </li>
-              <% end %>
-            </ul>
-          </div>
+        <div class="navbar-header">
+          <%= link_to 'SOCM', "/", id: "logo", class: "navbar-brand" %>
         </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'Galaxies', galaxies_path %></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <% if current_admin %>
+              <li><%= link_to 'Logout', destroy_admin_session_path, :method => :delete %></li>
+            <% else %>
+              <li><%= link_to 'Login', new_admin_session_path, :method => :get %></li>
+            <% end %>
+             <!-- TODO: merge admin code here -->
+          </ul>
+        </div>
+      </div>
     </div>
 
     <div class="container">

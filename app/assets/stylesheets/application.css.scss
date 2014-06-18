@@ -14,10 +14,12 @@
  *= require_self
  */
 
-.navbar-inverse {background-image: url('galaxy_navbar.jpg');}
-.navbar-inverse .container .brand {color: #58D3F7; font-size: 35px;}
-.navbar-inverse .container .brand:hover {background-color: #58D3F7; color: #000000;}
-.navbar-inverse .container .navbar-nav>li>a {color: #58D3F7;}
+@import "bootstrap";
+
+.navbar-inverse {background-image: url('galaxy_navbar.jpg'); background-position: left;}
+.navbar-inverse .container .navbar-header .navbar-brand {color: #58D3F7; font-size: 35px;}
+.navbar-inverse .container .navbar-header .navbar-brand:hover {background-color: #58D3F7; color: #000000;}
+.navbar-inverse .container .navbar-nav>li>a {color: #58D3F7; font-size: 16px;}
 .navbar-inverse .container .navbar-nav>li>a:hover {background-color: #58D3F7; color: #000000;}
 
 .search-field {width: 50px;}
