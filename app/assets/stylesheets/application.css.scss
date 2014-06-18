@@ -24,7 +24,8 @@
   font-size: 35px;
 }
 
-.navbar-inverse .navbar-header .navbar-nav > .active > a, .navbar-inverse .navbar-header .navbar-nav > :not(.active) > a:hover{
+.navbar-inverse .navbar-header .navbar-nav > .active > a, .navbar-inverse .navbar-header .navbar-nav > :not(.active) > a:hover,
+.navbar-inverse .navbar-header .navbar-nav > .active > a:hover{
   background-color: #58D3F7;
   color: #000000;
   font-size: 35px;
