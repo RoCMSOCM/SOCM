@@ -14,6 +14,11 @@ gem 'bootstrap-sass', "~> 3.1.1.0"
 
 gem 'quiet_assets', :group => :development
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'factory_girl'
+end
+
 gem 'pg'
 gem 'devise'
 gem 'ransack'
