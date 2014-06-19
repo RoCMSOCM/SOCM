@@ -16,7 +16,7 @@ gem 'quiet_assets', :group => :development
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
-  gem 'factory_girl'
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 gem 'pg'
