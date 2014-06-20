@@ -29,3 +29,9 @@ development:
   database: socm_dev
   username: socm_dev
   password: s0cm_d3v
+
+test:
+  adapter: postgresql
+  database: socm_test
+  username: socm_test
+  password: s0cm_t3st

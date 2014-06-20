@@ -79,6 +79,8 @@ class GalaxiesController < ApplicationController
   private
     def set_galaxy
       @galaxy = Galaxy.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        render 'errors/404'
     end
 
     def galaxy_params
