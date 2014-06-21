@@ -19,7 +19,7 @@ describe Galaxy  do
   end
 
   it "returns a Galaxy with attributes as floats" do
-
+    galaxy.distance.should be_kind_of(Fixnum)
   end
 
   # TODO: update specs to include future uniqueness of galaxies

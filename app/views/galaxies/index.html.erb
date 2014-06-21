@@ -19,8 +19,8 @@
             <%= f.search_field :id_eq, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :galaxy, "Galaxy") %>
-            <%= f.search_field :galaxy_cont, :class => "search-field" %>
+            <%= sort_link(@q, :galaxy_name, "Galaxy Name") %>
+            <%= f.search_field :galaxy_name_cont, :class => "search-field" %>
           </th>
           <th>
             <%= sort_link(@q, :galaxy_type, "Galaxy Type") %>
@@ -69,7 +69,7 @@
       <% @galaxies.each do |galaxy| %>
         <tr>
           <td><%= link_to "#{galaxy.id}", galaxy_path(galaxy) %></td>
-          <td><%= galaxy.galaxy %></td>
+          <td><%= galaxy.galaxy_name %></td>
           <td><%= galaxy.galaxy_type %></td>
           <td><%= galaxy.distance %></td>
           <td><%= galaxy.luminosity %></td>
