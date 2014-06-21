@@ -8,6 +8,14 @@ class MeasurementsController < ApplicationController
   def index
     @measurements = Measurement.all
     @galaxy = Galaxy.find(params[:galaxy_id])
+
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render :json => @measurements.to_json(
+         :only => [:id, :r, :r, :r_err_min, :r_err_max, :vrot_data,
+                    :vrot_data_err_min, :vrot_data_err_max])
+      }
+    end
   end
 
   # GET /measurements/1
@@ -15,6 +23,14 @@ class MeasurementsController < ApplicationController
   def show
     @measurement = @galaxy.measurements.find(params[:id])
     @galaxy = Galaxy.find(params[:galaxy_id])
+
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render :json => @measurement.to_json(
+         :only => [:id, :r, :r, :r_err_min, :r_err_max, :vrot_data,
+                    :vrot_data_err_min, :vrot_data_err_max])
+      }
+    end
   end
 
   # GET /measurements/new

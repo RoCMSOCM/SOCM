@@ -6,6 +6,14 @@ class GalaxiesController < ApplicationController
   def index
     @q = Galaxy.search(params[:q])
     @galaxies = @q.result(distinct: true)
+
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render :json => @galaxies.to_json(
+         :only => [:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length,
+                      :mass_hydrogen, :mass_disk, :stars, :vcr])
+      }
+    end
   end
 
   # GET /galaxies/1
@@ -14,6 +22,14 @@ class GalaxiesController < ApplicationController
     @galaxy = Galaxy.find(params[:id].to_i)
     @q = @galaxy.measurements.search(params[:q])
     @measurements = @q.result(distinct: true)
+
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render :json => @galaxy.to_json(
+         :only => [:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length,
+                      :mass_hydrogen, :mass_disk, :stars, :vcr])
+      }
+    end
   end
 
   # GET /galaxies/new
