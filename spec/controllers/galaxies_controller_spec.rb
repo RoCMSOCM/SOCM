@@ -24,7 +24,7 @@ describe GalaxiesController do
         galaxy = Galaxy.find(1)
 
         expect(galaxy.id).should_not be_nil
-        expect(galaxy.galaxy).to eq("GALAXY NAME")
+        expect(galaxy.galaxy_name).to eq("GALAXY NAME")
         expect(galaxy.galaxy_type).to eq("ABC")
         expect(galaxy.distance).to eq(2.1)
         expect(galaxy.luminosity).to eq(3.1)
@@ -63,7 +63,7 @@ describe GalaxiesController do
 
       it "creates a new Galaxy" do
         expect(galaxy_post.id).should_not be_nil
-        expect(galaxy_post.galaxy).to eq("newest galaxy")
+        expect(galaxy_post.galaxy_name).to eq("newest galaxy")
         expect(galaxy_post.galaxy_type).to eq("ZYX")
         expect(galaxy_post.distance).to eq(2.1)
         expect(galaxy_post.luminosity).to eq(3.1)
@@ -104,7 +104,7 @@ describe GalaxiesController do
   context "PUT update/:id" do
     context "with valid attributes" do
       before(:each) do
-        @attr = { :galaxy => "herpderp", :galaxy_type => "ZYX",
+        @attr = { :galaxy_name => "herpderp", :galaxy_type => "ZYX",
                                     :distance => 10, :luminosity => 20, :scale_length => 30, :mass_hydrogen => 40,
                                     :mass_disk => 50, :stars => 60, :vcr => 70 }
       end
@@ -120,7 +120,7 @@ describe GalaxiesController do
         put :update, :id => galaxy.id, :galaxy => @attr
         galaxy.reload
 
-        expect(galaxy.galaxy).to eq("herpderp")
+        expect(galaxy.galaxy_name).to eq("herpderp")
         expect(galaxy.galaxy_type).to eq("ZYX")
         expect(galaxy.distance).to eq(10)
         expect(galaxy.luminosity).to eq(20)
@@ -137,7 +137,7 @@ describe GalaxiesController do
         put :update, id: galaxy, galaxy: FactoryGirl.attributes_for(:invalid_galaxy)
         galaxy.reload
 
-        galaxy.galaxy.should_not eq(nil)
+        galaxy.galaxy_name.should_not eq(nil)
         galaxy.galaxy_type.should_not eq(nil)
         galaxy.distance.should_not eq("abc")
         galaxy.luminosity.should_not eq("abc")

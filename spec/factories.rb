@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :galaxy do
-    galaxy "GALAXY NAME"
+    galaxy_name "GALAXY NAME"
     galaxy_type "ABC"
     distance 2.1
     luminosity 3.1
@@ -12,7 +12,7 @@ FactoryGirl.define do
   end
 
   factory :invalid_galaxy, parent: :galaxy do
-    galaxy nil #if you put an int, Rails will convert it to a string
+    galaxy_name nil #if you put an int, Rails will convert it to a string
     galaxy_type nil
     distance "abc"
     luminosity "abc"
@@ -24,7 +24,7 @@ FactoryGirl.define do
   end
 
   factory :galaxy_post, parent: :galaxy do
-    galaxy "newest galaxy"
+    galaxy_name "newest galaxy"
     galaxy_type "ZYX"
     distance 2.1
     luminosity 3.1

@@ -1,7 +1,7 @@
 class Galaxy < ActiveRecord::Base
   has_many :measurements, dependent: :destroy
 
-  validates :galaxy, presence: true
+  validates :galaxy_name, presence: true
   validates :galaxy_type, presence: true
   validates :distance, presence: true
   validates :luminosity, presence: true
