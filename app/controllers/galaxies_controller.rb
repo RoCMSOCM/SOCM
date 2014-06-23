@@ -83,12 +83,11 @@ class GalaxiesController < ApplicationController
 
   #ransack advanced search
   def search
+    #galaxy_id included for measurements search path
     if params[:q].has_key?(:galaxy_id_eq)
       show
-      render :show
     else
       index
-      render :index
     end
   end
 
@@ -100,6 +99,6 @@ class GalaxiesController < ApplicationController
     end
 
     def galaxy_params
-      params.require(:galaxy).permit(:galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length, :mass_hydrogen, :mass_disk, :stars, :vcr)
+      params.require(:galaxy).permit(:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length, :mass_hydrogen, :mass_disk, :stars, :vcr)
     end
 end
