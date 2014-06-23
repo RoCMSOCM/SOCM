@@ -99,6 +99,7 @@ class GalaxiesController < ApplicationController
     end
 
     def galaxy_params
-      params.require(:galaxy).permit(:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length, :mass_hydrogen, :mass_disk, :stars, :vcr)
+      params.require(:galaxy).permit(:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length, :mass_hydrogen, :mass_disk, :stars, :vcr,
+                                     :r, :r_err_min, :r_err_max, :vrot_data, :vrot_data_err_min, :vrot_data_err_max)
     end
 end
