@@ -64,9 +64,9 @@
 
 
 <br>
-
 <% if current_admin %>
-  <%= link_to 'Edit', edit_galaxy_path(@galaxy) %>
+  <%= link_to 'Edit', edit_galaxy_path(@galaxy) %> |
+  <%= link_to 'Destroy', galaxy_path(@galaxy), method: :delete, data: { confirm: 'Are you sure?' } %>
   <br>
   <br>
 <% end %>
