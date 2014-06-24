@@ -11,4 +11,9 @@ class Galaxy < ActiveRecord::Base
   validates :mass_disk, presence: true
   validates :stars, presence: true
   validates :vcr, presence: true
+  validates :n, presence: true
+  validates :r0, presence: true
+  validates :n_g, presence: true
+  validates :r_0, presence: true
+  validates :sigma0, presence: true
 end

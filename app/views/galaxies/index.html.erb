@@ -55,6 +55,26 @@
             <%= f.search_field :vcr_eq, :class => "search-field" %>
           </th>
           <th>
+            <%= sort_link(@q, :n, "N*") %>
+            <%= f.search_field :n_eq, :class => "search-field" %>
+          </th>
+          <th>
+            <%= sort_link(@q, :r0, "R0") %>
+            <%= f.search_field :r0_eq, :class => "search-field" %>
+          </th>
+          <th>
+            <%= sort_link(@q, :n_g, "N_g") %>
+            <%= f.search_field :n_g_eq, :class => "search-field" %>
+          </th>
+          <th>
+            <%= sort_link(@q, :r_0, "r0") %>
+            <%= f.search_field :r_0_eq, :class => "search-field" %>
+          </th>
+          <th>
+            <%= sort_link(@q, :sigma0, "Sigma0") %>
+            <%= f.search_field :sigma0_eq, :class => "search-field" %>
+          </th>
+          <th>
             Number of Measurements
           </th>
           <th colspan="3">
@@ -78,6 +98,11 @@
           <td><%= galaxy.mass_disk %></td>
           <td><%= galaxy.stars %></td>
           <td><%= galaxy.vcr %></td>
+          <td><%= galaxy.n %></td>
+          <td><%= galaxy.r0 %></td>
+          <td><%= galaxy.n_g %></td>
+          <td><%= galaxy.r_0 %></td>
+          <td><%= galaxy.sigma0 %></td>
           <td><%= galaxy.measurements.size %></td>
           <td><%= link_to 'Show', galaxy %></td>
           <% if current_admin %>

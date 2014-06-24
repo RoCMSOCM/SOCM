@@ -11,7 +11,7 @@ class GalaxiesController < ApplicationController
       format.html { render :index }
       format.json { render :json => @galaxies.to_json(
          :only => [:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length,
-                      :mass_hydrogen, :mass_disk, :stars, :vcr])
+                      :mass_hydrogen, :mass_disk, :stars, :vcr, :n, :r0, :n_g, :r_0, :sigma0])
       }
     end
   end
@@ -27,7 +27,7 @@ class GalaxiesController < ApplicationController
       format.html { render :show }
       format.json { render :json => @galaxy.to_json(
          :only => [:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length,
-                      :mass_hydrogen, :mass_disk, :stars, :vcr])
+                      :mass_hydrogen, :mass_disk, :stars, :vcr, :n, :r0, :n_g, :r_0, :sigma0])
       }
     end
   end
@@ -99,7 +99,8 @@ class GalaxiesController < ApplicationController
     end
 
     def galaxy_params
-      params.require(:galaxy).permit(:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length, :mass_hydrogen, :mass_disk, :stars, :vcr,
+      params.require(:galaxy).permit(:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length, :mass_hydrogen,
+                                     :mass_disk, :stars, :vcr, :n, :r0, :n_g, :r_0, :sigma0,
                                      :r, :r_err_min, :r_err_max, :vrot_data, :vrot_data_err_min, :vrot_data_err_max)
     end
 end
