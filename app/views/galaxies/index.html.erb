@@ -9,8 +9,7 @@
 <% end %>
 
 <% if @galaxies.size > 0 %>
-  <%= link_to_previous_page @galaxies, '<<' %>
-  <%= link_to_next_page @galaxies, '>>' %>
+  <%= paginate @galaxies %>
   <table>
     <thead>
       <tr>
