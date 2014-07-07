@@ -14,10 +14,6 @@ class GalaxiesController < ApplicationController
          :only => [:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length,
                       :mass_hydrogen, :mass_disk, :stars, :vcr, :n, :r0, :n_g, :r_0, :sigma0])
       }
-      # format.json { render :json => @galaxies.to_json(
-      #    :only => [:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length,
-      #                 :mass_hydrogen, :mass_disk, :stars, :vcr, :n, :r0, :n_g, :r_0, :sigma0])
-      # }
     end
   end
 
@@ -26,7 +22,7 @@ class GalaxiesController < ApplicationController
   def show
     @galaxy = Galaxy.find(params[:id].to_i)
     @q = @galaxy.measurements.search(params[:q])
-    @measurements = @q.result(distinct: true)
+    @measurements = @q.result(distinct: true).page(params[:page])
 
     respond_to do |format|
       format.html { render :show }

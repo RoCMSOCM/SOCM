@@ -78,6 +78,7 @@
     <%= link_to 'New Measurement', new_galaxy_measurement_path(@galaxy) %>
   <% end %>
 
+  <%= paginate @measurements %>
   <table>
     <thead>
       <tr>
