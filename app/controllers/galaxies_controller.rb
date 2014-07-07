@@ -1,17 +1,18 @@
 class GalaxiesController < ApplicationController
   before_action :set_galaxy, only: [:show, :edit, :update, :destroy]
+  max_per_page = 5
 
   # GET /galaxies
   # GET /galaxies.json
   def index
     @q = Galaxy.search(params[:q])
-    @galaxies = @q.result(distinct: true)
+    @galaxies = @q.result(distinct: true).page(params[:page])
 
     respond_to do |format|
       format.html { render :index }
       format.json { render :json => @galaxies.to_json(
          :only => [:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length,
-                      :mass_hydrogen, :mass_disk, :stars, :vcr, :n, :r0, :n_g, :r_0, :sigma0])
+                      :mass_hydrogen, :mass_disk, :stars, :vcr, :n, :r0, :n_g, :r_0, :sigma0]).page(params[:page])
       }
     end
   end
@@ -101,6 +102,7 @@ class GalaxiesController < ApplicationController
     def galaxy_params
       params.require(:galaxy).permit(:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length, :mass_hydrogen,
                                      :mass_disk, :stars, :vcr, :n, :r0, :n_g, :r_0, :sigma0,
-                                     :r, :r_err_min, :r_err_max, :vrot_data, :vrot_data_err_min, :vrot_data_err_max)
+                                     :r, :r_err_min, :r_err_max, :vrot_data, :vrot_data_err_min, :vrot_data_err_max,
+                                     :page)
     end
 end

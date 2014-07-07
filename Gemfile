@@ -20,6 +20,7 @@ group :test do
   gem 'factory_girl_rails', '~> 4.0'
 end
 
+gem 'kaminari'
 gem 'pg'
 gem 'devise'
 gem 'ransack'
