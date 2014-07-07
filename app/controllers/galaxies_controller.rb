@@ -12,8 +12,12 @@ class GalaxiesController < ApplicationController
       format.html { render :index }
       format.json { render :json => @galaxies.to_json(
          :only => [:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length,
-                      :mass_hydrogen, :mass_disk, :stars, :vcr, :n, :r0, :n_g, :r_0, :sigma0]).page(params[:page])
+                      :mass_hydrogen, :mass_disk, :stars, :vcr, :n, :r0, :n_g, :r_0, :sigma0])
       }
+      # format.json { render :json => @galaxies.to_json(
+      #    :only => [:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length,
+      #                 :mass_hydrogen, :mass_disk, :stars, :vcr, :n, :r0, :n_g, :r_0, :sigma0])
+      # }
     end
   end
 
