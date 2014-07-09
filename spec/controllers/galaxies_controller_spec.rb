@@ -3,7 +3,6 @@ require 'spec_helper'
 describe GalaxiesController do
   let!(:galaxy) { FactoryGirl.create(:galaxy) }
   let!(:galaxy_post) { FactoryGirl.create(:galaxy_post) }
-  let!(:galaxies) { FactoryGirl.create_list(:galaxy, 5) }
 
   describe "GET #index" do
     it "renders the index view" do
@@ -17,6 +16,8 @@ describe GalaxiesController do
     context "with valid ID" do
       before(:each) do
         Galaxy.stub(:find).and_return(galaxy)
+        Galaxy.stub(:save).and_return(true)
+        #galaxy = FactoryGirl.create
       end
 
       it "returns a galaxy" do
@@ -33,6 +34,11 @@ describe GalaxiesController do
         expect(galaxy.mass_disk).to eq(6.1)
         expect(galaxy.stars).to eq(7.1)
         expect(galaxy.vcr).to eq(8.1)
+        expect(galaxy.n).to eq(9.1)
+        expect(galaxy.r0).to eq(10.1)
+        expect(galaxy.n_g).to eq(11.1)
+        expect(galaxy.r_0).to eq(12.1)
+        expect(galaxy.sigma0).to eq(13.1)
       end
 
       it "assigns the returned galaxy to @galaxy" do
@@ -57,7 +63,7 @@ describe GalaxiesController do
   context "POST create" do
     context "with valid params" do
       before(:each) do
-        @initial_count = Galaxy.count #get count before post
+        #Galaxy.stub(:save).and_return(true)
         post :create, galaxy: galaxy_post.attributes
       end
 
@@ -72,14 +78,15 @@ describe GalaxiesController do
         expect(galaxy_post.mass_disk).to eq(6.1)
         expect(galaxy_post.stars).to eq(7.1)
         expect(galaxy_post.vcr).to eq(8.1)
+        expect(galaxy_post.n).to eq(9.1)
+        expect(galaxy_post.r0).to eq(10.1)
+        expect(galaxy_post.n_g).to eq(11.1)
+        expect(galaxy_post.r_0).to eq(12.1)
+        expect(galaxy_post.sigma0).to eq(13.1)
       end
 
-      it "increases Galaxy count by 1" do
-        expect(Galaxy.count).to be == @initial_count + 1
-      end
-
-      it "redirects to galaxy#show of last record" do
-        response.should redirect_to Galaxy.last
+      it "returns 200 when successfully creating a new galaxy" do
+        expect(response.status).to eq(200)
       end
     end
 
@@ -104,9 +111,11 @@ describe GalaxiesController do
   context "PUT update/:id" do
     context "with valid attributes" do
       before(:each) do
+        Galaxy.stub(:save).and_return(true)
         @attr = { :galaxy_name => "herpderp", :galaxy_type => "ZYX",
                                     :distance => 10, :luminosity => 20, :scale_length => 30, :mass_hydrogen => 40,
-                                    :mass_disk => 50, :stars => 60, :vcr => 70 }
+                                    :mass_disk => 50, :stars => 60, :vcr => 70, :n => 80, :r0 => 90, :n_g => 100,
+                                    :r_0 => 110, :sigma0 => 120 }
       end
 
       it "updates an existing Galaxy and gets a redirect response" do
@@ -129,6 +138,11 @@ describe GalaxiesController do
         expect(galaxy.mass_disk).to eq(50)
         expect(galaxy.stars).to eq(60)
         expect(galaxy.vcr).to eq(70)
+        expect(galaxy.n).to eq(80)
+        expect(galaxy.r0).to eq(90)
+        expect(galaxy.n_g).to eq(100)
+        expect(galaxy.r_0).to eq(110)
+        expect(galaxy.sigma0).to eq(120)
       end
     end
 
@@ -146,6 +160,11 @@ describe GalaxiesController do
         galaxy.mass_disk.should_not eq("abc")
         galaxy.stars.should_not eq("abc")
         galaxy.vcr.should_not eq("abc")
+        galaxy.n.should_not eq("abc")
+        galaxy.r0.should_not eq("abc")
+        galaxy.n_g.should_not eq("abc")
+        galaxy.r_0.should_not eq("abc")
+        galaxy.sigma0.should_not eq("abc")
       end
 
       it "renders the edit view" do
