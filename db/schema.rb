@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140709204304) do
+ActiveRecord::Schema.define(version: 20140709223851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,14 +29,20 @@ ActiveRecord::Schema.define(version: 20140709204304) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "approved"
   end
 
+  add_index "admins", ["approved"], name: "index_admins_on_approved", using: :btree
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "citations", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "author"
+    t.string   "title"
+    t.string   "bibtex"
+    t.string   "url"
   end
 
   create_table "galaxies", force: true do |t|
@@ -53,6 +59,11 @@ ActiveRecord::Schema.define(version: 20140709204304) do
     t.float    "r0",            null: false
     t.float    "n_g",           null: false
     t.float    "stars"
+  end
+
+  create_table "galaxies_citations", id: false, force: true do |t|
+    t.integer "galaxy_id"
+    t.integer "citation_id"
   end
 
   create_table "velocities", force: true do |t|
