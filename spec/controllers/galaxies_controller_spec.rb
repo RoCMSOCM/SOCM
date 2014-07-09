@@ -26,7 +26,7 @@ describe GalaxiesController do
 
         expect(galaxy.id).should_not be_nil
         expect(galaxy.galaxy_name).to eq("GALAXY NAME")
-        expect(galaxy.galaxy_type).to eq("ABC")
+        expect(galaxy.galaxy_type).to eq("LSB")
         expect(galaxy.distance).to eq(2.1)
         expect(galaxy.luminosity).to eq(3.1)
         expect(galaxy.scale_length).to eq(4.1)
@@ -70,7 +70,7 @@ describe GalaxiesController do
       it "creates a new Galaxy" do
         expect(galaxy_post.id).should_not be_nil
         expect(galaxy_post.galaxy_name).to eq("newest galaxy")
-        expect(galaxy_post.galaxy_type).to eq("ZYX")
+        expect(galaxy_post.galaxy_type).to eq("LSB")
         expect(galaxy_post.distance).to eq(2.1)
         expect(galaxy_post.luminosity).to eq(3.1)
         expect(galaxy_post.scale_length).to eq(4.1)
@@ -112,7 +112,7 @@ describe GalaxiesController do
     context "with valid attributes" do
       before(:each) do
         Galaxy.stub(:save).and_return(true)
-        @attr = { :galaxy_name => "herpderp", :galaxy_type => "ZYX",
+        @attr = { :galaxy_name => "herpderp", :galaxy_type => "LSB",
                                     :distance => 10, :luminosity => 20, :scale_length => 30, :mass_hydrogen => 40,
                                     :mass_disk => 50, :stars => 60, :vcr => 70, :n => 80, :r0 => 90, :n_g => 100,
                                     :r_0 => 110, :sigma0 => 120 }
@@ -130,7 +130,7 @@ describe GalaxiesController do
         galaxy.reload
 
         expect(galaxy.galaxy_name).to eq("herpderp")
-        expect(galaxy.galaxy_type).to eq("ZYX")
+        expect(galaxy.galaxy_type).to eq("LSB")
         expect(galaxy.distance).to eq(10)
         expect(galaxy.luminosity).to eq(20)
         expect(galaxy.scale_length).to eq(30)

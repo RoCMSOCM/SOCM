@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :galaxy do
     galaxy_name "GALAXY NAME"
-    galaxy_type "ABC"
+    galaxy_type "LSB"
     distance 2.1
     luminosity 3.1
     scale_length 4.1
@@ -35,7 +35,7 @@ FactoryGirl.define do
 
   factory :galaxy_post, parent: :galaxy do
     galaxy_name "newest galaxy"
-    galaxy_type "ZYX"
+    galaxy_type "LSB"
     distance 2.1
     luminosity 3.1
     scale_length 4.1

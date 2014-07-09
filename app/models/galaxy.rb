@@ -3,7 +3,7 @@ class Galaxy < ActiveRecord::Base
 
   validates :galaxy_name, presence: true
   validates_uniqueness_of :galaxy_name, :message => ": this galaxy already exists"
-  validates :galaxy_type, presence: true
+  validates :galaxy_type, :inclusion => %w(LSB HSB), presence: true
   validates :distance, presence: true
   validates :luminosity, presence: true
   validates :scale_length, presence: true

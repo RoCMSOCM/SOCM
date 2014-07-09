@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :galaxy_type %>
-    <%= f.text_field :galaxy_type %>
+    <%= f.select :galaxy_type, options_for_select([["LSB", "LSB"], ["HSB", "HSB"]]) %>
   </div>
   <div class="field">
     <%= f.label :distance %>
