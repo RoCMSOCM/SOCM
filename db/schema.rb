@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140623234502) do
+ActiveRecord::Schema.define(version: 20140709195612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,13 +51,10 @@ ActiveRecord::Schema.define(version: 20140623234502) do
     t.float    "scale_length",  null: false
     t.float    "mass_hydrogen", null: false
     t.float    "mass_disk",     null: false
-    t.float    "stars",         null: false
-    t.float    "vcr",           null: false
     t.float    "n",             null: false
     t.float    "r0",            null: false
     t.float    "n_g",           null: false
-    t.float    "r_0",           null: false
-    t.float    "sigma0",        null: false
+    t.float    "stars"
   end
 
   create_table "measurements", force: true do |t|

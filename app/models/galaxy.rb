@@ -9,11 +9,14 @@ class Galaxy < ActiveRecord::Base
   validates :scale_length, presence: true, numericality: {only_float: true}
   validates :mass_hydrogen, presence: true, numericality: {only_float: true}
   validates :mass_disk, presence: true, numericality: {only_float: true}
-  validates :stars, presence: true, numericality: {only_float: true}
-  validates :vcr, presence: true, numericality: {only_float: true}
   validates :n, presence: true, numericality: {only_float: true}
   validates :r0, presence: true, numericality: {only_float: true}
   validates :n_g, presence: true, numericality: {only_float: true}
-  validates :r_0, presence: true, numericality: {only_float: true}
-  validates :sigma0, presence: true, numericality: {only_float: true}
+  validate :set_stars
+
+  #TODO: check M/L with James to set number of stars
+  #calculates number of stars based on M/L
+  def set_stars
+    true
+  end
 end
