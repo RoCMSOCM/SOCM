@@ -1,3 +1,4 @@
+require 'bibtex'
 class Citation < ActiveRecord::Base
   # This class will be responsible for storing citation information 
   # for a paraticular measurement. To make this simple using 
