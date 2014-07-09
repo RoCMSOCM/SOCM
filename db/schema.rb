@@ -29,10 +29,8 @@ ActiveRecord::Schema.define(version: 20140709231353) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "approved"
   end
 
-  add_index "admins", ["approved"], name: "index_admins_on_approved", using: :btree
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
