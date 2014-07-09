@@ -25,4 +25,4 @@ gem 'pg'
 gem 'devise'
 gem 'ransack'
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin] #windows 8 fix for some dev environments
+gem 'tzinfo-data'
