@@ -21,8 +21,8 @@ class MeasurementsController < ApplicationController
   # GET /measurements/1
   # GET /measurements/1.json
   def show
-    @measurement = @galaxy.measurements.find(params[:id])
     @galaxy = Galaxy.find(params[:galaxy_id])
+    @measurement = @galaxy.measurements.find(params[:id])
 
     respond_to do |format|
       format.html { render :show }
