@@ -14,9 +14,10 @@ class Galaxy < ActiveRecord::Base
   validates :n_g, presence: true, numericality: {only_float: true}
   validate :set_stars
 
-  #TODO: check M/L with James to set number of stars
-  #calculates number of stars based on M/L
+  #TODO: check M/Msun with James to set number of stars
+  #calculates number of stars based on M/Msun
   def set_stars
+
     true
   end
 end
