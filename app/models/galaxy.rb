@@ -1,5 +1,4 @@
 class Galaxy < ActiveRecord::Base
-  has_many :measurements, dependent: :destroy
   has_and_belongs_to_many :citations
   has_many :velocities, dependent: :destroy
 
