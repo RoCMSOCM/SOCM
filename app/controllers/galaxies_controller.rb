@@ -11,7 +11,7 @@ class GalaxiesController < ApplicationController
       format.html { render :index }
       format.json { render :json => @galaxies.to_json(
          :only => [:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length,
-                      :mass_hydrogen, :mass_disk, :stars, :n, :r0, :n_g])
+                      :mass_hydrogen, :mass_disk, :stars])
       }
     end
   end
@@ -27,7 +27,7 @@ class GalaxiesController < ApplicationController
       format.html { render :show }
       format.json { render :json => @galaxy.to_json(
           :only => [:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length,
-                      :mass_hydrogen, :mass_disk, :stars, :n, :r0, :n_g])
+                      :mass_hydrogen, :mass_disk, :stars])
       }
     end
   end
@@ -101,7 +101,7 @@ class GalaxiesController < ApplicationController
     def galaxy_params
       # includes params for all velocities attributes - used with ransack search for galaxy_velocities
       params.require(:galaxy).permit(:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length, :mass_hydrogen,
-                                     :mass_disk, :stars, :n, :r0, :n_g,
+                                     :mass_disk, :stars
                                      :galaxy_id, :r, :vrot_data, :vrot_data_error,
                                      :page)
     end

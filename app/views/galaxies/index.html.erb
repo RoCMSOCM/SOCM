@@ -48,18 +48,6 @@
             <%= f.search_field :mass_disk_eq, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :n, "N*") %>
-            <%= f.search_field :n_eq, :class => "search-field" %>
-          </th>
-          <th>
-            <%= sort_link(@q, :r0, "R0") %>
-            <%= f.search_field :r0_eq, :class => "search-field" %>
-          </th>
-          <th>
-            <%= sort_link(@q, :n_g, "N_g") %>
-            <%= f.search_field :n_g_eq, :class => "search-field" %>
-          </th>
-          <th>
             Number of Velocities
           </th>
           <th>
@@ -85,9 +73,6 @@
           <td><%= galaxy.scale_length %></td>
           <td><%= galaxy.mass_hydrogen %></td>
           <td><%= galaxy.mass_disk %></td>
-          <td><%= galaxy.n %></td>
-          <td><%= galaxy.r0 %></td>
-          <td><%= galaxy.n_g %></td>
           <td><%= galaxy.velocities.size %></td>
           <td><%= galaxy.stars %></td>
           <td><%= link_to 'Show', galaxy %></td>
