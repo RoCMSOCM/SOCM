@@ -33,12 +33,9 @@ describe GalaxiesController do
         expect(galaxy.mass_hydrogen).to eq(5.1)
         expect(galaxy.mass_disk).to eq(6.1)
         expect(galaxy.stars).to eq(7.1)
-        expect(galaxy.vcr).to eq(8.1)
         expect(galaxy.n).to eq(9.1)
         expect(galaxy.r0).to eq(10.1)
         expect(galaxy.n_g).to eq(11.1)
-        expect(galaxy.r_0).to eq(12.1)
-        expect(galaxy.sigma0).to eq(13.1)
       end
 
       it "assigns the returned galaxy to @galaxy" do
@@ -77,12 +74,9 @@ describe GalaxiesController do
         expect(galaxy_post.mass_hydrogen).to eq(5.1)
         expect(galaxy_post.mass_disk).to eq(6.1)
         expect(galaxy_post.stars).to eq(7.1)
-        expect(galaxy_post.vcr).to eq(8.1)
         expect(galaxy_post.n).to eq(9.1)
         expect(galaxy_post.r0).to eq(10.1)
         expect(galaxy_post.n_g).to eq(11.1)
-        expect(galaxy_post.r_0).to eq(12.1)
-        expect(galaxy_post.sigma0).to eq(13.1)
       end
 
       it "returns 200 when successfully creating a new galaxy" do
@@ -137,12 +131,9 @@ describe GalaxiesController do
         expect(galaxy.mass_hydrogen).to eq(40)
         expect(galaxy.mass_disk).to eq(50)
         expect(galaxy.stars).to eq(60)
-        expect(galaxy.vcr).to eq(70)
         expect(galaxy.n).to eq(80)
         expect(galaxy.r0).to eq(90)
         expect(galaxy.n_g).to eq(100)
-        expect(galaxy.r_0).to eq(110)
-        expect(galaxy.sigma0).to eq(120)
       end
     end
 
@@ -159,12 +150,9 @@ describe GalaxiesController do
         galaxy.mass_hydrogen.should_not eq("abc")
         galaxy.mass_disk.should_not eq("abc")
         galaxy.stars.should_not eq("abc")
-        galaxy.vcr.should_not eq("abc")
         galaxy.n.should_not eq("abc")
         galaxy.r0.should_not eq("abc")
         galaxy.n_g.should_not eq("abc")
-        galaxy.r_0.should_not eq("abc")
-        galaxy.sigma0.should_not eq("abc")
       end
 
       it "renders the edit view" do

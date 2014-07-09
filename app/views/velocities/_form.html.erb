@@ -1,10 +1,10 @@
-<%= form_for [@galaxy, @measurement] do |f| %>
-  <% if @measurement.errors.any? %>
+<%= form_for [@galaxy, @velocity] do |f| %>
+  <% if @velocity.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@measurement.errors.count, "error") %> prohibited this measurement from being saved:</h2>
+      <h2><%= pluralize(@velocity.errors.count, "error") %> prohibited this velocity from being saved:</h2>
 
       <ul>
-      <% @measurement.errors.full_messages.each do |message| %>
+      <% @velocity.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

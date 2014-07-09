@@ -1,0 +1,6 @@
+<h1>Edit velocity <%= @velocity.id %> for Galaxy <%= @galaxy.id %></h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', galaxy_velocity_path(@galaxy, @velocity) %> |
+<%= link_to 'Back', galaxy_path(@galaxy) %>

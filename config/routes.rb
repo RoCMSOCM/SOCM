@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :galaxies do
-    resources :measurements
+    resources :velocities
     collection do
       match 'search' => 'galaxies#search', via: [:get, :post], as: :search
     end

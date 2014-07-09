@@ -21,8 +21,8 @@ class GalaxiesController < ApplicationController
   # GET /galaxies/1.json
   def show
     @galaxy = Galaxy.find(params[:id].to_i)
-    @q = @galaxy.measurements.search(params[:q])
-    @measurements = @q.result(distinct: true).page(params[:page])
+    @q = @galaxy.velocities.search(params[:q])
+    @velocities = @q.result(distinct: true).page(params[:page])
 
     respond_to do |format|
       format.html { render :show }
@@ -84,7 +84,7 @@ class GalaxiesController < ApplicationController
 
   #ransack advanced search
   def search
-    #galaxy_id included for measurements search path
+    #galaxy_id included for velocities search path
     if params[:q].has_key?(:galaxy_id_eq)
       show
     else
@@ -100,7 +100,7 @@ class GalaxiesController < ApplicationController
     end
 
     def galaxy_params
-      # includes params for all Measurements attributes - used with ransack search for galaxy_measurements
+      # includes params for all velocities attributes - used with ransack search for galaxy_velocities
       params.require(:galaxy).permit(:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length, :mass_hydrogen,
                                      :mass_disk, :stars, :n, :r0, :n_g,
                                      :galaxy_id, :r, :r_err_min, :r_err_max, :vrot_data, :vrot_data_err_min, :vrot_data_err_max,

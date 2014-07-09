@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140709195612) do
+ActiveRecord::Schema.define(version: 20140709200219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20140709195612) do
     t.float    "stars"
   end
 
-  create_table "measurements", force: true do |t|
+  create_table "velocities", force: true do |t|
     t.float    "r",                 null: false
     t.float    "r_err_min",         null: false
     t.float    "r_err_max",         null: false
@@ -69,6 +69,6 @@ ActiveRecord::Schema.define(version: 20140709195612) do
     t.integer  "galaxy_id"
   end
 
-  add_index "measurements", ["galaxy_id"], name: "index_measurements_on_galaxy_id", using: :btree
+  add_index "velocities", ["galaxy_id"], name: "index_velocities_on_galaxy_id", using: :btree
 
 end

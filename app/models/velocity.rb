@@ -1,4 +1,4 @@
-class Measurement < ActiveRecord::Base
+class Velocity < ActiveRecord::Base
   belongs_to :galaxy
 
   validates :r, presence: true, numericality: {only_float: true}

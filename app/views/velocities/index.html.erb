@@ -4,7 +4,7 @@
 
 <p>
   <strong>Galaxy:</strong>
-  <%= @galaxy.galaxy %>
+  <%= @galaxy.galaxy_name %>
 </p>
 <!-- TODO: Figure out galaxy column names -->
 
@@ -14,7 +14,7 @@
 
 <br>
 
-<%= search_form_for @q, url: galaxy_measurement_search_path(@galaxy.id, @measurements.first.id),
+<%= search_form_for @q, url: galaxy_velocity_search_path(@galaxy.id, @velocities.first.id),
                         html: { method: :post } do |f| %>
   <%= f.label :id_eq %>
   <%= f.search_field :id_eq, :class => "search-field" %>
@@ -36,10 +36,10 @@
   <%= f.submit "Clear", :id => :q_reset%>
 <% end %>
 
-<% if @measurements.size > 0 %>
-  <h2>Measurements for Galaxy <%= @galaxy.id %></h2>
+<% if @velocities.size > 0 %>
+  <h2>Velocities for Galaxy <%= @galaxy.id %></h2>
 
-  <%= link_to 'New Measurement', new_galaxy_measurement_path(@galaxy) %>
+  <%= link_to 'New Velocity', new_galaxy_velocity_path(@galaxy) %>
 
   <table>
     <thead>
@@ -57,24 +57,24 @@
     </thead>
 
     <tbody>
-      <% @measurements.each do |measurement| %>
+      <% @velocities.each do |velocity| %>
         <tr>
-          <td><%= link_to "#{measurement.id}", galaxy_measurement_path(@galaxy, measurement) %></td>
-          <td><%= measurement.galaxy_id %></td>
-          <td><%= measurement.r %></td>
-          <td><%= measurement.r_err_min %></td>
-          <td><%= measurement.r_err_max %></td>
-          <td><%= measurement.vrot_data %></td>
-          <td><%= measurement.vrot_data_err_min %></td>
-          <td><%= measurement.vrot_data_err_max %></td>
-          <td><%= link_to 'Show', galaxy_measurement_path(@galaxy, measurement) %></td>
-          <td><%= link_to 'Edit', edit_galaxy_measurement_path(@galaxy, measurement) %></td>
-          <td><%= link_to 'Destroy', galaxy_measurement_path(@galaxy, measurement), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to "#{velocity.id}", galaxy_velocity_path(@galaxy, velocity) %></td>
+          <td><%= velocity.galaxy_id %></td>
+          <td><%= velocity.r %></td>
+          <td><%= velocity.r_err_min %></td>
+          <td><%= velocity.r_err_max %></td>
+          <td><%= velocity.vrot_data %></td>
+          <td><%= velocity.vrot_data_err_min %></td>
+          <td><%= velocity.vrot_data_err_max %></td>
+          <td><%= link_to 'Show', galaxy_velocity_path(@galaxy, velocity) %></td>
+          <td><%= link_to 'Edit', edit_galaxy_velocity_path(@galaxy, velocity) %></td>
+          <td><%= link_to 'Destroy', galaxy_velocity_path(@galaxy, velocity), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 <% else %>
   <br>
-  <%= link_to 'New Measurement', new_galaxy_measurement_path(@galaxy) %>
+  <%= link_to 'New velocity', new_galaxy_velocity_path(@galaxy) %>
 <% end %>

@@ -1,5 +1,5 @@
 class Galaxy < ActiveRecord::Base
-  has_many :measurements, dependent: :destroy
+  has_many :velocities, dependent: :destroy
 
   validates :galaxy_name, presence: true
   validates_uniqueness_of :galaxy_name, :message => ": this galaxy already exists"
