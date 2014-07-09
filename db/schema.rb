@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140709200219) do
+ActiveRecord::Schema.define(version: 20140709203515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,12 +58,8 @@ ActiveRecord::Schema.define(version: 20140709200219) do
   end
 
   create_table "velocities", force: true do |t|
-    t.float    "r",                 null: false
-    t.float    "r_err_min",         null: false
-    t.float    "r_err_max",         null: false
-    t.float    "vrot_data",         null: false
-    t.float    "vrot_data_err_min", null: false
-    t.float    "vrot_data_err_max", null: false
+    t.float    "r",          null: false
+    t.float    "vrot_data",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "galaxy_id"
