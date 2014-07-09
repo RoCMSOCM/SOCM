@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'csv'
 
-path = "#{Rails.root}\\db\\velocity_data\\MILKY-WAY.csv"
+path = "#{Rails.root}/db/velocity_data/MILKY-WAY.csv"
 
 galaxy = Galaxy.find(29)
 CSV.foreach(path) do |row|
