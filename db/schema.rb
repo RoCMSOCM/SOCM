@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140709203515) do
+ActiveRecord::Schema.define(version: 20140709204304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,11 +58,12 @@ ActiveRecord::Schema.define(version: 20140709203515) do
   end
 
   create_table "velocities", force: true do |t|
-    t.float    "r",          null: false
-    t.float    "vrot_data",  null: false
+    t.float    "r",               null: false
+    t.float    "vrot_data",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "galaxy_id"
+    t.float    "vrot_data_error"
   end
 
   add_index "velocities", ["galaxy_id"], name: "index_velocities_on_galaxy_id", using: :btree

@@ -12,8 +12,7 @@ class VelocitiesController < ApplicationController
     respond_to do |format|
       format.html { render :index }
       format.json { render :json => @velocities.to_json(
-         :only => [:id, :galaxy_id, :r, :r, :r_err_min, :r_err_max, :vrot_data,
-                    :vrot_data_err_min, :vrot_data_err_max])
+         :only => [:id, :galaxy_id, :r, :vrot_data, :vrot_data_error])
       }
     end
   end
@@ -27,8 +26,7 @@ class VelocitiesController < ApplicationController
     respond_to do |format|
       format.html { render :show }
       format.json { render :json => @velocity.to_json(
-         :only => [:id, :galaxy_id, :r, :r, :r_err_min, :r_err_max, :vrot_data,
-                    :vrot_data_err_min, :vrot_data_err_max])
+         :only => [:id, :galaxy_id, :r, :vrot_data, :vrot_data_error])
       }
     end
   end
@@ -93,7 +91,7 @@ class VelocitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def velocity_params
-      params.require(:velocity).permit(:galaxy_id, :r, :r_err_min, :r_err_max, :vrot_data, :vrot_data_err_min, :vrot_data_err_max)
+      params.require(:velocity).permit(:galaxy_id, :r, :vrot_data, :vrot_data_error)
     end
 
     def find_galaxy

@@ -1,6 +1,5 @@
 class GalaxiesController < ApplicationController
   before_action :set_galaxy, only: [:show, :edit, :update, :destroy]
-  max_per_page = 5
 
   # GET /galaxies
   # GET /galaxies.json
@@ -103,7 +102,7 @@ class GalaxiesController < ApplicationController
       # includes params for all velocities attributes - used with ransack search for galaxy_velocities
       params.require(:galaxy).permit(:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length, :mass_hydrogen,
                                      :mass_disk, :stars, :n, :r0, :n_g,
-                                     :galaxy_id, :r, :r_err_min, :r_err_max, :vrot_data, :vrot_data_err_min, :vrot_data_err_max,
+                                     :galaxy_id, :r, :vrot_data, :vrot_data_error,
                                      :page)
     end
 end

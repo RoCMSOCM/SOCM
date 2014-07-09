@@ -3,5 +3,5 @@ class Velocity < ActiveRecord::Base
 
   validates :r, presence: true, numericality: {only_float: true}
   validates :vrot_data, presence: true, numericality: {only_float: true}
-  validates :vrot_data_error, presence: true
+  validates :vrot_data_error, presence: true, numericality: {only_float: true}
 end

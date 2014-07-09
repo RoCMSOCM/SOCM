@@ -84,24 +84,12 @@
             <%= f.search_field :r_eq, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :r_err_min, "R err min") %>
-            <%= f.search_field :r_err_min_eq, :class => "search-field" %>
-          </th>
-          <th>
-            <%= sort_link(@q, :r_err_max, "R err max") %>
-            <%= f.search_field :r_err_max_eq, :class => "search-field" %>
-          </th>
-          <th>
             <%= sort_link(@q, :vrot_data, "Vrot data") %>
             <%= f.search_field :vrot_data_eq, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :vrot_data_err_min, "Vrot data err min") %>
-            <%= f.search_field :vrot_data_err_min_eq, :class => "search-field" %>
-          </th>
-          <th>
-            <%= sort_link(@q, :vrot_data_err_max, "Vrot data err max") %>
-            <%= f.search_field :vrot_data_err_max_eq, :class => "search-field" %>
+            <%= sort_link(@q, :vrot_data_error, "Vrot data err min") %>
+            <%= f.search_field :vrot_data_error_eq, :class => "search-field" %>
           </th>
           <th colspan="3">
             <%= f.submit "Search" %>
@@ -117,11 +105,8 @@
           <td><%= link_to "#{velocity.id}", galaxy_velocity_path(@galaxy, velocity) %></td>
           <td><%= velocity.galaxy_id %></td>
           <td><%= velocity.r %></td>
-          <td><%= velocity.r_err_min %></td>
-          <td><%= velocity.r_err_max %></td>
           <td><%= velocity.vrot_data %></td>
-          <td><%= velocity.vrot_data_err_min %></td>
-          <td><%= velocity.vrot_data_err_max %></td>
+          <td><%= velocity.vrot_data_error %></td>
           <td><%= link_to 'Show', galaxy_velocity_path(@galaxy, velocity) %></td>
           <% if current_admin %>
             <td><%= link_to 'Edit', edit_galaxy_velocity_path(@galaxy, velocity) %></td>
