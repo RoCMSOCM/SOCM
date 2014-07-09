@@ -1,10 +1,10 @@
 class Measurement < ActiveRecord::Base
   belongs_to :galaxy
 
-  validates :r, presence: true
-  validates :r_err_min, presence: true
-  validates :r_err_max, presence: true
-  validates :vrot_data, presence: true
-  validates :vrot_data_err_min, presence: true
-  validates :vrot_data_err_max, presence: true
+  validates :r, presence: true, numericality: {only_float: true}
+  validates :r_err_min, presence: true, numericality: {only_float: true}
+  validates :r_err_max, presence: true, numericality: {only_float: true}
+  validates :vrot_data, presence: true, numericality: {only_float: true}
+  validates :vrot_data_err_min, presence: true, numericality: {only_float: true}
+  validates :vrot_data_err_max, presence: true, numericality: {only_float: true}
 end
