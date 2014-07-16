@@ -6,9 +6,14 @@ Rails.application.routes.draw do
 
   resources :galaxies do
     resources :velocities
-    resources :citations
     collection do
       match 'search' => 'galaxies#search', via: [:get, :post], as: :search
+    end
+  end
+
+  resources :citations do
+    collection do
+      match 'search' => 'citations#search', via: [:get, :post], as: :search
     end
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140709231353) do
+ActiveRecord::Schema.define(version: 20140716190201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,8 @@ ActiveRecord::Schema.define(version: 20140709231353) do
     t.integer "galaxy_id"
     t.integer "citation_id"
   end
+
+  add_index "galaxies_citations", ["galaxy_id", "citation_id"], name: "index_galaxies_citations_on_galaxy_id_and_citation_id", using: :btree
 
   create_table "velocities", force: true do |t|
     t.float    "r",               null: false
