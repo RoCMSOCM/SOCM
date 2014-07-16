@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'csv'
 
+#use this file to upload csvs for now
 # path = "#{Rails.root}/db/velocity_data/MILKY-WAY.csv"
 
 # galaxy = Galaxy.new(:galaxy_name => "MILKY-WAY", :galaxy_type => "LSB", :distance => 0.0081,
@@ -16,9 +17,9 @@ require 'csv'
 # 	galaxy.velocities.create(:r => row[0], :vrot_data => row[1], :vrot_data_error => row[2])
 # end
 
-100.times do |i|
-  galaxy = Galaxy.new(:galaxy_name => "Galaxy #{i}", :galaxy_type => "LSB", :distance => 0.0081,
-                     :luminosity => 1.6, :scale_length => 2.1, :mass_hydrogen => 0, :mass_disk => 6.43)
-  galaxy.save!
+# 100.times do |i|
+#   galaxy = Galaxy.new(:galaxy_name => "Galaxy #{i}", :galaxy_type => "LSB", :distance => 0.0081,
+#                      :luminosity => 1.6, :scale_length => 2.1, :mass_hydrogen => 0, :mass_disk => 6.43)
+#   galaxy.save!
 
-end
+# end
