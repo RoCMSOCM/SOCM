@@ -20,9 +20,13 @@ class CitationsController < ApplicationController
   # GET /citations/1
   # GET /citations/1.json
   def show
+    puts "got here..."
     @citation = Citation.find(params[:id])
+    puts "got here...2"
     @galaxies = @citation.galaxies
+    puts "got here...3"
     @citation.set_galaxy_ids
+    puts "got here...4"
 
     respond_to do |format|
       format.html { render :show }
