@@ -1,4 +1,5 @@
 class Galaxy < ActiveRecord::Base
+  attr_accessor :citation_ids
 
   has_many :galaxy_citations, dependent: :delete_all
   has_many :citations, :through => :galaxy_citations, :foreign_key => :citations_id
@@ -9,4 +10,8 @@ class Galaxy < ActiveRecord::Base
   validates :mass_hydrogen, :mass_disk, :scale_length,  :luminosity, :distance, presence: true, numericality: {only_float: true}
 
   accepts_nested_attributes_for :citations
+
+  def set_citation_ids
+    self.citation_ids = self.citations.collect(&:id)
+  end
 end

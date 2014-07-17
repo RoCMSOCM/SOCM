@@ -23,12 +23,15 @@ class GalaxiesController < ApplicationController
     @q = @galaxy.velocities.search(params[:q])
     @velocities = @q.result(distinct: true).page(params[:page])
     @citations = @galaxy.citations
+    @galaxy.set_citation_ids
 
     respond_to do |format|
       format.html { render :show }
       format.json { render :json => @galaxy.to_json(
           :only => [:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length,
-                      :mass_hydrogen, :mass_disk, :citation_ids])
+                      :mass_hydrogen, :mass_disk, :citation_ids],
+          :methods => [:citation_ids]
+        )
       }
     end
   end
@@ -46,8 +49,6 @@ class GalaxiesController < ApplicationController
   # POST /galaxies.json
   def create
     @galaxy = Galaxy.new(galaxy_params)
-    puts "-----------"
-    puts "params = #{galaxy_params.inspect}"
     respond_to do |format|
       if @galaxy.save
         format.html { redirect_to @galaxy, notice: 'Galaxy was successfully created.' }

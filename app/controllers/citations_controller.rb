@@ -11,7 +11,8 @@ class CitationsController < ApplicationController
       format.html { render :index }
       format.json { render :json => @citations.to_json(
          :only => [:title, :author, :bibtex, :journal, :year,
-                   :volume, :pages, :month, :note, :key, :galaxy_ids])
+                   :volume, :pages, :month, :note, :key]
+         )
       }
     end
   end
@@ -21,12 +22,15 @@ class CitationsController < ApplicationController
   def show
     @citation = Citation.find(params[:id])
     @galaxies = @citation.galaxies
+    @citation.set_galaxy_ids
 
     respond_to do |format|
       format.html { render :show }
       format.json { render :json => @citation.to_json(
-         :only => [:title, :author, :bibtex, :journal, :year,
-                   :volume, :pages, :month, :note, :key, :galaxy_ids])
+          :only => [:title, :author, :bibtex, :journal, :year,
+                   :volume, :pages, :month, :note, :key],
+          :methods => [:galaxy_ids]
+        )
       }
     end
   end

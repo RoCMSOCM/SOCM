@@ -1,5 +1,7 @@
 #require 'bibtex'
 class Citation < ActiveRecord::Base
+  attr_accessor :galaxy_ids
+
   has_many :galaxy_citations, dependent: :delete_all
   has_many :galaxies, :through => :galaxy_citations, :foreign_key => :galaxy_id
 
@@ -22,5 +24,9 @@ class Citation < ActiveRecord::Base
                 "note = \"#{self.note}\","\
                 "key = \"#{self.key}\""\
               "}"
+  end
+
+  def set_galaxy_ids
+    self.galaxy_ids = self.galaxies.collect(&:id)
   end
 end
