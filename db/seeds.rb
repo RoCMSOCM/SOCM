@@ -9,7 +9,7 @@ require 'csv'
 
 path = "#{Rails.root}/db/velocity_data/MILKY-WAY.csv"
 
-galaxy = Galaxy.find(29)
+galaxy = Galaxy.find(135)
 CSV.foreach(path) do |row|
 	galaxy.velocities.create(:r => row[0], :vrot_data => row[1], :vrot_data_error => row[2])
 end
