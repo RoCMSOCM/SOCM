@@ -44,10 +44,6 @@ class CitationsController < ApplicationController
     @citation = Citation.new(citation_params)
     respond_to do |format|
       if @citation.save
-        #hands creation of galaxy_citations join model
-        citation_params[:galaxy_ids].each do |galaxy_id|
-          @citation.galaxy_citations.create!(galaxy_id: => galaxy_id, :citation_id => @citation.id) if galaxy_id != ""
-        end
         format.html { redirect_to @citation, notice: 'Citation was successfully created.' }
         format.json { render :show, status: :created, location: @citation }
       else

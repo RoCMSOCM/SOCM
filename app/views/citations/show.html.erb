@@ -19,6 +19,8 @@
   <%= @citation.url %>
 </p>
 <p>
-  <strong>Galaxy count:</strong>
-  <%= @citation.galaxies.size %>
+  <strong>Galaxy galaxies:</strong>
+  <% @citation.galaxies.each do |galaxy| %>
+    <%= galaxy.galaxy_name %>,
+  <% end %>
 </p>
