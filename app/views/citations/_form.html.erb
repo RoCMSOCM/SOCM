@@ -27,6 +27,15 @@
     <%= f.label :url %>
     <%= f.text_field :url %>
   </div>
+
+  <!--<% Galaxy.all.each do |galaxy| %>
+    <%= check_box_tag 'citation[galaxy_ids][]', galaxy.id, @citation.galaxies.include?(galaxy) %>
+    <%= galaxy.galaxy_name %>
+  <% end %>-->
+
+  <!--<%= collection_check_boxes(:galaxy_ids, :ids, Galaxy.all, :id, :galaxy_name) %>-->
+  <%= f.collection_check_boxes :galaxy_ids, Galaxy.all, :id, :galaxy_name %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

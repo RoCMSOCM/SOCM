@@ -1,9 +1,9 @@
 #require 'bibtex'
 class Citation < ActiveRecord::Base
-  # This class will be responsible for storing citation information
-  has_and_belongs_to_many :galaxies
+  has_many :galaxy_citations
+  has_many :galaxies, :through => :galaxy_citations, :foreign_key => :galaxy_id
 
-  validates :author, presence: true
-  validates :bibtex, presence: true
-  validates :title, presence: true
+  validates :author, :bibtex, :title, presence: true
+
+  accepts_nested_attributes_for :galaxies
 end

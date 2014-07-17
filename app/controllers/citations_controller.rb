@@ -10,7 +10,7 @@ class CitationsController < ApplicationController
     respond_to do |format|
       format.html { render :index }
       format.json { render :json => @citations.to_json(
-         :only => [:title, :author, :bibtex, :url])
+         :only => [:title, :author, :bibtex, :url, :galaxy_id])
       }
     end
   end
@@ -18,13 +18,13 @@ class CitationsController < ApplicationController
   # GET /citations/1
   # GET /citations/1.json
   def show
-    @citation = Citation.find(params[:id].to_i)
-    #@galaxies = @citation.galaxies#.find(params[:id])
+    @citation = Citation.find(params[:id])
+    @galaxies = @citation.galaxies#.find(params[:id])
 
     respond_to do |format|
       format.html { render :show }
       format.json { render :json => @citation.to_json(
-         :only => [:title, :author, :bibtex, :url])
+         :only => [:title, :author, :bibtex, :url, :galaxy_ids])
       }
     end
   end
@@ -32,6 +32,7 @@ class CitationsController < ApplicationController
   # GET /citations/new
   def new
     @citation = Citation.new
+    @citation.galaxy_citations.build.build_citation
   end
 
   # GET /citations/1/edit
@@ -42,9 +43,12 @@ class CitationsController < ApplicationController
   # POST /citations.json
   def create
     @citation = Citation.new(citation_params)
-
     respond_to do |format|
       if @citation.save
+        #create the galaxy_citation reference
+        puts "-----"
+        puts "params = #{citation_params.inspect}"
+        #@citation.galaxies.create(:galaxy_id => citation_params[:galaxy_ids], :citation_id => @citation.id)
         format.html { redirect_to @citation, notice: 'Citation was successfully created.' }
         format.json { render :show, status: :created, location: @citation }
       else
@@ -92,7 +96,7 @@ class CitationsController < ApplicationController
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def citation_params
-      params.require(:citation).permit(:id, :author, :title, :bibtex, :url)
+      params.require(:citation).permit(:id, :author, :title, :bibtex, :url, :galaxy_ids => [])
     end
 
     def set_citation

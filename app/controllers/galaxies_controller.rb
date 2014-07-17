@@ -19,7 +19,7 @@ class GalaxiesController < ApplicationController
   # GET /galaxies/1
   # GET /galaxies/1.json
   def show
-    @galaxy = Galaxy.find(params[:id].to_i)
+    @galaxy = Galaxy.find(params[:id])
     @q = @galaxy.velocities.search(params[:q])
     @velocities = @q.result(distinct: true).page(params[:page])
 
