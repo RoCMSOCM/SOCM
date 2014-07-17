@@ -10,7 +10,8 @@ class CitationsController < ApplicationController
     respond_to do |format|
       format.html { render :index }
       format.json { render :json => @citations.to_json(
-         :only => [:title, :author, :bibtex, :url, :galaxy_id])
+         :only => [:title, :author, :bibtex, :journal, :year,
+                   :volume, :pages, :month, :note, :key, :galaxy_ids])
       }
     end
   end
@@ -19,12 +20,13 @@ class CitationsController < ApplicationController
   # GET /citations/1.json
   def show
     @citation = Citation.find(params[:id])
-    @galaxies = @citation.galaxies#.find(params[:id])
+    @galaxies = @citation.galaxies
 
     respond_to do |format|
       format.html { render :show }
       format.json { render :json => @citation.to_json(
-         :only => [:title, :author, :bibtex, :url, :galaxy_ids])
+         :only => [:title, :author, :bibtex, :journal, :year,
+                   :volume, :pages, :month, :note, :key, :galaxy_ids])
       }
     end
   end
@@ -56,7 +58,6 @@ class CitationsController < ApplicationController
   # PATCH/PUT /citations/1
   # PATCH/PUT /citations/1.json
   def update
-    set_citation
     respond_to do |format|
       if @citation.update(citation_params)
         format.html { redirect_to @citation, notice: 'Citation was successfully updated.' }
@@ -80,7 +81,6 @@ class CitationsController < ApplicationController
 
   #ransack advanced search
   def search
-    #galaxy_id included for velocities search path
     if params[:q].has_key?(:id_eq)
       show
     else
@@ -91,11 +91,14 @@ class CitationsController < ApplicationController
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def citation_params
-      params.require(:citation).permit(:id, :author, :title, :bibtex, :url, :galaxy_ids => [])
+      params.require(:citation).permit(:id, :author, :title, :bibtex, :journal, :year,
+                                       :volume, :pages, :month, :note, :key, :galaxy_ids => [])
     end
 
     def set_citation
       @citation = Citation.find(params[:id]) if params[:id]
+      rescue ActiveRecord::RecordNotFound
+        render 'errors/404'
     end
 
     def citation_url(citation)

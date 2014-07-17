@@ -87,7 +87,9 @@ class VelocitiesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_velocity
       find_galaxy
-      @velocities = @galaxy.velocities.find(params[:id].to_i)#velocity.find(params[:id])
+      @velocities = @galaxy.velocities.find(params[:id]) if params[:id]
+      rescue ActiveRecord::RecordNotFound
+        render 'errors/404'
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

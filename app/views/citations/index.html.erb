@@ -18,11 +18,11 @@
             <%= f.search_field :id_eq, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :author, "citation Name") %>
+            <%= sort_link(@q, :author, "Author") %>
             <%= f.search_field :author_cont, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :title, "citation Type") %>
+            <%= sort_link(@q, :title, "Title") %>
             <%= f.search_field :title_cont, :class => "search-field" %>
           </th>
           <th>
@@ -30,8 +30,32 @@
             <%= f.search_field :bibtex_cont, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :url, "Url") %>
-            <%= f.search_field :url_cont, :class => "search-field" %>
+            <%= sort_link(@q, :journal, "Journal") %>
+            <%= f.search_field :journal_eq, :class => "search-field" %>
+          </th>
+          <th>
+            <%= sort_link(@q, :year, "Year") %>
+            <%= f.search_field :year_eq, :class => "search-field" %>
+          </th>
+          <th>
+            <%= sort_link(@q, :volume, "Volume") %>
+            <%= f.search_field :volume_eq, :class => "search-field" %>
+          </th>
+          <th>
+            <%= sort_link(@q, :pages, "Pages") %>
+            <%= f.search_field :pages_eq, :class => "search-field" %>
+          </th>
+          <th>
+            <%= sort_link(@q, :month, "Month") %>
+            <%= f.search_field :month_cont, :class => "search-field" %>
+          </th>
+          <th>
+            <%= sort_link(@q, :note, "Note") %>
+            <%= f.search_field :note_cont, :class => "search-field" %>
+          </th>
+          <th>
+            <%= sort_link(@q, :key, "Key") %>
+            <%= f.search_field :key_cont, :class => "search-field" %>
           </th>
           <th colspan="3">
             <%= f.submit "Search" %>
@@ -48,7 +72,13 @@
           <td><%= citation.author %></td>
           <td><%= citation.title %></td>
           <td><%= citation.bibtex %></td>
-          <td><%= citation.url %></td>
+          <td><%= citation.journal %></td>
+          <td><%= citation.year %></td>
+          <td><%= citation.volume %></td>
+          <td><%= citation.pages %></td>
+          <td><%= citation.month %></td>
+          <td><%= citation.note %></td>
+          <td><%= citation.key %></td>
           <td><%= link_to 'Show', citation %></td>
           <% if current_admin %>
             <td><%= link_to 'Edit', edit_citation_path(citation) %></td>

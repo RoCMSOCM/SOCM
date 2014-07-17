@@ -48,10 +48,6 @@
           <th>
             Number of Velocities
           </th>
-          <th>
-            <%= sort_link(@q, :stars, "Number of Stars") %>
-            <%= f.search_field :stars_eq, :class => "search-field" %>
-          </th>
           <th colspan="3">
             <%= f.submit "Search" %>
             <%= f.submit "Clear", :id => :q_reset%>
@@ -72,7 +68,6 @@
           <td><%= galaxy.mass_hydrogen %></td>
           <td><%= galaxy.mass_disk %></td>
           <td><%= galaxy.velocities.size %></td>
-          <td><%= galaxy.stars %></td>
           <td><%= link_to 'Show', galaxy %></td>
           <% if current_admin %>
             <td><%= link_to 'Edit', edit_galaxy_path(galaxy) %></td>

@@ -19,13 +19,41 @@
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
-  <div class="field">
+  <!--<div class="field">
     <%= f.label :bibtex %>
     <%= f.text_field :bibtex %>
+  </div>-->
+  <div class="field">
+    <%= f.label :journal %>
+    <%= f.number_field :journal %>
   </div>
   <div class="field">
-    <%= f.label :url %>
-    <%= f.text_field :url %>
+    <%= f.label :year %>
+    <%= f.number_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :volume %>
+    <%= f.text_field :volume %>
+  </div>
+  <div class="field">
+    <%= f.label :number %>
+    <%= f.text_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :pages %>
+    <%= f.text_field :pages %>
+  </div>
+  <div class="field">
+    <%= f.label :month %>
+    <%= f.text_field :month %>
+  </div>
+  <div class="field">
+    <%= f.label :note %>
+    <%= f.text_field :note %>
+  </div>
+  <div class="field">
+    <%= f.label :key %>
+    <%= f.text_field :key %>
   </div>
 
   <%= f.collection_check_boxes :galaxy_ids, Galaxy.all, :id, :galaxy_name %>

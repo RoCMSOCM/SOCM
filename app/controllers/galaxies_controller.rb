@@ -11,7 +11,7 @@ class GalaxiesController < ApplicationController
       format.html { render :index }
       format.json { render :json => @galaxies.to_json(
          :only => [:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length,
-                      :mass_hydrogen, :mass_disk, :stars])
+                      :mass_hydrogen, :mass_disk, :citation_ids])
       }
     end
   end
@@ -22,12 +22,13 @@ class GalaxiesController < ApplicationController
     @galaxy = Galaxy.find(params[:id])
     @q = @galaxy.velocities.search(params[:q])
     @velocities = @q.result(distinct: true).page(params[:page])
+    @citations = @galaxy.citations
 
     respond_to do |format|
       format.html { render :show }
       format.json { render :json => @galaxy.to_json(
           :only => [:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length,
-                      :mass_hydrogen, :mass_disk, :stars])
+                      :mass_hydrogen, :mass_disk, :citation_ids])
       }
     end
   end
@@ -45,7 +46,8 @@ class GalaxiesController < ApplicationController
   # POST /galaxies.json
   def create
     @galaxy = Galaxy.new(galaxy_params)
-
+    puts "-----------"
+    puts "params = #{galaxy_params.inspect}"
     respond_to do |format|
       if @galaxy.save
         format.html { redirect_to @galaxy, notice: 'Galaxy was successfully created.' }
@@ -100,9 +102,8 @@ class GalaxiesController < ApplicationController
 
     def galaxy_params
       # includes params for all velocities attributes - used with ransack search for galaxy_velocities
-      params.require(:galaxy).permit(:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length, :mass_hydrogen,
-                                     :mass_disk, :stars,
+      params.require(:galaxy).permit(:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length, :mass_hydrogen, :mass_disk,
                                      :galaxy_id, :r, :vrot_data, :vrot_data_error,
-                                     :page)
+                                     :page, :citation_ids => [])
     end
 end

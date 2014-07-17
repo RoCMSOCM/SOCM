@@ -31,8 +31,11 @@
   <%= @galaxy.mass_disk %>
 </p>
 <p>
-  <strong>Stars:</strong>
-  <%= @galaxy.stars %>
+  <strong>Citations:</strong>
+  <% @galaxy.citations.each do |citation| %>
+    <%= citation.title %>, by: <%= citation.author %>
+    <br>
+  <% end %>
 </p>
 
 <br>
