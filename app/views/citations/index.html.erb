@@ -1,0 +1,61 @@
+<h1>Citations</h1>
+
+<p id="notice"><%= notice %></p>
+
+<% if current_admin %>
+  <%= link_to 'New Citation', new_citation_path %>
+<% end %>
+
+<% if @citations.size > 0 %>
+  <%= paginate @citations %>
+  <table>
+    <thead>
+      <tr>
+        <%= search_form_for @q, url: search_citations_path,
+                          html: { method: :post } do |f| %>
+          <th>
+            <%= sort_link(@q, :id, "ID") %>
+            <%= f.search_field :id_eq, :class => "search-field" %>
+          </th>
+          <th>
+            <%= sort_link(@q, :author, "citation Name") %>
+            <%= f.search_field :author_cont, :class => "search-field" %>
+          </th>
+          <th>
+            <%= sort_link(@q, :title, "citation Type") %>
+            <%= f.search_field :title_cont, :class => "search-field" %>
+          </th>
+          <th>
+            <%= sort_link(@q, :bibtex, "Bibtex") %>
+            <%= f.search_field :bibtex_cont, :class => "search-field" %>
+          </th>
+          <th>
+            <%= sort_link(@q, :url, "Url") %>
+            <%= f.search_field :url_cont, :class => "search-field" %>
+          </th>
+          <th colspan="3">
+            <%= f.submit "Search" %>
+            <%= f.submit "Clear", :id => :q_reset%>
+          </th>
+        <% end %>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @citations.each do |citation| %>
+        <tr>
+          <td><%= link_to "#{citation.id}", citation_path(citation) %></td>
+          <td><%= citation.author %></td>
+          <td><%= citation.title %></td>
+          <td><%= citation.bibtex %></td>
+          <td><%= citation.url %></td>
+          <td><%= link_to 'Show', citation %></td>
+          <% if current_admin %>
+            <td><%= link_to 'Edit', edit_citation_path(citation) %></td>
+            <td><%= link_to 'Destroy', citation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

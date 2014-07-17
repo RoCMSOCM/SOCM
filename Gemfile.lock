@@ -31,6 +31,8 @@ GEM
     bcrypt (3.1.7)
     bcrypt (3.1.7-x64-mingw32)
     bcrypt (3.1.7-x86-mingw32)
+    bibtex-ruby (4.0.0)
+      latex-decode (~> 0.0)
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
     builder (3.2.2)
@@ -67,6 +69,8 @@ GEM
     kaminari (0.16.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    latex-decode (0.1.1)
+      unicode (~> 0.4)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -158,6 +162,7 @@ GEM
     uglifier (2.5.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unicode (0.4.4.1)
     warden (1.2.3)
       rack (>= 1.0)
 
@@ -167,6 +172,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  bibtex-ruby
   bootstrap-sass (~> 3.1.1.0)
   coffee-rails (~> 4.0.0)
   devise

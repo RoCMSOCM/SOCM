@@ -1,7 +1,9 @@
+#require 'bibtex'
 class Citation < ActiveRecord::Base
-  # This class will be responsible for storing citation information 
-  # for a paraticular measurement. To make this simple using 
-  # https://github.com/inukshuk/csl-ruby may help
+  has_many :galaxy_citations, dependent: :delete_all
+  has_many :galaxies, :through => :galaxy_citations, :foreign_key => :galaxy_id
 
-   belongs_to :measurement
+  validates :author, :bibtex, :title, presence: true
+
+  accepts_nested_attributes_for :galaxies
 end

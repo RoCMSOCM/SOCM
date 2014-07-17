@@ -1,0 +1,26 @@
+<h1>Citation <%= @citation.id %> details</h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @citation.author %>
+</p>
+<p>
+  <strong>Title:</strong>
+  <%= @citation.title %>
+</p>
+<p>
+  <strong>Bibtex:</strong>
+  <%= @citation.bibtex %>
+</p>
+<p>
+  <strong>Url:</strong>
+  <%= @citation.url %>
+</p>
+<p>
+  <strong>Galaxy galaxies:</strong>
+  <% @citation.galaxies.each do |galaxy| %>
+    <%= galaxy.galaxy_name %>,
+  <% end %>
+</p>

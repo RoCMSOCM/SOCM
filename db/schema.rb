@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140709204304) do
+ActiveRecord::Schema.define(version: 20140717004331) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,10 @@ ActiveRecord::Schema.define(version: 20140709204304) do
   create_table "citations", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "author"
+    t.string   "title"
+    t.string   "bibtex"
+    t.string   "url"
   end
 
   create_table "galaxies", force: true do |t|
@@ -49,10 +53,14 @@ ActiveRecord::Schema.define(version: 20140709204304) do
     t.float    "scale_length",  null: false
     t.float    "mass_hydrogen", null: false
     t.float    "mass_disk",     null: false
-    t.float    "n",             null: false
-    t.float    "r0",            null: false
-    t.float    "n_g",           null: false
     t.float    "stars"
+  end
+
+  create_table "galaxy_citations", force: true do |t|
+    t.integer  "galaxy_id"
+    t.integer  "citation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "velocities", force: true do |t|
