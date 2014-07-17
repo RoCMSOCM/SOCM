@@ -11,10 +11,6 @@
   <%= @citation.title %>
 </p>
 <p>
-  <strong>Bibtex:</strong>
-  <%= @citation.bibtex %>
-</p>
-<p>
   <strong>Journal:</strong>
   <%= @citation.journal %>
 </p>
@@ -46,6 +42,11 @@
   <strong>Key:</strong>
   <%= @citation.key %>
 </p>
+<p>
+  <strong>Bibtex:</strong>
+  <%= @citation.bibtex %>
+</p>
+
 <p>
   <strong>Galaxy galaxies:</strong>
   <% @citation.galaxies.each do |galaxy| %>

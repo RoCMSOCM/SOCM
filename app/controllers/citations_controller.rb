@@ -25,7 +25,7 @@ class CitationsController < ApplicationController
     puts "got here...2"
     @galaxies = @citation.galaxies
     puts "got here...3"
-    @citation.set_galaxy_ids
+    #@citation.set_galaxy_ids
     puts "got here...4"
 
     respond_to do |format|
