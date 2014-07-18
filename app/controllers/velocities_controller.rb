@@ -6,12 +6,12 @@ class VelocitiesController < ApplicationController
   # GET /velocities
   # GET /velocities.json
   def index
-    @q = Citations.search(params[:q])
-    @citations = @q.result(distinct: true).page(params[:page])
+    @q = Velocity.search(params[:q])
+    @velocities = @q.result(distinct: true).page(params[:page])
 
     respond_to do |format|
       format.html { render :index }
-      format.json { render :json => @citations.to_json(
+      format.json { render :json => @velocities.to_json(
          :only => [:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length,
                       :mass_hydrogen, :mass_disk, :stars])
       }
