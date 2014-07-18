@@ -74,7 +74,11 @@
           <td style="max-width: 150px;">
             <% citation_ids = galaxy.citations.collect(&:id) %>
             <% citation_ids.each_with_index do |id, i| %>
-              <%= link_to "#{id}", citation_path(id) %> <% if i != citation_ids.size-1 %>,<% end %>
+              <% if i != citation_ids.size-1 %>
+                <%= link_to "#{id},", citation_path(id) %>
+              <% else %>
+                <%= link_to "#{id}", citation_path(id) %>
+              <% end %>
             <% end %>
           </td>
           <td><%= link_to 'Show', galaxy %></td>
