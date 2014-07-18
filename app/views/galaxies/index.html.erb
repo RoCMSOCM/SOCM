@@ -48,6 +48,9 @@
           <th>
             Number of Velocities
           </th>
+          <th>
+            Citations
+          </th>
           <th colspan="3">
             <%= f.submit "Search" %>
             <%= f.submit "Clear", :id => :q_reset%>
@@ -68,6 +71,12 @@
           <td><%= galaxy.mass_hydrogen %></td>
           <td><%= galaxy.mass_disk %></td>
           <td><%= galaxy.velocities.size %></td>
+          <td>
+            <% citation_ids = galaxy.citations.collect(&:id) %>
+            <% citation_ids.each_with_index do |id, i| %>
+              <%= link_to "#{id}", citation_path(id) %> <% if i != citation_ids.size-1 %>,<% end %>
+            <% end %>
+          </td>
           <td><%= link_to 'Show', galaxy %></td>
           <% if current_admin %>
             <td><%= link_to 'Edit', edit_galaxy_path(galaxy) %></td>
