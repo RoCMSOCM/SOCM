@@ -11,7 +11,7 @@ class GalaxiesController < ApplicationController
       format.html { render :index }
       format.json { render :json => @galaxies.to_json(
          :only => [:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length,
-                      :mass_hydrogen, :mass_disk, :citation_ids])
+                      :mass_hydrogen, :mass_disk])
       }
     end
   end
@@ -23,14 +23,14 @@ class GalaxiesController < ApplicationController
     @q = @galaxy.velocities.search(params[:q])
     @velocities = @q.result(distinct: true).page(params[:page])
     @citations = @galaxy.citations
-    @galaxy.set_citation_ids
+    @galaxy.set_citation_ids_array
 
     respond_to do |format|
       format.html { render :show }
       format.json { render :json => @galaxy.to_json(
           :only => [:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length,
-                      :mass_hydrogen, :mass_disk, :citation_ids],
-          :methods => [:citation_ids]
+                      :mass_hydrogen, :mass_disk, :citation_ids_array],
+          :methods => [:citation_ids_array]
         )
       }
     end

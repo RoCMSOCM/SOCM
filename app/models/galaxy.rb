@@ -1,5 +1,5 @@
 class Galaxy < ActiveRecord::Base
-  attr_accessor :citation_ids
+  attr_accessor :citation_ids_array
 
   has_many :galaxy_citations, dependent: :delete_all
   has_many :citations, :through => :galaxy_citations, :foreign_key => :citations_id
@@ -11,7 +11,7 @@ class Galaxy < ActiveRecord::Base
 
   accepts_nested_attributes_for :citations
 
-  def set_citation_ids
-    self.citation_ids = self.citations.collect(&:id)
+  def set_citation_ids_array
+    self.citation_ids_array = self.citations.collect(&:id)
   end
 end

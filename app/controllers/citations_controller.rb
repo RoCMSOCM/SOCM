@@ -22,14 +22,14 @@ class CitationsController < ApplicationController
   def show
     @citation = Citation.find(params[:id])
     @galaxies = @citation.galaxies
-    @citation.set_galaxy_ids
+    @citation.set_galaxy_ids_array
 
     respond_to do |format|
       format.html { render :show }
       format.json { render :json => @citation.to_json(
           :only => [:title, :author, :bibtex, :journal, :year,
                    :volume, :pages, :month, :note, :key],
-          :methods => [:galaxy_ids]
+          :methods => [:galaxy_ids_array]
         )
       }
     end
@@ -96,7 +96,7 @@ class CitationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def citation_params
       params.require(:citation).permit(:id, :author, :title, :bibtex, :journal, :year,
-                                       :volume, :pages, :month, :note, :key, :galaxy_ids => [])
+                                       :volume, :number, :pages, :month, :note, :key, :galaxy_ids => [])
     end
 
     def set_citation

@@ -1,6 +1,6 @@
 #require 'bibtex'
 class Citation < ActiveRecord::Base
-  attr_accessor :galaxy_ids
+  attr_accessor :galaxy_ids_array
 
   has_many :galaxy_citations, dependent: :delete_all
   has_many :galaxies, :through => :galaxy_citations, :foreign_key => :galaxy_id
@@ -26,7 +26,7 @@ class Citation < ActiveRecord::Base
               "}"
   end
 
-  def set_galaxy_ids
-    self.galaxy_ids = self.galaxies.collect(&:id)
+  def set_galaxy_ids_array
+    self.galaxy_ids_array = self.galaxies.collect(&:id)
   end
 end
