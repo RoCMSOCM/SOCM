@@ -7,13 +7,17 @@ class VelocitiesController < ApplicationController
   # GET /velocities.json
   def index
     @q = Velocity.search(params[:q])
-    @velocities = @q.result(distinct: true).page(params[:page])
+    if params[:page] != "false"
+      @velocities = @q.result(distinct: true).page(params[:page])
+    else
+      puts "here #{ @galaxy.velocities.all.count}"
+      @velocities = @q.result(distinct: true)
+    end
 
     respond_to do |format|
       format.html { render :index }
       format.json { render :json => @velocities.to_json(
-         :only => [:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length,
-                      :mass_hydrogen, :mass_disk, :stars])
+         :only => [:id, :galaxy_id, :r, :vrot_data, :vrot_data_error])
       }
     end
   end
