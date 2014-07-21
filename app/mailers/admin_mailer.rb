@@ -1,8 +1,8 @@
 class AdminMailer < ActionMailer::Base
-  default from: 'millerd1@wit.edu'
+  default from: 'socm.herokuapp.com'
 
   def welcome_email(admin)
-    @url  = 'http://www.socm.herokuapp.com'
+    @url  = 'http://localhost:3000/admins/sign_in'
     mail(to: @admin.email, subject: 'Welcome to SOCM as a site admin.')
   end
 
