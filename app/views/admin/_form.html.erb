@@ -1,0 +1,26 @@
+<%= form_for(@admin, url: {action: "update"}, :method => :PUT) do |f| %>
+  <% if @admin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin.errors.count, "error") %> prohibited this admin from being saved:</h2>
+
+      <ul>
+      <% @admin.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    Admin email: <%= @admin.email %>
+  </div>
+  <% if current_admin.email != @admin.email %>
+    <div clss="field">
+      <%= f.label :approved %>
+      <%= f.check_box :approved %>
+    </div>
+  <% end %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

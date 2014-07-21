@@ -27,6 +27,29 @@
           <ul class="nav navbar-nav">
             <li class="<%= 'active' if params[:controller] == 'welcome' %>" ><%= link_to 'SOCM', "/", id: "logo", class: "navbar-brand" %></li>
           </ul>
+          <div class="collapse nav-collapse bs-navbar-collapse" role="navigation">
+            <a class="brand" href="/">SOCM</a>
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/galaxies">Galaxies</a>
+              </li>
+              <% if current_admin %>
+                <li>
+                  <%= link_to "Admin Page", "/admin" %>
+                </li>
+                <li>
+                  <%= link_to "Account", edit_admin_registration_path %>
+                </li>
+                <li>
+                  <a href="/admins/sign_out" data-method="DELETE" rel="nofollow">Logout</a>
+                </li>
+              <% else %>
+                <li>
+                  <a href="/admins/sign_in" data-method="GET" rel="nofollow">Login</a>
+                </li>
+              <% end %>
+            </ul>
+          </div>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
