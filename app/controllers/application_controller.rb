@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   #TODO: Uncomment when we merge the rest of the admin changes into master
-  #before_action :authenticate_admin!, except: [:index, :show]
+  before_action :authenticate_admin!, except: [:index, :show]
   before_action :set_headers
 
   private
