@@ -1,5 +1,5 @@
 class AdminMailer < ActionMailer::Base
-  default from: 'socm.herokuapp.com'
+  default from: 'rocmsocm.v1@gmail.com'
 
   def welcome_email(admin)
     @url  = 'http://localhost:3000/admins/sign_in'

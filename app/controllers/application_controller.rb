@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   #TODO: Uncomment when we merge the rest of the admin changes into master
   before_action :authenticate_admin!, except: [:index, :show]
   before_action :set_headers
+  before_action :set_admin_unapproved_count
 
   private
     def set_headers
@@ -14,5 +15,9 @@ class ApplicationController < ActionController::Base
       headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, PATCH, OPTIONS, HEAD'
       headers['Access-Control-Allow-Headers'] = '*, x-requested-with, Content-Type, If-Modified-Since, If-None-Match'
       headers['Access-Control-Max-Age'] = '86400'
+    end
+
+    def set_admin_unapproved_count
+      @unapproved_admin_count = Admin.where(:approved => nil).count
     end
 end

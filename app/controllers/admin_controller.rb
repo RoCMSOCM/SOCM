@@ -1,6 +1,7 @@
 class AdminController < ApplicationController
   before_action :authenticate_admin!
   before_action :set_admin, only: [:show, :edit, :update, :destroy]
+  before_action :other_admin_change?, only: [:edit, :update, :destroy]
 
   def index
     if params[:approved] == "false"
@@ -37,6 +38,10 @@ class AdminController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_admin
       @admin = Admin.find(params[:id])
+    end
+
+    def other_admin_change?
+      redirect_to action: "index" if !current_admin.super_user
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

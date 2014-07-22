@@ -43,7 +43,9 @@ en:
       updated: "You updated your account successfully."
       user:
       admin:
-        signed_up_but_not_approved: "You have signed up successfully but your account has not been approved by your administrator yet"
+        signed_up_but_not_approved: "You have signed up successfully but your account has not been approved by the super user yet"
+      failure:
+        not_approved: 'Your account has not been approved by the super user yet.'
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."

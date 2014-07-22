@@ -19,6 +19,8 @@
       <%= f.label :approved %>
       <%= f.check_box :approved %>
     </div>
+  <% else %>
+    <%= f.hidden_field :approved, :value => true %>
   <% end %>
   <div class="actions">
     <%= f.submit %>

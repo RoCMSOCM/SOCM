@@ -37,9 +37,15 @@
           </ul>
           <% if current_admin %>
             <ul class="nav navbar-nav">
-              <li>
-                <%= link_to "Admin Page", "/admin" %>
-              </li>
+              <% if @unapproved_admin_count > 0  %>
+                <li>
+                  <%= link_to "Admin Page (#{@unapproved_admin_count})", "/admin" %>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to "Admin Page", "/admin" %>
+                </li>
+              <% end %>
             </ul>
             <ul class="nav navbar-nav">
               <li>
