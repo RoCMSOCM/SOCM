@@ -95,6 +95,7 @@ class GalaxiesController < ApplicationController
   def search
     #galaxy_id included for velocities search path
     if params[:q].has_key?(:galaxy_id_eq)
+      set_galaxy
       show
     else
       index
@@ -117,7 +118,7 @@ class GalaxiesController < ApplicationController
 
     def galaxy_params
       # includes params for all velocities attributes - used with ransack search for galaxy_velocities
-      params.require(:galaxy).permit(:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length, :mass_hydrogen, :mass_disk,
+      params.require(:galaxy).permit(:id, :q, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length, :mass_hydrogen, :mass_disk,
                                      :galaxy_id, :r, :vrot_data, :vrot_data_error,
                                      :page, :citation_ids => [])
     end

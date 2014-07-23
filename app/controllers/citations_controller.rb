@@ -9,7 +9,11 @@ class CitationsController < ApplicationController
   # GET /citations.json
   def index
     @q = Citation.search(params[:q])
-    @citations = @q.result(distinct: true).page(params[:page])
+    if params[:page] != "false"
+      @citations = @q.result(distinct: true).page(params[:page])
+    else
+      @citations = @q.result(distinct: true)
+    end
 
     respond_to do |format|
       format.html { render :index }
@@ -89,18 +93,13 @@ class CitationsController < ApplicationController
 
   #ransack advanced search
   def search
-    puts "here..."
-    if params[:q].has_key?(:id_eq)
-      show
-    else
-      index
-    end
+    index
   end
 
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def citation_params
-      params.require(:citation).permit(:id, :author, :title, :bibtex, :journal, :year,
+      params.require(:citation).permit(:id, :q, :author, :title, :bibtex, :journal, :year,
                                        :volume, :number, :pages, :month, :note, :key, :galaxy_ids => [])
     end
 

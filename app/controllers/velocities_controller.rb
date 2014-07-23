@@ -1,5 +1,6 @@
 class VelocitiesController < ApplicationController
   before_action :set_velocity, only: [:show, :edit, :update, :destroy]
+  before_action :find_galaxy
 
   before_filter except: [:index, :show] do
     render "errors/401" unless current_admin
