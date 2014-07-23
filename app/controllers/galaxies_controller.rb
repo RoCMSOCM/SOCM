@@ -2,7 +2,7 @@ class GalaxiesController < ApplicationController
   before_action :set_galaxy, only: [:show, :edit, :update, :destroy, :index_galaxy_citations]
 
   before_filter except: [:index, :show] do
-    render "errors/401" unless current_admin
+    render "errors/401", :status => :unauthorized unless current_admin
   end
 
   # GET /galaxies
