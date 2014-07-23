@@ -20,7 +20,7 @@ CSV.foreach(paramsPath) do |row|
 	galaxy.save!
 
 	velocityFiles.each do |filename|
-		if filename.include? galaxy.galaxy_name
+		if filename.downcase.include? galaxy.galaxy_name.downcase
 			CSV.foreach(velocitiesPath + filename) do |row|
 				galaxy.velocities.create(:r => row[0], :vrot_data => row[1], :vrot_data_error => row[2])
 			end
