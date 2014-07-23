@@ -16,7 +16,7 @@
 
 @import "bootstrap";
 
-.navbar-inverse {background-image: url('galaxy_navbar.jpg'); background-position: left;}
+.navbar-inverse {background-image: url('galaxy_navbar.jpg'); background-position: left; border-color: transparent}
 
 
 .navbar-inverse .navbar-header .navbar-nav > :not(.active) > a{

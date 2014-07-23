@@ -26,5 +26,6 @@ gem 'kaminari'
 gem 'pg'
 gem 'devise'
 gem 'ransack'
+gem 'rails-erd'
 
 gem 'tzinfo-data'

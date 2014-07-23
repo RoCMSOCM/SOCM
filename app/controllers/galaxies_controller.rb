@@ -1,6 +1,10 @@
 class GalaxiesController < ApplicationController
   before_action :set_galaxy, only: [:show, :edit, :update, :destroy, :index_galaxy_citations]
 
+  before_filter except: [:index, :show] do
+    render "errors/401" unless current_admin
+  end
+
   # GET /galaxies
   # GET /galaxies.json
   def index
@@ -95,7 +99,6 @@ class GalaxiesController < ApplicationController
 
   def index_galaxy_citations
     @q = @galaxy.citations.search(params[:q])
-    puts "galaxy = #{@galaxy.inspect}"
     @citations = @galaxy.citations.all
     render 'galaxy_citations_index'
   end

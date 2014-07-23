@@ -17,10 +17,3 @@ galaxy.save!
 CSV.foreach(path) do |row|
 	galaxy.velocities.create(:r => row[0], :vrot_data => row[1], :vrot_data_error => row[2])
 end
-
-# 100.times do |i|
-#   galaxy = Galaxy.new(:galaxy_name => "Galaxy #{i}", :galaxy_type => "LSB", :distance => (i - 0.0081),
-#                      :luminosity => (i-1.6), :scale_length => (i-2.1), :mass_hydrogen => 0, :mass_disk => (i-6.43))
-#   galaxy.save!
-
-# end
