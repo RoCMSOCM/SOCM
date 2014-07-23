@@ -7,20 +7,23 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'csv'
 
-#use this file to upload csvs for now
-path = "#{Rails.root}/db/velocity_data/MILKY-WAY.csv"
 
-galaxy = Galaxy.new(:galaxy_name => "MILKY-WAY", :galaxy_type => "LSB", :distance => 0.0081,
-                    :luminosity => 1.6, :scale_length => 2.1, :mass_hydrogen => 0, :mass_disk => 6.43)
-galaxy.save!
+paramsPath = "#{Rails.root}/db/PARAMS_TABLE.csv"
+velocitiesPath = "#{Rails.root}/db/velocity_data/"
 
-CSV.foreach(path) do |row|
-	galaxy.velocities.create(:r => row[0], :vrot_data => row[1], :vrot_data_error => row[2])
+velocityFiles = Dir.entries(velocitiesPath)
+
+CSV.foreach(paramsPath) do |row|
+	galaxy = Galaxy.new(:galaxy_name => row[0], :galaxy_type => row[1], :distance => row[2].to_f,
+	                    :luminosity => row[3].to_f, :scale_length => row[4].to_f, :mass_hydrogen => row[5].to_f, :mass_disk => row[6].to_f)
+
+	galaxy.save!
+
+	velocityFiles.each do |filename|
+		if filename.include? galaxy.galaxy_name
+			CSV.foreach(velocitiesPath + filename) do |row|
+				galaxy.velocities.create(:r => row[0], :vrot_data => row[1], :vrot_data_error => row[2])
+			end
+		end
+	end
 end
-
-# 100.times do |i|
-#   galaxy = Galaxy.new(:galaxy_name => "Galaxy #{i}", :galaxy_type => "LSB", :distance => (i - 0.0081),
-#                      :luminosity => (i-1.6), :scale_length => (i-2.1), :mass_hydrogen => 0, :mass_disk => (i-6.43))
-#   galaxy.save!
-
-# end
