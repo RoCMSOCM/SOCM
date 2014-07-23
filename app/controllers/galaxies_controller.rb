@@ -20,7 +20,7 @@ class GalaxiesController < ApplicationController
       format.json { render :json => @galaxies.to_json(
          :only => [:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length,
                       :mass_hydrogen, :mass_disk],
-          :methods => [:set_citation_ids_array, :set_r_last, :set_vrot_data_last]
+          :methods => [:set_citation_ids_array, :set_r_last, :set_vrot_data_last, :set_velocities_count]
         )
       }
     end
@@ -39,7 +39,7 @@ class GalaxiesController < ApplicationController
       format.json { render :json => @galaxy.to_json(
           :only => [:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length,
                       :mass_hydrogen, :mass_disk, :citation_ids_array],
-          :methods => [:set_citation_ids_array, :set_r_last, :set_vrot_data_last]
+          :methods => [:set_citation_ids_array, :set_r_last, :set_vrot_data_last, :set_velocities_count]
         )
       }
     end
