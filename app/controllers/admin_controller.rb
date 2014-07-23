@@ -38,6 +38,8 @@ class AdminController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_admin
       @admin = Admin.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        render 'errors/404'
     end
 
     def other_admin_change?

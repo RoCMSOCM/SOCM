@@ -22,4 +22,7 @@ Rails.application.routes.draw do
   resources :admin
 
   root to: "welcome#index"
+
+  # used to redirect all unknown routes
+  get '*path' => redirect('/')
 end
