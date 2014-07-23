@@ -8,7 +8,8 @@ class VelocitiesController < ApplicationController
   # GET /velocities
   # GET /velocities.json
   def index
-    @q = Velocity.search(params[:q])
+    @galaxy = Galaxy.find(params[:galaxy_id])
+    @q = @galaxy.velocities.search(params[:q])
     if params[:page] != "false"
       @velocities = @q.result(distinct: true).page(params[:page])
     else
