@@ -12,9 +12,7 @@ class VelocitiesController < ApplicationController
     if params[:page] != "false"
       @velocities = @q.result(distinct: true).page(params[:page])
     else
-      puts "hit false!!!"
       @velocities = @q.result(distinct: true)
-      puts "#{@velocities.inspect}"
     end
 
     respond_to do |format|
