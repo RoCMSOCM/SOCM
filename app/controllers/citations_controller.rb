@@ -1,7 +1,7 @@
 class CitationsController < ApplicationController
   before_action :set_citation, only: [:show, :edit, :update, :destroy]
 
-  before_filter except: [:index, :show] do
+  before_filter except: [:index, :show, :search] do
     render "errors/401" unless current_admin
   end
 
@@ -89,6 +89,7 @@ class CitationsController < ApplicationController
 
   #ransack advanced search
   def search
+    puts "here..."
     if params[:q].has_key?(:id_eq)
       show
     else

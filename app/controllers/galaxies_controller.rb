@@ -1,7 +1,7 @@
 class GalaxiesController < ApplicationController
   before_action :set_galaxy, only: [:show, :edit, :update, :destroy, :index_galaxy_citations]
 
-  before_filter except: [:index, :show, :index_galaxy_citations] do
+  before_filter except: [:index, :show, :index_galaxy_citations, :search] do
     render "errors/401", :status => :unauthorized unless current_admin
   end
 
@@ -9,7 +9,11 @@ class GalaxiesController < ApplicationController
   # GET /galaxies.json
   def index
     @q = Galaxy.search(params[:q])
-    @galaxies = @q.result(distinct: true).page(params[:page])
+    if params[:page] != "false"
+      @galaxies = @q.result(distinct: true).page(params[:page])
+    else
+      @galaxies = @q.result(distinct: true)
+    end
 
     respond_to do |format|
       format.html { render :index }
