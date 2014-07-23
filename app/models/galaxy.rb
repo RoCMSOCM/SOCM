@@ -1,5 +1,5 @@
 class Galaxy < ActiveRecord::Base
-  attr_accessor :citation_ids_array
+  attr_accessor :citation_ids_array, :r_last, :vrot_data_last
 
   has_many :galaxy_citations, dependent: :delete_all
   has_many :citations, :through => :galaxy_citations, :foreign_key => :citations_id
@@ -13,5 +13,13 @@ class Galaxy < ActiveRecord::Base
 
   def set_citation_ids_array
     self.citation_ids_array = self.citations.collect(&:id)
+  end
+
+  def set_r_last
+    self.r_last = self.velocities.last.r if self.velocities.last
+  end
+
+  def set_vrot_data_last
+    self.vrot_data_last = self.velocities.last.vrot_data if self.velocities.last
   end
 end
