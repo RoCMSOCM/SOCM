@@ -1,16 +1,18 @@
 class VelocitiesController < ApplicationController
   before_action :set_velocity, only: [:show, :edit, :update, :destroy]
 
-  before_filter :find_galaxy
+  before_filter except: [:index, :show] do
+    render "errors/401" unless current_admin
+  end
 
   # GET /velocities
   # GET /velocities.json
   def index
-    @q = Velocity.search(params[:q])
+    @galaxy = Galaxy.find(params[:galaxy_id])
+    @q = @galaxy.velocities.search(params[:q])
     if params[:page] != "false"
       @velocities = @q.result(distinct: true).page(params[:page])
     else
-      puts "here #{ @galaxy.velocities.all.count}"
       @velocities = @q.result(distinct: true)
     end
 

@@ -1,6 +1,10 @@
 class CitationsController < ApplicationController
   before_action :set_citation, only: [:show, :edit, :update, :destroy]
 
+  before_filter except: [:index, :show] do
+    render "errors/401" unless current_admin
+  end
+
   # GET /citations
   # GET /citations.json
   def index

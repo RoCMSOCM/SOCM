@@ -5,7 +5,7 @@ class AdminController < ApplicationController
 
   def index
     if params[:approved] == "false"
-       @admins = Admin.where(:approved => nil)
+      @admins = Admin.where(:approved => nil)
     else
       @admins = Admin.all
     end
