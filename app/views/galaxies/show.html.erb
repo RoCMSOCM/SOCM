@@ -46,6 +46,8 @@
   <br>
 <% end %>
 
+<%= link_to "#{@galaxy.galaxy_name}'s Citations", :controller => 'galaxies', :action => 'index_galaxy_citations', :id => @galaxy.id %>
+
 <% if @velocities.size > 0 %>
   <h2>Velocities for Galaxy <%= @galaxy.id %></h2>
 

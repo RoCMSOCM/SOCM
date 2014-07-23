@@ -1,5 +1,5 @@
 class GalaxiesController < ApplicationController
-  before_action :set_galaxy, only: [:show, :edit, :update, :destroy]
+  before_action :set_galaxy, only: [:show, :edit, :update, :destroy, :index_galaxy_citations]
 
   # GET /galaxies
   # GET /galaxies.json
@@ -19,7 +19,6 @@ class GalaxiesController < ApplicationController
   # GET /galaxies/1
   # GET /galaxies/1.json
   def show
-    @galaxy = Galaxy.find(params[:id])
     @q = @galaxy.velocities.search(params[:q])
     @velocities = @q.result(distinct: true).page(params[:page])
     @citations = @galaxy.citations
@@ -94,10 +93,16 @@ class GalaxiesController < ApplicationController
     end
   end
 
+  def index_galaxy_citations
+    @q = @galaxy.citations.search(params[:q])
+    puts "galaxy = #{@galaxy.inspect}"
+    @citations = @galaxy.citations.all
+    render 'galaxy_citations_index'
+  end
+
   private
     def set_galaxy
       @galaxy = Galaxy.find(params[:id]) if params[:id]
-    puts "galaxy = #{@galaxy.inspect}"
 
       rescue ActiveRecord::RecordNotFound
         render 'errors/404'

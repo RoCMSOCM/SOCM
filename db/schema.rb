@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140722230149) do
+ActiveRecord::Schema.define(version: 20140723001033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,31 +38,31 @@ ActiveRecord::Schema.define(version: 20140722230149) do
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "citations", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "author"
-    t.string   "title"
-    t.text     "bibtex"
-    t.string   "journal"
-    t.integer  "year"
+    t.string   "author",     null: false
+    t.string   "title",      null: false
+    t.text     "bibtex",     null: false
+    t.string   "journal",    null: false
+    t.integer  "year",       null: false
     t.integer  "volume"
     t.integer  "number"
     t.integer  "pages"
     t.string   "month"
     t.string   "note"
     t.string   "key"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "galaxies", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "galaxy_name"
+    t.string   "galaxy_name",   null: false
     t.string   "galaxy_type",   null: false
     t.float    "distance",      null: false
     t.float    "luminosity",    null: false
     t.float    "scale_length",  null: false
     t.float    "mass_hydrogen", null: false
     t.float    "mass_disk",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "galaxy_citations", force: true do |t|
@@ -75,10 +75,10 @@ ActiveRecord::Schema.define(version: 20140722230149) do
   create_table "velocities", force: true do |t|
     t.float    "r",               null: false
     t.float    "vrot_data",       null: false
+    t.integer  "galaxy_id",       null: false
+    t.float    "vrot_data_error", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "galaxy_id"
-    t.float    "vrot_data_error"
   end
 
   add_index "velocities", ["galaxy_id"], name: "index_velocities_on_galaxy_id", using: :btree
