@@ -9,6 +9,7 @@ class GalaxiesController < ApplicationController
   # GET /galaxies.json
   def index
     @q = Galaxy.search(params[:q])
+    @q.sorts = 'id asc' if @q.sorts.empty?
     if params[:page] != "false"
       @galaxies = @q.result(distinct: true).page(params[:page])
     else

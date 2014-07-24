@@ -9,6 +9,7 @@ class CitationsController < ApplicationController
   # GET /citations.json
   def index
     @q = Citation.search(params[:q])
+    @q.sorts = 'id asc' if @q.sorts.empty?
     if params[:page] != "false"
       @citations = @q.result(distinct: true).page(params[:page])
     else

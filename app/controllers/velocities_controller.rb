@@ -11,6 +11,7 @@ class VelocitiesController < ApplicationController
   def index
     @galaxy = Galaxy.find(params[:galaxy_id])
     @q = @galaxy.velocities.search(params[:q])
+    @q.sorts = 'id asc' if @q.sorts.empty?
     if params[:page] != "false"
       @velocities = @q.result(distinct: true).page(params[:page])
     else
