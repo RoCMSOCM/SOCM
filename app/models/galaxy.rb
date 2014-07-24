@@ -11,19 +11,19 @@ class Galaxy < ActiveRecord::Base
 
   accepts_nested_attributes_for :citations
 
-  def set_citation_ids_array
+  def citation_ids_array
     self.citation_ids_array = self.citations.collect(&:id)
   end
 
-  def set_r_last
+  def r_last
     self.r_last = self.velocities.last.r if self.velocities.last
   end
 
-  def set_vrot_data_last
+  def vrot_data_last
     self.vrot_data_last = self.velocities.last.vrot_data if self.velocities.last
   end
 
-  def set_velocities_count
+  def velocities_count
     self.velocities_count = self.velocities.count if self.velocities
   end
 end
