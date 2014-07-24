@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :admins
 
   get 'welcome/index'
+  get 'welcome/developers'
+
   get 'galaxies/index_galaxy_citations'
   match 'admin' => "admin#index", via: [:get, :put]
 
