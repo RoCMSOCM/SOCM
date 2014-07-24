@@ -1,0 +1,29 @@
+<h1>Welcome to the Developers section of SOCM</h1>
+
+<p id="notice"><%= notice %></p>
+<p></p>
+
+<div class="container" id="developer_container">
+
+  <h3>Getting info about Galaxies</h3>
+  <p><b>GET</b> socm.herokuapp.com/galaxies.json </p>
+  <p> This will show all of the galaxies and their associated information in json.</p>
+  <br>
+  <p><b>GET</b> socm.herokuapp.com/galaxies/#galaxyId#.json </p>
+  <p>This is a get request to show a particular galaxy where the #galaxyId# is the id of the galaxy you want.</p>
+
+  <h3>Getting info about Galaxy Velocity Data</h3>
+  <p><b>GET</b> socm.herokuapp.com/galaxies/#galaxyId#/velocities.json </p>
+  <p> This will show all of the velocities and their associated information in json.</p>
+  <br>
+  <p><b>GET</b> socm.herokuapp.com/galaxies/#galaxyId#/velocities/#velocityId#.json </p>
+  <p>This is a get request to show a particular Galaxy (specified by #galaxyId#) and a specific velocity specified by #velocityId#</p>
+
+  <h3>Getting info about Citations</h3>
+  <p><b>GET</b> socm.herokuapp.com/citations.json </p>
+  <p>This shows all of the citation information.</p>
+  <br>
+  <p><b>GET</b> socm.herokuapp.com/citations/#citationId#.json </p>
+  <p>This is a get request to show a particular Citation where the # is the id of the Citation you want.</p>
+
+</div>
