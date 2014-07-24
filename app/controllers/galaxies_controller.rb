@@ -33,7 +33,7 @@ class GalaxiesController < ApplicationController
     @q = @galaxy.velocities.search(params[:q])
     @velocities = @q.result(distinct: true).page(params[:page])
     @citations = @galaxy.citations
-    @galaxy.set_citation_ids_array
+    @galaxy.citation_ids_array
 
     respond_to do |format|
       format.html { render :show }
