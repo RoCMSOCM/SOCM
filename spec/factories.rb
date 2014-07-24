@@ -7,10 +7,6 @@ FactoryGirl.define do
     scale_length 4.1
     mass_hydrogen 5.1
     mass_disk 6.1
-    stars 7.1
-    n 9.1
-    r0 10.1
-    n_g 11.1
   end
 
   factory :invalid_galaxy, parent: :galaxy do
@@ -21,10 +17,6 @@ FactoryGirl.define do
     scale_length "abc"
     mass_hydrogen "abc"
     mass_disk "abc"
-    stars "abc"
-    n "abc"
-    r0 "abc"
-    n_g "abc"
   end
 
   factory :galaxy_post, parent: :galaxy do
@@ -35,9 +27,18 @@ FactoryGirl.define do
     scale_length 4.1
     mass_hydrogen 5.1
     mass_disk 6.1
-    stars 7.1
-    n 9.1
-    r0 10.1
-    n_g 11.1
+  end
+
+  factory :admin do
+    email "some_admin@herpderp.com"
+    password "herpderp"
+    approved true
+  end
+
+  factory :super_user, parent: :admin do
+    email "super_user@herpderp.com"
+    password "herpderp"
+    approved true
+    super_user true
   end
 end
