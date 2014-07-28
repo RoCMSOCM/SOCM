@@ -26,23 +26,23 @@
             <%= f.search_field :galaxy_type_cont, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :distance, "Distance") %>
+            <%= sort_link(@q, :distance, "Distance (Mpc)<br>".html_safe) %>
             <%= f.search_field :distance_eq, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :luminosity, "Luminosity") %>
+            <%= sort_link(@q, :luminosity, "Luminosity (10<sup>10</sup> L<sub>☉</sub> W) <br>".html_safe) %>
             <%= f.search_field :luminosity_eq, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :scale_length, "Scale Length") %>
+            <%= sort_link(@q, :scale_length, "Scale Length (kpc) <br>".html_safe) %>
             <%= f.search_field :scale_length_eq, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :mass_hydrogen, "Hydrogen Mass") %>
+            <%= sort_link(@q, :mass_hydrogen, "Hydrogen Mass (10<sup>10</sup> M<sub>☉</sub> kg) <br>".html_safe) %>
             <%= f.search_field :mass_hydrogen_eq, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :mass_disk, "Disk Mass") %>
+            <%= sort_link(@q, :mass_disk, "Disk Mass (10<sup>10</sup> M<sub>☉</sub> kg) <br>".html_safe) %>
             <%= f.search_field :mass_disk_eq, :class => "search-field" %>
           </th>
           <th>

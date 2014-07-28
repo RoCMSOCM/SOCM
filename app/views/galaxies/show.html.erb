@@ -11,23 +11,23 @@
   <%= @galaxy.galaxy_type %>
 </p>
 <p>
-  <strong>Distance:</strong>
+  <strong>Distance (Mpc):</strong>
   <%= @galaxy.distance %>
 </p>
 <p>
-  <strong>Luminosity:</strong>
+  <strong>Luminosity (10<sup>10</sup> L<sub>☉</sub> W):</strong>
   <%= @galaxy.luminosity %>
 </p>
 <p>
-  <strong>Scale Length:</strong>
+  <strong>Scale Length (kpc):</strong>
   <%= @galaxy.scale_length %>
 </p>
 <p>
-  <strong>Hydrogen Mass:</strong>
+  <strong>Hydrogen Mass (10<sup>10</sup> M<sub>☉</sub> kg):</strong>
   <%= @galaxy.mass_hydrogen %>
 </p>
 <p>
-  <strong>Disk Mass:</strong>
+  <strong>Disk Mass (10<sup>10</sup> M<sub>☉</sub> kg):</strong>
   <%= @galaxy.mass_disk %>
 </p>
 <p>
@@ -70,15 +70,15 @@
             <%= f.search_field :galaxy_id_eq, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :r, "R") %>
+            <%= sort_link(@q, :r, "R (kpc)") %>
             <%= f.search_field :r_eq, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :vrot_data, "Vrot data") %>
+            <%= sort_link(@q, :vrot_data, "VROT DATA (km/s)") %>
             <%= f.search_field :vrot_data_eq, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :vrot_data_error, "Vrot data err min") %>
+            <%= sort_link(@q, :vrot_data_error, "VROT DATA ERROR (km/s)") %>
             <%= f.search_field :vrot_data_error_eq, :class => "search-field" %>
           </th>
           <th colspan="3" width="250px;">
