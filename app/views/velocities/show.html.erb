@@ -2,7 +2,7 @@
 
 <p>
   <strong>Galaxy ID:</strong>
-  <%= @velocity.galaxy_id %>
+  <%= @velocity.galaxy_id %> (<%= Galaxy.find(@velocity.galaxy_id).galaxy_name %>)
 </p>
 <p>
   <strong>R (kpc):</strong>
