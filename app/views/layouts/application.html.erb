@@ -25,7 +25,7 @@
       <div class="container">
         <div class="navbar-header">
           <ul class="nav navbar-nav">
-            <li class="<%= 'active' if params[:controller] == 'welcome' %>" ><%= link_to 'SOCM', "/", id: "logo", class: "navbar-brand" %></li>
+            <li><%= link_to 'SOCM', "/", id: "logo", class: "navbar-brand" %></li>
           </ul>
         </div>
         <div class="navbar-collapse collapse">
@@ -34,6 +34,9 @@
           </ul>
           <ul class="nav navbar-nav">
             <li class="<%= 'active' if params[:controller] == 'citations'%>" ><%= link_to 'Citations', citations_path %></li>
+          </ul>
+          <ul class="nav navbar-nav">
+            <li class="<%= 'active' if params[:controller] == 'welcome' && params[:action] == 'developers' %>" ><%= link_to 'Developers', 'welcome/developers' %></li>
           </ul>
           <% if current_admin %>
             <ul class="nav navbar-nav">
