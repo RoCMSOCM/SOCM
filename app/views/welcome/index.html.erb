@@ -1,21 +1,29 @@
-<h1>Welcome to Scholarly Observed Celestial Measurements (SOCM)</h1>
-
-<p id="notice"><%= notice %></p>
-
 <div class="container" id="welcome_container">
   <p>
-    <u><b>TODO: Cleanup this page, styling, layout, and rewrite intro</b></u>
-  </p>
-
-  <p>
+    <h1>Scholarly Observed Celestial Measurements</h1>
+    <p id="notice"><%= notice %></p>
     <br>
-    <p>SOCM serves as a service layer to www.rotationalcurve.com (to be determined!) SOCM holds Galaxy and Galaxy Measurement data that RoCM uses in order to generate visualized galaxy rotations. All of the hosted data RoCM uses comes directly from SOCM. </p>
-    <p>
-      SOCM also provides admin privileges to the data. In order to gain admin privileges, you must sign
-        <u><%= link_to 'here', new_admin_registration_path %></u> up and beapproved by the site administrator.
-    </p>
-    <p>
-      SOCM's main goal is to provide a universal repository for free scholarly observed celestial data. We hope this tool is useful in your research, and if it is, please cite us!
-    </p>
+    <p>SoCM was developed at <%= link_to 'Wentworth Institute of Technology', "http://www.wit.edu/computer-science/" %> by:
+      <ul>
+        <li>Alex Clement</li>
+        <li>Patrick McGee</li>
+        <li>David Miller</li>
+        <li>Robert Moss</li>
+      </ul>
+     under the guidance of <%= link_to "Professor James G. O'Brien", 'http://www.wit.edu/experts/files/obrien.html'%>.  SoCM serves as a two fold service, both as a comprehensive source of galactic rotation measurements, but is also used as the data API for RoCM (<%= link_to 'www.rotationcurve.com', 'http://www.rotationcurve.com' %>).  If you would like to use any of the information of SoCM please cite both SoCM as well as the original references which are given in the SoCM database.</p>
+
+
+      <p>If you would like to have your galactic data uploaded to SoCM's data base, please contact Professor James G O'Brien (<u><b>obrienj10@wit.edu</u></b>) so that we can collect all the proper references and have your data represented properly.
+      </p>
+
+      <p>It is the hope that SoCM can serve as the epicenter of rotation curve information.</p>
+
+      <p>
+      SoCM is also an open source technology for future Wentworth students to support and enhance. All source code can be found <%= link_to 'here', 'http://www.github.com/rocmsocm/socm' %>
+      </p>
+
+      <p>
+      Like-wise, RoCM is also open source and all source code can be found <%= link_to 'here', 'http://www.github.com/rocmsocm/rocm' %>
+      </p>
   </p>
 </div>
