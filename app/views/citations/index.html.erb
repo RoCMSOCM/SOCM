@@ -14,47 +14,47 @@
         <%= search_form_for @q, url: search_citations_path,
                           html: { method: :post } do |f| %>
           <th>
-            <%= sort_link(@q, :id, "ID") %>
+            <%= sort_link(@q, :id, "ID".html_safe) %>
             <%= f.search_field :id_eq, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :author, "Author") %>
+            <%= sort_link(@q, :author, "Author".html_safe) %>
             <%= f.search_field :author_cont, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :title, "Title") %>
+            <%= sort_link(@q, :title, "Title".html_safe) %>
             <%= f.search_field :title_cont, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :bibtex, "Bibtex") %>
+            <%= sort_link(@q, :bibtex, "Bibtex".html_safe) %>
             <%= f.search_field :bibtex_cont, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :journal, "Journal") %>
+            <%= sort_link(@q, :journal, "Journal".html_safe) %>
             <%= f.search_field :journal_eq, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :year, "Year") %>
+            <%= sort_link(@q, :year, "Year".html_safe) %>
             <%= f.search_field :year_eq, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :volume, "Volume") %>
+            <%= sort_link(@q, :volume, "Volume".html_safe) %>
             <%= f.search_field :volume_eq, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :pages, "Pages") %>
+            <%= sort_link(@q, :pages, "Pages".html_safe) %>
             <%= f.search_field :pages_eq, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :month, "Month") %>
+            <%= sort_link(@q, :month, "Month".html_safe) %>
             <%= f.search_field :month_cont, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :note, "Note") %>
+            <%= sort_link(@q, :note, "Note".html_safe) %>
             <%= f.search_field :note_cont, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :key, "Key") %>
+            <%= sort_link(@q, :key, "Key".html_safe) %>
             <%= f.search_field :key_cont, :class => "search-field" %>
           </th>
           <th colspan="3" width="250px;">
