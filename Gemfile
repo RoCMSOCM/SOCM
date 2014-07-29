@@ -32,7 +32,7 @@ gem 'tzinfo-data'
 
 group :production do
   case RUBY_PLATFORM
-  when /darwin/
+  when /x86_64-linux/
     gem 'unicorn'
   end
 end
