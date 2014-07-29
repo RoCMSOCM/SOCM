@@ -1,9 +1,14 @@
 Scholarly Observed Celestial Measurements
 =========================================
+SOCM was developed at Wentworth Institute of Technology by:
+  - [Alex Clement](https://github.com/alexrdclement)
+  - [Patrick McGee](https://github.com/patrickwmcgee)
+  - [David Miller](https://github.com/djmill)
+  - [Robert Moss](https://github.com/mossr)
 
-Welcome to SOCM (Scholarly Observed Celestial Measurements)
+under the guidance of Professor James G. O'Brien. SOCM serves as a two fold service, both as a comprehensive source of galactic rotation measurements, but is also used as the service layer API for RoCM [rotationcurve.herokuapp.com](http://rotationcurve.herokuapp.com).
 
-Instructions and app info are found below:
+A running version of SOCM can be found at [socm.herokuapp.com](http://socm.herokuapp.com).
 
 Ruby version
 ============
