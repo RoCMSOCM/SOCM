@@ -3,5 +3,5 @@
 set :environment, 'production'
 
 every 10.seconds do
-  puts "ran it at #{Time.now}", environment => "production"
+  command "echo 'you can use raw cron syntax too'"
 end
