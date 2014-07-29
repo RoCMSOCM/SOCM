@@ -14,35 +14,35 @@
         <%= search_form_for @q, url: search_galaxies_path,
                           html: { method: :post } do |f| %>
           <th>
-            <%= sort_link(@q, :id, "ID") %>
+            <%= sort_link(@q, :id, "ID".html_safe) %>
             <%= f.search_field :id_eq, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :galaxy_name, "Galaxy Name") %>
+            <%= sort_link(@q, :galaxy_name, "Galaxy Name".html_safe) %>
             <%= f.search_field :galaxy_name_cont, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :galaxy_type, "Galaxy Type") %>
+            <%= sort_link(@q, :galaxy_type, "Galaxy Type".html_safe) %>
             <%= f.search_field :galaxy_type_cont, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :distance, "Distance (Mpc)<br>".html_safe) %>
+            <%= sort_link(@q, :distance, "Distance".html_safe) %> (Mpc)<br>
             <%= f.search_field :distance_eq, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :luminosity, "Luminosity (10<sup>10</sup> L<sub>☉</sub> W) <br>".html_safe) %>
+            <%= sort_link(@q, :luminosity, "Luminosity".html_safe) %> (10<sup>10</sup> L<sub>☉</sub> W) <br>
             <%= f.search_field :luminosity_eq, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :scale_length, "Scale Length (kpc) <br>".html_safe) %>
+            <%= sort_link(@q, :scale_length, "Scale Length".html_safe) %>  (kpc) <br>
             <%= f.search_field :scale_length_eq, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :mass_hydrogen, "Hydrogen Mass (10<sup>10</sup> M<sub>☉</sub> kg) <br>".html_safe) %>
+            <%= sort_link(@q, :mass_hydrogen, "Hydrogen Mass".html_safe) %> (10<sup>10</sup> M<sub>☉</sub> kg) <br>
             <%= f.search_field :mass_hydrogen_eq, :class => "search-field" %>
           </th>
           <th>
-            <%= sort_link(@q, :mass_disk, "Disk Mass (10<sup>10</sup> M<sub>☉</sub> kg) <br>".html_safe) %>
+            <%= sort_link(@q, :mass_disk, "Disk Mass".html_safe) %> (10<sup>10</sup> M<sub>☉</sub> kg) <br>
             <%= f.search_field :mass_disk_eq, :class => "search-field" %>
           </th>
           <th>
