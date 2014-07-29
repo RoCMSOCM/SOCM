@@ -8,6 +8,8 @@ SOCM was developed at Wentworth Institute of Technology by:
 
 under the guidance of Professor James G. O'Brien. SOCM serves as a two fold service, both as a comprehensive source of galactic rotation measurements, but is also used as the service layer API for RoCM [rotationcurve.herokuapp.com](http://rotationcurve.herokuapp.com).
 
+A running version of SOCM can be found at [socm.herokuapp.com](http://socm.herokuapp.com).
+
 Ruby version
 ============
   - Ruby 2.0.0
