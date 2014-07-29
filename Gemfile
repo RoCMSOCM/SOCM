@@ -29,10 +29,4 @@ gem 'ransack'
 gem 'whenever'
 
 gem 'tzinfo-data'
-
-group :production do
-  case RUBY_PLATFORM
-  when /x86_64-linux/
-    gem 'unicorn'
-  end
-end
+gem 'unicorn' if RUBY_PLATFORM.include?("x86_64-linux")
