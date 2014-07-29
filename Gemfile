@@ -26,6 +26,12 @@ gem 'kaminari'
 gem 'pg'
 gem 'devise'
 gem 'ransack'
-gem 'whenever'
 
 gem 'tzinfo-data'
+
+group :production do
+  case RUBY_PLATFORM
+  when /darwin/
+    gem 'unicorn'
+  end
+end
