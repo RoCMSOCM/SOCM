@@ -2,6 +2,6 @@
 #so SOCM doesn't go idle on heroku's server
 set :environment, 'production'
 
-every 10.seconds do
+every 1.minutes do
   command "echo 'you can use raw cron syntax too'"
 end
