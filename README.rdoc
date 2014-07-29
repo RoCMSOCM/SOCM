@@ -1,4 +1,4 @@
-== README
+== Scholarly Observed Celestial Measurements (SOCM) README
 
 Welcome to SOCM (Scholarly Observed Celestial Measurements)
 
