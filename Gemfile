@@ -26,6 +26,7 @@ gem 'kaminari'
 gem 'pg'
 gem 'devise'
 gem 'ransack'
+gem 'whenever'
 
 gem 'tzinfo-data'
 
