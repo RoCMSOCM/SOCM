@@ -79,7 +79,7 @@
           <td><%= citation.month %></td>
           <td><%= citation.note %></td>
           <td><%= citation.key %></td>
-          <td><%= link_to 'Show', citation %></td>
+          <td><%= link_to 'Show', citation, :method => :get %></td>
           <% if current_admin %>
             <td><%= link_to 'Edit', edit_citation_path(citation) %></td>
             <td><%= link_to 'Destroy', citation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
