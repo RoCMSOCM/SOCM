@@ -1,0 +1,1575 @@
+
+
+\documentclass[preprint,aps]{revtex4}
+
+\usepackage{epsfig}
+
+
+\begin{document}
+
+
+
+\title{Fitting galactic rotation curves with conformal gravity and a global quadratic potential}
+
+\author{Philip~D.~Mannheim and James~G.~O'Brien}
+
+\affiliation{Department of Physics\\ University of Connecticut\\ Storrs, CT
+06269, USA
+\\ {\tt  philip.mannheim@uconn.edu,obrien@phys.uconn.edu}}
+
+\date{November 9, 2010}
+
+\begin{abstract}
+We apply the conformal gravity theory to a sample of 110 spiral galaxies whose rotation curve data points extend well beyond the optical disk. With no free parameters other than galactic mass to light ratios, the theory is able to account for the systematics that is observed in this entire set of rotation curves without the need for any dark matter at all. In previous applications of the theory a central role was played by a universal linear potential term $V(r)=\gamma_0 c^2r/2$ that is generated through the effect of cosmology on individual galaxies, with the coefficient $\gamma_0=3.06\times 10^{-30}{\rm cm}^{-1}$ being of cosmological magnitude. Because the current sample is so big and encompasses some specific galaxies whose data points go out to  quite substantial distances from galactic centers, we are able to identify an additional globally induced universal term in the data, a quadratic $V(r)=-\kappa c^2r^2/2$ term that is induced by inhomogeneities in the cosmic background. With $\kappa$ being found to be of magnitude $\kappa=9.54\times 10^{-54}~{\rm cm}^{-2}$, through study of the motions of particles contained within galaxies we are thus able to both detect the presence of a global de Sitter-like component and provide a specific value for its strength. Our study suggests that invoking dark matter may be nothing more than an attempt to describe global physics effects such as these in purely local galactic terms.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+\label{s1}
+
+Observational studies of spiral galaxies have repeatedly established that galactic rotational velocities look nothing like the velocities that would be produced by the Newtonian gravitational potentials associated with the luminous matter in the galaxies. In consequence, it is quite widely thought that such velocity discrepancies are to be explained by the presence of copious amounts of non-luminous or dark matter in galaxies. Since the case for the presence of such dark matter rests solely on the assumption that wisdom acquired from studies on solar system distance scales can be extrapolated without modification to the much larger galactic distance scales, a few authors have ventured to suggest (see e.g. \cite{Mannheim2006} for a recent review) that dark matter may not actually exist and that instead it is the standard Newtonian description that needs modifying. In this work we apply one particular candidate alternative theory, namely conformal gravity, to a large and comprehensive sample of 110 galactic rotation curves. With only one free parameter per galaxy, the galactic mass to light ratio, we find that the conformal theory provides for a good accounting of the data without the need for any dark matter at all. Moreover, because our sample is so large, through our fitting we are able to find evidence in the data for the presence of a universal quadratic potential term that the conformal theory possesses.
+
+As a theory, conformal gravity (see e.g. \cite{Mannheim2006}) is a completely covariant metric  theory of gravity that possesses all the general coordinate invariance and equivalence principle structure of standard Einstein gravity, but which in addition possesses a local conformal invariance in which the action is left invariant under local metric transformations of the form $g_{\mu\nu}(x)\rightarrow e^{2\alpha(x)}g_{\mu\nu}(x)$ with any arbitrary local phase $\alpha(x)$.  As a symmetry,  conformal invariance forbids the presence of any fundamental cosmological constant term in the gravitational action, with the action being uniquely prescribed by the Weyl action  
+%
+\begin{equation}
+I_{\rm W}=-\alpha_g\int d^4x (-g)^{1/2}C_{\lambda\mu\nu\kappa}
+C^{\lambda\mu\nu\kappa}
+=-2\alpha_g\int d^4x (-g)^{1/2}\left[R_{\mu\kappa}R^{\mu\kappa}-(1/3) (R^{\alpha}_{\phantom{\alpha}\alpha})^2\right],
+\label{182}
+\end{equation}
+% 
+where 
+%
+\begin{equation}
+C_{\lambda\mu\nu\kappa}= R_{\lambda\mu\nu\kappa}
+-\frac{1}{2}\left(g_{\lambda\nu}R_{\mu\kappa}-
+g_{\lambda\kappa}R_{\mu\nu}-
+g_{\mu\nu}R_{\lambda\kappa}+
+g_{\mu\kappa}R_{\lambda\nu}\right)
++\frac{1}{6}R^{\alpha}_{\phantom{\alpha}\alpha}\left(
+g_{\lambda\nu}g_{\mu\kappa}-
+g_{\lambda\kappa}g_{\mu\nu}\right)
+\label{180}
+\end{equation}
+% 
+is the conformal Weyl tensor and the gravitational coupling constant $\alpha_g$ is dimensionless. Thus, unlike the standard Einstein-Hilbert action $I_{\rm EH}=-(1/16 \pi G)\int d^4x (-g)^{1/2}R^{\alpha}_{\phantom{\alpha}\alpha}$, which can be augmented to include a $\int d^4x (-g)^{1/2}\Lambda$ term, the conformal theory has a control over the cosmological constant that the standard Einstein theory does not, and through this control one is able to both address and resolve the cosmological constant problem \cite{Mannheim2009,Mannheim2010a}.
+
+\section{Local Considerations}
+\label{s2}
+
+
+For the Weyl action the equations of motion take the form \cite{Mannheim2006} 
+%
+\begin{equation}
+4\alpha_g W^{\mu\nu}=4\alpha_g\left[
+2C^{\mu\lambda\nu\kappa}_
+{\phantom{\mu\lambda\nu\kappa};\lambda;\kappa}-
+C^{\mu\lambda\nu\kappa}R_{\lambda\kappa}\right]=4\alpha_g\left[W^{\mu
+\nu}_{(2)}-\frac{1}{3}W^{\mu\nu}_{(1)}\right]=T^{\mu\nu},
+\label{188}
+\end{equation}
+% 
+where
+%                                                                               
+\begin{eqnarray}
+W^{\mu \nu}_{(1)}&=&
+2g^{\mu\nu}(R^{\alpha}_{\phantom{\alpha}\alpha})          
+^{;\beta}_{\phantom{;\beta};\beta}                                              
+-2(R^{\alpha}_{\phantom{\alpha}\alpha})^{;\mu;\nu}                           
+-2 R^{\alpha}_{\phantom{\alpha}\alpha}
+R^{\mu\nu}                              
++\frac{1}{2}g^{\mu\nu}(R^{\alpha}_{\phantom{\alpha}\alpha})^2,
+\nonumber\\
+W^{\mu \nu}_{(2)}&=&
+\frac{1}{2}g^{\mu\nu}(R^{\alpha}_{\phantom{\alpha}\alpha})   
+^{;\beta}_{\phantom{;\beta};\beta}+
+R^{\mu\nu;\beta}_{\phantom{\mu\nu;\beta};\beta}                     
+ -R^{\mu\beta;\nu}_{\phantom{\mu\beta;\nu};\beta}                        
+-R^{\nu \beta;\mu}_{\phantom{\nu \beta;\mu};\beta}                          
+ - 2R^{\mu\beta}R^{\nu}_{\phantom{\nu}\beta}                                    
++\frac{1}{2}g^{\mu\nu}R_{\alpha\beta}R^{\alpha\beta}.
+\label{108}
+\end{eqnarray}                                 
+%   
+Thus, since $W^{\mu\nu}$ vanishes when $R^{\mu\nu}$ vanishes, we see that, as well as being a vacuum solution to Einstein gravity, the Schwarzschild solution is also a vacuum solution to conformal gravity. The conformal theory thus recovers all the standard solar system Schwarzschild metric phenomenology, just as is needed for any metric theory of gravity.
+
+However since  the vanishing of $W^{\mu\nu}$ could potentially be achieved without $R^{\mu\nu}$ needing to vanish, the conformal theory could also have some non-Schwarzschild solutions as well. To determine what such solutions might look like, Mannheim and Kazanas solved for the metric outside a static, spherically symmetric source of radius $r_0$. They found \cite{Mannheim1989} that in the conformal theory the exact, all-order classical line element is given by $ds^2=-B(r)dt^2+dr^2/B(r)+r^2d\Omega_2$ where the exterior metric coefficient $B(r>r_0)$ is given by 
+%
+\begin{equation}
+B(r>r_0)=1-\frac{2\beta}{r}+\gamma r -kr^2.
+\label{E1}
+\end{equation}
+%
+In (\ref{E1}) the presence of the three integration constants $\beta$, $\gamma$ and $k$ is  due to the fact that unlike the standard second-order derivative Einstein theory, the conformal theory is instead based on fourth-order derivative equations, to thus contain two additional terms. With the emergence of the $1-2\beta/r$ term we see that the conformal gravity metric contains the familiar general-relativistic Schwarzschild metric solution (and thus its non-relativistic Newtonian gravitational limit as well), while departing from it only at large $r$, i.e.  departing from it in precisely the kinematic region where the dark matter problem is first encountered.
+
+In seeking to relate the various integration constants in (\ref{E1}) to properties of the energy-momentum tensor $T_{\mu\nu}$ of the source, Mannheim and Kazanas found \cite{Mannheim1994} that in terms of the general source function $f(r)=(3/4\alpha_gB(r))(T^{0}_{\phantom{0}0}-T^{r}_{\phantom{r}r})$,  the exact fourth-order equation of motion given in (\ref{188}) reduced to the remarkably simple form
+%
+\begin{equation}
+\frac{3}{B(r)}(W^{0}_{\phantom{0}0}-W^{r}_{\phantom{r}r})=\nabla^4B=B^{\prime\prime\prime\prime}+\frac{4B^{\prime\prime\prime}}{r}=
+\frac{(rB)^{\prime\prime\prime}}{r}=f(r),
+\label{E2}
+\end{equation}
+%
+without any approximation whatsoever. (The primes here denote derivatives with respect to $r$.) Since $\nabla^4(r^2)$ vanishes identically everywhere while $\nabla^4(1/r)$ and $\nabla^4(r)$ evaluate to delta functions and their derivatives, we see that of the constants given in (\ref{E1}), only $\beta$ and $\gamma$ can be associated with properties of a local source of radius $r_0$; with the matching of the interior and exterior metrics yielding \cite{Mannheim1994} 
+%
+\begin{equation}
+\gamma= -\frac{1}{2}\int_0^{r_0}dr^{\prime}r^{\prime 2}f(r^{\prime}),\qquad 
+2\beta=\frac{1}{6}\int_0^{r_0}dr^{\prime}r^{\prime 4}f(r^{\prime}).
+\label{E3}
+\end{equation}
+%
+Since the $-kr^2$ term in (\ref{E1}) is a trivial solution to (\ref{E2}), as such it is not associated with any matter source, and so there is no basis for considering it further. However, since the $\beta$ and $\gamma$ terms do couple to the source, we that in conformal gravity a given local gravitational source generates a gravitational potential
+%
+\begin{equation}
+V^{*}(r)=-\frac{\beta^{*}c^2}{r}+\frac{\gamma^{*} c^2 r}{2}
+\label{E4}
+\end{equation}
+%
+per unit solar mass, with $\beta^{*}$ being given by the familiar $M_{\odot}G/c^2=1.48\times 10^{5}$ cm, and with the numerical value of the solar $\gamma^{*}$ needing to be determined by data fitting.
+
+In conformal gravity the visible local material in a given galaxy would generate a net local gravitational potential $V_{\rm  LOC}(r)$ given by integrating $V^{*}(r)$ over the visible galactic mass distribution. Typically, the luminous material in a disk galaxy is distributed with a surface brightness $\Sigma (R)=\Sigma_0e^{-R/R_0}$ with scale length $R_0$ and total luminosity $L=2\pi \Sigma_0R_0^2$, with most of the surface brightness being concentrated in the $R \leq 4R_0$ or so optical disk region. For a galactic mass to light ratio $M/L$, one can define the total number of solar mass units $N^{*}$ in the galaxy via $(M/L)L=M=N^{*}M_{\odot}$. Then, on integrating $V^{*}(r)$ over this visible matter distribution, one obtains  \cite{Mannheim2006} the net local luminous contribution 
+% 
+\begin{eqnarray}
+\frac{v_{{\rm LOC}}^2}{R}&=&
+\frac{N^*\beta^*c^2 R}{2R_0^3}\left[I_0\left(\frac{R}{2R_0}
+\right)K_0\left(\frac{R}{2R_0}\right)-
+I_1\left(\frac{R}{2R_0}\right)
+K_1\left(\frac{R}{2R_0}\right)\right]
+\nonumber \\
+&&+\frac{N^*\gamma^* c^2R}{2R_0}I_1\left(\frac{R}{2R_0}\right)
+K_1\left(\frac{R}{2R_0}\right)
+\label{E5}
+\end{eqnarray} 
+%
+for the centripetal accelerations  of particles orbiting in the plane of the galactic disk.
+In the $R\gg R_0$ limit this expression simplifies to 
+% 
+\begin{equation}
+\frac{v_{{\rm LOC}}^2}{R} \rightarrow \frac{N^*\beta^*c^2}{R^2}\left(1+\frac{9R_0^2}{2R^2}\right)
++\frac{N^*\gamma^*c^2}{2}\left(1-\frac{3R_0^2}{2R^2}-\frac{45R_0^4}{8R^4}\right)
+ \rightarrow \frac{N^*\beta^*c^2}{R^2}+
+\frac{N^*\gamma^*c^2}{2},
+\label{E6}
+\end{equation} 
+%
+with entire galaxy acting as if it were a point source located at the galactic center. With the surface brightness of the optical disk region essentially becoming negligible by $R=4R_0$ or so, (\ref{E6}) can be expected to be a good approximation to (\ref{E5}) at points with $R > 4R_0$. 
+
+\section{Global Considerations}
+\label{s3}
+
+
+Unlike the situation that obtains in standard second-order gravity, one cannot simply use (\ref{E5}) as is to fit galactic rotation curve data, as one must take into consideration the effect of the rest of the material in the universe as well. Specifically, we recall that for standard gravity, the solution to the second order Poisson equation $\nabla^2\phi(r)=g(r)$ for a general static, spherically symmetric source $g(r)$ is given by 
+%                                                                               
+\begin{equation}
+\phi(r)= -\frac{1}{r}\int_0^r
+dr^{\prime}r^{\prime 2}g(r^{\prime})-\int_r^{\infty}
+dr^{\prime}r^{\prime }g(r^{\prime}),
+\label{E7}
+\end{equation}                                 
+%
+with derivative 
+%                                                                               
+\begin{equation}
+\frac{d\phi(r)}{dr}= \frac{1}{r^2}\int_0^r
+dr^{\prime}r^{\prime 2}g(r^{\prime}).
+\label{E8}
+\end{equation}                                 
+%
+As such, the import of (\ref{E8}) is that even though $g(r)$ could continue globally all the way to infinity, the force at any radial point $r$ is determined only by the material in the local $0< r^{\prime}< r$ region. In this sense Newtonian gravity is local, since to explain a gravitational effect in some local region one only needs to consider the material in that region. Thus in Newtonian gravity, if one wishes to explain the behavior of galactic rotation curves through the use of dark matter, one must locate the dark matter where the problem is and not elsewhere. Since the discrepancy problem in galaxies occurs primarily in the region beyond the optical disk, one must thus locate galactic dark matter in precisely the region in galaxies where there is little or no visible matter.
+
+Despite the fact that the force in (\ref{E8}) is not sensitive to any material beyond the radial point of interest, this local character to Newtonian gravity is not a generic property of any gravitational potential. In particular for the fourth-order Poisson equation $\nabla^4\phi(r)=h(r)=f(r)c^2/2$ of interest to conformal gravity, the general solution is of the form 
+%                                                                               
+\begin{eqnarray}
+\phi(r)= -\frac{r}{2}\int_0^r
+dr^{\prime}r^{\prime 2}h(r^{\prime})
+-\frac{1}{6r}\int_0^r
+dr^{\prime}r^{\prime 4}h(r^{\prime})
+-\frac{1}{2}\int_r^{\infty}
+dr^{\prime}r^{\prime 3}h(r^{\prime})
+-\frac{r^2}{6}\int_r^{\infty}
+dr^{\prime}r^{\prime }h(r^{\prime}).
+\label{E9}
+\end{eqnarray}                                 
+%
+With the derivative of the potential evaluating to 
+%                                                                               
+\begin{eqnarray}
+\frac{d\phi(r)}{dr}= -\frac{1}{2}\int_0^r
+dr^{\prime}r^{\prime 2}h(r^{\prime})
++\frac{1}{6r^2}\int_0^r
+dr^{\prime}r^{\prime 4}h(r^{\prime})
+-\frac{r}{3}\int_r^{\infty}
+dr^{\prime}r^{\prime }h(r^{\prime}),
+\label{E10}
+\end{eqnarray}                                 
+%
+this time we find a contribution to the force coming from material that is beyond the radial point of interest. Thus in the third integral in (\ref{E10}) we recognize a potential global contribution to local motions, with a test particle in orbit in a galaxy being able to sample both the local field due to the matter in the galaxy and the global field due to the material in the rest of the universe as well. In conformal gravity then, to determine motions of particles inside of galaxies one cannot ignore the effect of the material outside of them.
+
+In order to determine the effect that material exterior to galaxies might have on galaxies, we note that there are actually two global effects that we need to take into consideration. Specifically, we need to consider the effects of both the homogeneous background cosmology and the inhomogeneities that are present in it. Moreover, in the conformal theory, these effects have very different geometric structures. The global background cosmology is described by a comoving Robertson-Walker (RW) geometry. Since an RW geometry is homogeneous and isotropic, its metric is conformal to flat. Thus in an RW geometry both the Weyl tensor and $W^{\mu\nu}$ vanish identically. However, since by their very nature inhomogeneities can localize in space, they are associated with a geometries in which neither the Weyl tensor nor $W^{\mu\nu}$ can vanish. Indeed, in the derivation of (\ref{E2}) given in \cite{Mannheim1994}, it was found that in a static, spherically symmetric geometry the quantity $(3/B(r))\left(W^0_{{\phantom 0} 0} - W^r_{{\phantom r} r}\right)$ evaluates exactly to $\nabla^4B(r)$, with some components of $W^{\mu\nu}$ necessarily being non-zero in any configuration in which $\nabla^4B(r)$ is non-zero. Thus it is only inhomogeneities that contribute to the third integral in (\ref{E10}). As regards the cosmological background, we note that since the background is associated with $W^{\mu\nu}=0$, it too will contribute to the solution to $\nabla^4 B(r)=f(r)$. However, it will do so not as part of the particular integral solution given in (\ref{E10}) but as part of the complementary solution to $\nabla^4B=0$ instead. The background cosmology can thus have physical consequences for galactic motions provided it causes $W^{\mu\nu}$ to vanish non-trivially, i.e. provided it causes $T^{\mu\nu}$  to vanish non-trivially in (\ref{188}). We thus recall \cite{Mannheim1992,Mannheim2006} that in conformal gravity one can indeed construct cosmologies in which $T^{\mu\nu}$  does vanish non-trivially, and in them the scale factor $R(t)$ and the 3-curvature $K$ of the RW metric are related to the cosmological matter content, with $K$ being found \cite{Mannheim2006} to be negative.
+
+With the Hubble flow being described in comoving coordinates and galactic rotational velocities being measured in a coordinate system in which a galaxy is at rest, to determine the effect of the Hubble flow on galactic motions we need to transform the RW metric to a static coordinate system. To this end, we recall  \cite{Mannheim1989} that the general coordinate transformation 
+%                                                                               
+\begin{equation}
+\rho=\frac{4r}{2(1+\gamma_0r-kr^2)^{1/2}+2 +\gamma_0 r},\qquad \tau=\int dt R(t)
+\label{E11}
+\end{equation}                                 
+%
+effects the metric transformation 
+% 
+\begin{eqnarray}
+&&-(1+\gamma_0r-kr^2)c^2dt^2+\frac{dr^2}{(1+\gamma_0r-kr^2)}+r^2d\Omega_2=
+\nonumber \\
+&&\frac{1}{R^2(\tau)}\frac{[1-\gamma_0^2\rho^2/16-k\rho^2/4]^2}
+{[(1-\gamma_0\rho/4)^2+k\rho^2/4]^2}
+\left[-c^2d\tau^2+\frac{R^2(\tau)}{[1-(\gamma_0^2/16+k/4)\rho^2]^2}
+\left(d\rho^2+\rho^2d\Omega_2\right)\right].
+\label{E12}
+\end{eqnarray} 
+%
+With the transformed metric being written compactly as 
+%                                                                               
+\begin{equation}
+ds^2=e^{2\alpha(\tau,\rho)}\left[-c^2d\tau^2+\frac{R^2(\tau)}{[1+K\rho^2/4]^2}
+\left(d\rho^2+\rho^2d\Omega_2\right)\right],
+\label{E13}
+\end{equation}                                 
+%
+we see that the transformed metric is conformally equivalent  to a comoving RW metric as written in spatially isotropic coordinates with spatial 3-curvature $K=-\gamma_0^2/4-k$. Since an RW geometry is conformal to flat and since it remains so under a conformal transformation, we see that when written in a static coordinate system a comoving conformal cosmology  looks just like a static metric with universal linear and quadratic terms. 
+
+Since the decomposition of just one RW scale (viz. $K$) into two static scales ($\gamma_0$ and $k$) is somewhat artificial, one could just as easily leave out the $k$ term in the coordinate transformation, and replace (\ref{E11}) and (\ref{E12}) by 
+%                                                                               
+\begin{equation}
+\rho=\frac{4r}{2(1+\gamma_0r)^{1/2}+2 +\gamma_0 r},\qquad \tau=\int dt R(t)
+\label{E14}
+\end{equation}                                 
+%
+and
+% 
+\begin{eqnarray}
+&&-(1+\gamma_0r)c^2dt^2+\frac{dr^2}{(1+\gamma_0r)}+r^2d\Omega_2=
+\nonumber \\
+&&\frac{1}{R^2(\tau)}\left(\frac{1+\gamma_0\rho/4}
+{1-\gamma_0\rho/4}\right)^2
+\left[-c^2d\tau^2+\frac{R^2(\tau)}{[1-\gamma_0^2\rho^2/16]^2}
+\left(d\rho^2+\rho^2d\Omega_2\right)\right].
+\label{E15}
+\end{eqnarray} 
+%
+While the $kr^2$ term is not playing a crucial role in the above and can therefore be ignored (but see \cite{Vareschi2010} for a possible application of the transformation in (\ref{E11})), one is not able to dispense with the $\gamma_0 r$ term since there would otherwise be no transformation at all. Without the $k$ term the RW 3-curvature is given by $K=-\gamma_0^2/4$, to then unambiguously be negative. Since the only way to make $K$ be positive would be to have complex $\gamma_0$, and the only way to make $K$ be zero would be to have  $\gamma_0=0$, we see that in the rest frame of a comoving galaxy (i.e. one with no peculiar velocity with respect to the Hubble flow), a topologically open comoving cosmology (viz. just the one found in \cite{Mannheim2006}), and only a topologically open one, looks just like a universal linear potential, with a strength that is given by $\gamma_0/2=(-K)^{1/2}$. 
+
+In the conformal theory then we recognize not one but two linear potential terms, a local $N^*\gamma^*$ dependent one associated with the matter within a galaxy and a global cosmological one $\gamma_0c^2r/2$ associated with the cosmological background. Thus in \cite{Mannheim1997} it was noted that in the weak gravity limit one could add the two potentials, with the total velocity $v_{\rm TOT}$ then being given by
+%                                                                               
+\begin{equation}
+\frac{v^2_{\rm TOT}}{R}=\frac{v^2_{\rm LOC}}{R}+\frac{\gamma_0 c^2}{2},
+\label{E16}
+\end{equation}                                 
+%
+with asymptotic limit 
+% 
+\begin{equation}
+\frac{v_{{\rm TOT}}^2}{R} \rightarrow \frac{N^*\beta^*c^2}{R^2}+
+\frac{N^*\gamma^*c^2}{2}+\frac{\gamma_0c^2}{2}.
+\label{E17}
+\end{equation} 
+%
+In \cite{Mannheim1997}  (\ref{E16}) was used to fit the galactic rotation curve data of a sample of 11 galaxies, and good fits were found, with the two universal linear potential parameters being found to be given by
+%
+\begin{equation}
+\gamma^*=5.42\times 10^{-41} {\rm cm}^{-1},\qquad \gamma_0=3.06\times
+10^{-30} {\rm cm}^{-1}.
+\label{E18}
+\end{equation} 
+%
+The value obtained for $\gamma^*$ entails that the linear potential of the Sun is so small that there are no modifications to standard solar system phenomenology, with the values obtained for $N^*\gamma^*$ and $\gamma_0$ being so small that one has to go all the way to galactic systems before their effects can become as big as the Newtonian contribution. Moreover, the value obtained for $\gamma_0$ shows that it is indeed of cosmological magnitude, just as desired.
+
+While the analysis described above provides no definitive reason for including any possible quadratic  potential term in (\ref{E16}), valid justification for considering it is obtained by considering not the homogeneous cosmological background, but rather the inhomogeneities in it. On large scales these inhomogeneities would typically be in the form of clusters and superclusters and would be associated with distance scales between 1 Mpc and 100 Mpc or so. Without knowing anything other than that about them, we see from (\ref{E9}) that  for calculating potentials at galactic distance scales the inhomogeneities would contribute constant and quadratic terms multiplied by integrals that are evaluated between fixed end points, to thus be constants. (I.e. all that we require of the  $-(r^2/6)\int_r^{\infty} dr^{\prime}r^{\prime }h(r^{\prime})$ integral in (\ref{E9}) is that it begin at some minimum cluster-sized radius that is outside the galaxy and independent of it.) Thus given the quadratic term in (\ref{E9}), then again up to peculiar velocity effects, for weak gravity we can augment (\ref{E16}) and (\ref{E17}) to 
+%                                                                               
+\begin{equation}
+\frac{v^2_{\rm TOT}}{R}=\frac{v^2_{\rm LOC}}{R}+\frac{\gamma_0 c^2}{2}-\kappa c^2R,
+\label{E20}
+\end{equation}                                 
+%
+with asymptotic limit 
+% 
+\begin{equation}
+\frac{v_{{\rm TOT}}^2}{R} \rightarrow \frac{N^*\beta^*c^2}{R^2}+
+\frac{N^*\gamma^*c^2}{2}+\frac{\gamma_0c^2}{2}-\kappa c^2R.
+\label{E21}
+\end{equation} 
+%
+As such, (\ref{E20}) can be derived from a metric with a term $B(r)=-\kappa r^2$, and thus has a de Sitter-like form. However, it is not associated with an explicit de Sitter geometry per se since the inhomogeneities that give rise to it are not distributed in a maximally 4-symmetric way. 
+Nonetheless, a particle in orbit in a galaxy would be affected by the quadratic term, and thus behave in exactly the same way as if it had been embedded in a de Sitter background. Equation (\ref{E20}) with its universal $\kappa$ is our main theoretical result, and so we proceed now to apply it to galactic rotation curve data.
+
+\section{Conformal Gravity Data Fitting}
+\label{s4}
+
+Since successful rotation curve fitting to an 11 galaxy sample was obtained in  \cite{Mannheim1997} via the use of  (\ref{E16}), one would initially anticipate that even if the $-\kappa c^2R$ term in (\ref{E20}) were to be present in principle, in practice it would be too small to have any effect. However, the sample we study here is much larger (110 galaxies) and it contains some galaxies whose data points extend to far larger distances from galactic centers than had been the case for the 11 galaxy sample originally studied in \cite{Mannheim1997}. As reported in \cite{Mannheim2010b}, it is through fitting 20 such highly extended galaxies that we were able to uncover a role for the $-\kappa c^2R$ term and extract a value for $\kappa $ given by $\kappa =9.54\times 10^{-54}~{\rm cm}^{-2}$. In the fitting to the full 110 galaxy sample we shall use this value for $\kappa$ and the values for $\gamma^*$ and $\gamma_0$ as given above in (\ref{E18}). For the fitting then there is just one free parameter per galaxy, namely the galactic mass to light ratio, and thus our fitting is highly constrained.
+
+With the stars in galaxies lying within the optical disk region, to fully explore the rotation curves of galaxies one needs to study the HI gas spectra as it is only the gas in galaxies that extends well beyond the optical disk region. To get velocity measurements that are free of projection concerns one wants galaxies to be close to edge on along our line of sight, and to be able to model the gravitational contribution of the luminous disk one needs good disk photometry. Given these criteria there is a now quite substantial number of galaxies for which one can do modeling, with the 110 galaxy set that we use being a large, very varied and representative sample that contains both high surface brightness (HSB) galaxies where both $N^*$ and $\Sigma_0$ are large, and low surface brightness galaxies with small $\Sigma_0$ and dwarf galaxies with small $N^*$ (collectively referred to here as LSB galaxies since many small $N^*$ galaxies have small $\Sigma_0$ and vice versa).
+
+Having this broad a variety of  galaxies turns out to be very instructive since one of the most interesting aspects of (\ref{E16}) and (\ref{E20}) is that there are situations in which departures from the luminous Newtonian prediction can be very pronounced. One situation is when $N^*$ is small, since then the net Newtonian contribution cannot compete with the fixed magnitude $\gamma_0$ and $\kappa$ terms. Another situation is when the quantity $N^*/R_0^2\sim \Sigma_0$ is small.  Specifically, since the Newtonian contribution in (\ref{E5}) (the $\beta^*$ dependent $I_0K_0 - I_1K_1$ term) numerically peaks at around $R=2.2R_0$, the strength of the Newtonian term at the peak will be set by the magnitude of  $N^*/R_0^2$, and when small will not be able to compete with the fixed magnitude $\gamma_0$ and $\kappa $ terms. Since the linear term dominates over the quadratic one until the largest distances, in both small $N^*$ and/or small $\Sigma_0$ galaxies one should expect the rotation curves to start rising immediately, just as is systematically seen in the data sample. The case where the luminous Newtonian contribution is not suppressed is in HSB galaxies, and here the falling Newtonian contribution can compete with the rising linear term to give a region of approximate flatness before any rise could set in, again just as is systematically seen in the data sample. Thus we see that the simple formula given in (\ref{E20}) directly captures the essence of the data, and as the fits show, the formula captures not just the qualitative trend but the actual quantitative numerical values of the velocities as well. Finally, we note that for all galaxies the quadratic term will eventually take over, to then arrest the rising linear potential terms and cause all rotation velocities to ultimately fall. Moreover, since $v^2$ cannot go negative, beyond a distance $R$ of order $\gamma_0/\kappa \sim 3\times 10^{23}~{\rm cm}$ or so there could no longer be any bound galactic orbits, with galaxies thus having a natural way of terminating, and with the allowable sizes of galaxies being determined by an interplay between galaxies and the global structure of the universe.
+
+For the actual fitting we have predominantly used galaxies that were studied in large surveys. In particular for the rotation curves we have used 
+18 galaxies from THINGS: The HI Nearby Galaxy Survey (as detailed in Table (1)), 
+30 galaxies from a study of the Ursa Major  Cluster of Galaxies (Table (2)), 
+20 galaxies from a study of LSB galaxies, as augmented by an extended distance study of UGC 128  (Table (3)), 21 galaxies from a second study of LSB galaxies (Table (4)), 
+and also included some 21 miscellaneous galaxies (Table (5)), with this last set containing many of the galaxies that played a significant historical role in establishing that there actually was a galactic missing mass problem in the first place.  The sample we use contains all the 11 galaxies that were studied in \cite{Mannheim1997} (DDO 154, DDO 170, NGC 1560, NGC 3109, UGC 2259, NGC 6503, NGC 2403, NGC 3198, NGC 2903, NGC 7331, and NGC 2841), with a few of them having undergone significant updates since then. Of the 110 galaxies in our sample, the 20 that extend the furthest in radial distance were reported in \cite{Mannheim2010b}, and for completeness we also include them here. In order of increasing largest radial distance these 20 galaxies are NGC 3726, NGC 3769, NGC 4013, NGC 3521, NGC 2683, UGC 1230, NGC 3198, NGC 5371, NGC 2998, NGC 5055, NGC 5033, NGC 801, NGC 5907, NGC 3992, NGC 2841, UGC 128,  NGC 5533, NGC 6674, UGC 6614 and UGC 2885.
+
+For the fits we have taken photometric luminosities, optical disk scale lengths and HI gas masses  from Refs. \cite{deBlok2008} through \cite{Roelfsema1985}. The values we use are listed in  Tables (1) -- (5). In the last column in each of these Tables each set of four references gives the data sources for rotation velocities ($v$), luminosities ($L$), disk scale lengths ($R_0$) and HI gas mass (${\rm HI}$).
+
+As described in the Appendix, for ten of the galaxies (NGC 801, NGC 2998, NGC 5033, NGC 5055, NGC 5371, NGC 5533, NGC 5907, NGC 6674, UGC 2885 and ESO 1440040), we have also included the contribution of a central spherical bulge. For the HI gas we have modeled the gas profile as a single exponential disk with a scale length four times that of the optical disk. Also we have multiplied the overall HI gas contribution by 1.4 to account for primordial Helium. (When an HI gas mass was not available, the HI gas mass is listed as NA in the Tables.) In the fits the gas contribution is anyway never that significant. Specifically, in the HSB galaxies the mass in stars is much greater than the mass in gas, while in the LSB galaxies, neither the gas nor the stars are able to compete with the universal $\gamma_0$ and $\kappa$ terms. In the fits we followed the discussion in \cite{Sanders1996} and required that $M/L$ not be less than $0.2M_{\odot}/L_{\odot}$. In the Tables we have listed the fitted stellar mass to light ratios  ($M/L$) that we have obtained from our fitting,  with the $(M/L)_{\rm stars}$ values quoted in the Tables representing the total stellar disk plus bulge masses divided by the total blue galactic luminosity in those cases where we have included a galactic bulge.  In almost all cases the mass to light ratios that we obtain are reasonably close to the solar mass to light ratio, just as one would want.
+
+
+
+In those cases where optical scale lengths have been measured in many wavelengths, by and large we have used the scale lengths as measured in the longest available wavelength band (usually the $K$ band) and have systematically  done so for the entire 30 galaxy Ursa Major sample. For seven of the galaxies  (NGC 7137, UGC 477, ESO 0840411, ESO 1200211, ESO 13020120, ESO 3050090 and ESO 4880490) little or no surface photometry is available at all. As described in the Appendix, for these particular galaxies we have had to estimate scale lengths, with the sources for the scale lengths for these galaxies accordingly being listed as ES in the Tables.
+
+The place in our theory where there is the most sensitivity to parameters is in the adopted distances to the individual galaxies, since the parameters $\gamma^*$, $\gamma_0$ and $\kappa$ that appear in (\ref{E20}) are given as absolute quantities. To establish a common baseline for determining adopted distances, for all the galaxies in our sample we have used the distances listed in the NASA/IPAC Extragalactic Database (NED). In this database distances are obtained either via direct visual measurements (typically Cepheids or the Tully-Fisher relation) or indirectly via redshift measurements. For the directly determined distances a world average mean value and its one standard deviation uncertainty are listed. The redshift-based determinations depend on how one models both the peculiar velocity with respect to the Hubble flow of the Milky Way Galaxy and the peculiar velocity of the galaxy of interest. Five different such models are provided in the NED, and with each one giving a mean value and uncertainty, taken together the five determinations  and their uncertainties provide a spread in values.  For definitiveness, for redshift-based distance determinations we have opted to use the mean value associated with the galactocentric  distance determination. For our entire set of 110 galaxies there was only a handful of 11 galaxies for which using the visually-determined mean or the redshift-determined galactocentric mean did not immediately give a reasonable fit. For IC 2574, NGC 2403, NGC 3621, NGC 7793 and NGC 3109 we found it advantageous to use adopted distances up to one standard deviation above the NED mean, while for NGC 2841, DDO 170, NGC 5033 and NGC 5533 we allowed up to one standard deviation below the NED mean. (For NGC 2841 the adopted distance we used coincides with the one given by Cepheid data alone, with Tully-Fisher based determinations yielding a somewhat higher value.) For NGC 6674 and UGC 2885 we used the smallest allowed distance value within the redshift determined spread in values. Thus for no less than 99 of the galaxies in our sample our theory captured the essence of the rotation curve data using the NED preferred distances as is. And moreover, despite the fact that the sensitivity to adopted distance is the most pronounced in the 20 large galaxy sample, for only five of them (NGC 5033, NGC 2841, NGC 5533, NGC 6674 and UGC 2885) did we even need to consider not using the NED mean values as is. The fact that our fits work so well at the NED distances is thus a noteworthy achievement for our theory. In the Tables we have listed the specific adopted distances that we have used. 
+
+In regard to some specific galaxies within our 110 galaxy sample, we should note that we have some difficulty fitting NGC 7793, with the shape of its rotation curve not readily lending itself to a fit based on smooth functions. Since the HI data for this galaxy only go out to six optical disk scale lengths or so, the fits are very sensitive to any inner region structure that would not be modeled by a single exponential disk. For the galaxy NGC 3109 we should note that we followed \cite{Begeman1991} and scaled up the HI gas mass by a factor of 1.67 to allow for loss of flux in the original radio observations of the galaxy given in  \cite{Jobin1990}. Even with this rescaling, at the one standard deviation NED distance of 1.5 Mpc our fit still falls a little below the observed velocities at the largest radial distances. However, as noted in our earlier fit to this galaxy \cite{Mannheim1997}, the fit falls right on the data at the slightly larger adopted distance of 1.7 Mpc. For the galaxy NGC 4736 the surface brightness profile was found \cite{deBlok2008} to decompose into a two-disk structure, a small disk with scale length $0.3$ kpc  that is operative in the inner $80''=1.9$ kpc region where the first 13 of the 82 rotation curve data points reported in \cite{deBlok2008} are located, together with a large disk with scale length $2.1$ kpc scale length that is operative in the region greater than $80''$. For simplicity we opted not to truncate either of the two disks so that we could use (\ref{E5}) as is for each of them. In the fitting the inner region disk was found to have a fitted mass $0.708\times 10^{10}~M_{\odot}$, while the dominant primary disk was found to have a mass $1.630 \times 10^{10}~M_{\odot}$. In Table (1) the reported value for $(M/L)_{\rm stars}$ for this galaxy is the total stellar mass of the two disks combined divided by the total blue luminosity of the galaxy. The galaxy NGC 2976 is also reported to have a two-disk structure \cite{Simon2003}, with an effective $R_0=79''=1.4$ kpc in the less than $100''$ radial region and an effective $R_0=34''=0.6$ kpc in the greater than $100''$ radial region. With the rotation curve data of \cite{deBlok2008} ending at $147''$, and with  28 of the reported 42 rotation curve data points lying in the less than $100''$ region, for the fitting we have approximated the two disks by a single disk with a blended scale length $R_0=1.2$ kpc. The galaxy NGC 4826 is a highly unusual galaxy in which the inner 10 of the 89 rotation curve data points reported in \cite{deBlok2008} are counter-rotating with respect to the outer 79. With the two regions being well segregated (the inner points lie within $50''$ of the center of the galaxy while the outer region points lie beyond $130''$), we provide a fit to the 79 outer region points alone.
+
+
+Of the galaxies in the 20 large galaxy sample (the region were we are maximally sensitive to distance determinations) there were only three galaxies whose fitting we found challenging, viz. NGC 5533, NGC 6674 and UGC 2885, each a galaxy with a bulge. However, the fitting difficulties were mainly in the inner region where one has to make a bulge/disk decomposition of the luminosity, and not in the asymptotic region where the quadratic term contribution was still readily able to universally cancel the linear potential term contribution. Since the NED determination of the adopted distance for NGC 5533 is given as $47.7 \pm 5.7$ to one standard deviation (this being the spread obtained by using the Tully-Fisher distance determination method), we found that using $42.0$ Mpc as the adopted distance gave the tightest fit. For UGC 2885 and NGC 6674 only redshift-based NED adopted distances are available, and they are given as the respective ranges of $72.3$ to $86.9$ Mpc and $42.0$ to $57.0$ Mpc. For both of these galaxies again we found that the fitting preferred the smallest adopted distance values. For UGC 2885 there is quite a large variation reported in the literature for its disk scale length, and the one we found to work best was both the smallest one available and the one associated with the longest wavelength band available, namely the $K$ band value given in \cite{Kim2007}.  For NGC 5533 and NGC 6674 we recall \cite{Sanders1996} that NGC 5533 has significant side-to-side asymmetries and kinematic evidence for a warp, while NGC 6674 has a large scale non-axisymmetric structure and a substantial inner region bar \cite{Broeils1992}. Consequently we should not anticipate being able to do more than fit the general trend for these  two galaxies in the inner region. Nonetheless, none of these inner region luminosity structure issues affect the outer region where all the various luminous components consolidate to produce one effective $N^*$ in the asymptotic (\ref{E21}) that then readily controls the outer region. 
+
+In Figures (1) -- (5) we present  the rotational velocities with their quoted errors (in ${\rm km}~{\rm sec}^{-1}$) for all of the galaxies in the 110 galaxy sample as plotted as functions of radial distances from galactic centers (in ${\rm kpc}$). For each galaxy we have exhibited the contribution due to the luminous Newtonian term alone (dashed curve), the contribution from the two linear terms alone (dot dashed curve), the contribution from the two linear terms and the quadratic terms combined (dotted curve), with the full curve showing the total contribution. As we see, the tightly constrained (\ref{E20}) captures the essence of the data, and does so without needing any dark matter whatsoever. 
+
+One of the most interesting aspects  of the fits is that in the galaxies that go out to the largest radial distances the contribution of the linear potential (dot dashed curve) would actually lead to an overshoot of the data, but as the figures show this overshoot is completely arrested by the quadratic potential term (dotted curve). Since the quadratic term would eventually cause rotation velocities to fall, to illustrate the effect, for the very small DDO 154 and for the very large UGC 128  in Figure (6) we have plotted the expectation of our model over an extended distance range. The anticipated ultimate fall in rotation velocities is thus a significant falsifiable diagnostic of the theory presented here. As regards DDO 154, we should also note that there actually have been some suggestions of a possible fall in the literature. However, the small fall at the end of the rotation curve that had originally been reported in \cite{Carignan1989} is not apparent in the more recent THINGS survey of the galaxy. Additionally, in \cite{Hoffman1993} it was suggested that there might  be a fall in the rotation curve at radial distances beyond those currently available. (The authors are indebted to Dr. M.~Milgrom for alerting them to this reference.)  However, the fall discussed in \cite{Hoffman1993} is thought to set in well before the one predicted here.
+
+Of particular interest in the sample are the HSB galaxies NGC 3992, NGC 3198, NGC 2841 and UGC 2885, all four of which were also in the 20 large galaxy sample. While NGC 3992 is part of the Ursa Major cluster study, its NED distance of 25.6 Mpc puts it well beyond the 15.5 - 18.6 Mpc distance range that the Ursa Major cluster is thought to lie within, and yet even at this much larger distance our theory is still able to accommodate it. Both  the NGC 3198 and NGC 2841 galaxies were in the 11 galaxy sample considered in \cite{Mannheim1997}, and the rotation curves shown here are of precisely the same shape as they had been then. However, in the interim the adopted distances to both of these galaxies have been revised upwards by as much as 50 per cent.  With the linear term contribution to $v^2$ being of the form $\gamma_0 c^2R/2$, it is extremely sensitive to distance determinations since $\gamma_0$ is given in (\ref{E18}) as an absolute quantity. Consequently, as the figures show, the linear potential terms would now be requiring the NGC 3198 and NGC 2841 rotation curves to rise. That no rise is seen is due entirely to the quadratic term, with the currently observed flatness of these rotation curves being due to a natural interplay of all the various terms involved. 
+
+While the rotation curves of all of the galaxies in the sample are obtained from HI radio studies that extend beyond the optical disk region, the rotation curve of UGC 2885 had originally been obtained from HII optical studies \cite{Rubin1980} that were thus restricted to the optical disk region where hot stars can ionize hydrogen gas. Now even though the UGC 2885 HII rotation curve data were found to quickly rise to flat (to thereby immediately suggest a missing mass problem), because the optical disk is highly extended, within the optical disk it is actually possible to fit the UGC 2885 HII rotation curve data using only the Newtonian contributions of the luminous disk and bulge and visible HI gas, without the need to invoke dark matter or alternate gravity at all \cite{Kent1986}.  Such a fit would have to be a maximum disk fit in which the luminous disk $N^*$ is taken to be as large as it possibly can be in (\ref{E5}), with optical disk region flatness thus not necessarily being an indicator of any failure of the luminous Newtonian expectation. However, because the UGC 2885 optical disk region does go out so far (not relatively in disk scale lengths but absolutely in kpc), the inner region rotation curve is sensitive to the linear and quadratic terms in (\ref{E20}), and as is seen in our fit to UGC 2885, they force the normalization of the Newtonian disk term to be less than maximal, with the inner region UGC 2885 HII data indeed serving as an indicator of the failure of the luminous Newtonian expectation after all. 
+
+
+
+
+In total, our fits here and in \cite{Mannheim2010b} are noteworthy in that the universal $\gamma_0$ and $\kappa$ terms have no dependence on individual galactic properties whatsoever and yet have to work in every single case. Our fits are also noteworthy in that we have captured the essence of the rotation curve data even though we have imposed some rather strong constraints on the input parameters. Specifically, we have used NED mean distances, used the longest available wavelength disk scale lengths, and have taken gas scale lengths to be four times disk scale lengths. Moreover, we have not used actual surface brightness distributions or actual gas profiles but have treated these distributions simply as single exponentials. Additionally, we have not taken any bulge/disk decomposition uncertainties or galactic inclination angle uncertainties into consideration. On the theoretical side our fits are also noteworthy in that (\ref{E20}) is not simply a phenomenological or empirical formula that was extracted solely from consideration of the systematics of galactic rotation curves. Rather, (\ref{E20}) was explicitly derived from first principles in a fundamental, uniquely prescribed metric-based theory of gravity, namely conformal gravity. Moreover, conformal gravity  itself was not even advanced for the purposes of addressing the dark matter problem. Rather, before it was known what its static, spherically symmetric solutions might even look like, it was advanced by one of us \cite{Mannheim1990} simply because it had a symmetry that could control the cosmological constant. Our fitting is thus quite non-trivial.
+
+
+
+
+\section{General Comments}
+\label{s5}
+
+While beyond the scope of the present paper, we note that since the scale we find for $\kappa$ is of order $1/(100~{\rm Mpc})^2$, our work potentially has some interesting implications for clusters of galaxies. For clusters one can make measurements using either interior or exterior probes. The interior probe involves measuring cluster velocity dispersions, while the exterior probe involves measuring lensing by clusters. For the interior case we need to use (\ref{E10}) for points within the cluster, and for lensing we need to use (\ref{E9}) for points exterior to the cluster. Thus given the quadratic term,  a study of clusters could be instructive.
+
+It is of interest to compare our work with some other  alternate theories that have been proposed. Of them, two other non-dark-matter theories have also had success when applied to large samples of galaxies. One is the Modified Newtonian Dynamics (MOND) theory of Milgrom \cite{Milgrom1983}, and the other is the Metric Skew Tensor Gravity (MSTG) theory of Moffat \cite{Moffat2005}. In MOND one modifies the connection between acceleration and force by setting
+ %                                                                               
+\begin{equation}
+ \mu\left(\frac{a}{a_0}\right)\frac{v^2}{r}=\frac{d\phi}{dr}
+\label{E22}
+\end{equation}                                 
+%
+where $a=v^2/r$ is the ordinary centripetal acceleration, $d\phi/dr$ is the standard Newtonian gravitational force, and $\mu(a/a_0)$ is the modification as defined in terms of some new universal parameter $a_0$ with the dimensions of acceleration. Milgrom introduced this modification because of his empirical discovery that in all those cases where the standard Newtonian theory needed dark matter the measured centripetal accelerations were found to fall below a common value $a_0=1.2\times 10^{-8}~{\rm cm.sec}^{-2}$. Through use of the simple expression
+%                                                                               
+\begin{equation}
+\mu(x)= \frac{x}{(1+x^2)^{1/2}}
+\label{E23}
+\end{equation}                                 
+%
+for the function $\mu(x)$, Milgrom was able to construct a function that interpolated between standard Newton-Kepler behavior at $a \gg a_0$ and departures from it in the $a \ll a_0$ MOND regime where it led to asymptotically flat rotation velocities. In the years since Milgrom first introduced MOND many rotation curves of many different varieties of galaxy have been measured, and to a remarkable degree (see e.g. \cite{Begeman1991,Sanders1996,Sanders1998,deBlok1998,Sanders2002} and references therein) they have been successfully fitted by (\ref{E23}) without the need to include any dark matter at all. 
+
+In Moffat's MSTG theory a skew-symmetric tensor field is coupled to Einstein gravity, with the centripetal accelerations that result being given by the simple formula
+% 
+\begin{equation}
+\frac{v^2}{r}=\frac{GM}{r^2}\left\{1+\left(\frac{M_0}{M}\right)^{1/2}\left[1-\left(1+\frac{r}{r_0}\right)
+{\rm exp}\left(-\frac{r}{r_0}\right)\right]\right\}
+\label{E24}
+\end{equation} 
+%
+for a galaxy of mass $M$. In (\ref{E24}) the universal parameters $M_0$ and $r_0$ are given by $M_0=9.60\times 10^{11}M_{\odot}$ and $r_0=4.30\times 10^{22}~{\rm cm}$; and together they combine with Newton's constant $G$ to give a universal acceleration parameter $GM_0/r_0^2=6.90\times 10^{-8}~{\rm cm.sec}^{-2}$. In (\ref{E24}) the velocity obeys $v^2=GM/r$ for $r \ll r_0$ and obeys $v^2=GM[1+(M_0/M)^{1/2}]/r$ for $r \gg r_0$, to thus be Kepler in both limits, albeit  with different effective Newton constants. Via (\ref{E24}) successful fitting to a wide variety of galaxies has been obtained without dark matter \cite{Brownstein2006}.
+
+That conformal gravity, MOND and MSTG can all succeed in fitting the data is because not only does each one of them possess  a universal (i.e. galaxy independent) parameter with the dimensions of an inverse length (viz. $a_0/c^2=1.33\times 10^{-29}~{\rm cm}^{-1}$ for MOND, $G_0M_0/r_0^2c^2=7.67\times 10^{-29}~{\rm cm}^{-1}$ for MSTG, and $\gamma_0=3.06\times 10^{-30}~{\rm cm}^{-1}$ for conformal gravity), the data do too. Specifically, in the Tables we have listed the value of the quantity $v^2/c^2R_{\rm last}$ at the last data point for each of the galaxies in the sample. As we see, despite the huge variation in luminosity and central surface brightness across the sample, within one order of magnitude all the $v^2/c^2R_{\rm last}$ values cluster around a value of $3\times 10^{-30}~{\rm cm}^{-1}$ or so. Now different theories cannot agree for ever, and since (\ref{E20}), (\ref{E22}) and (\ref{E24}) predict differing behaviors at large $R$, study of rotation curves at large enough $R$ could enable us to distinguish between them. 
+
+As regards the near universality of $v^2/c^2R_{\rm last}$, we should note that this is an empirical property of the raw data themselves. Moreover, while there may be some uncertainties in the adopted distances to the galaxies, such uncertainties are never more than a factor of two or so. With the velocities being uncertain to no more than 10 to 20 per cent or so, the near universality of $v^2/c^2R_{\rm last}$ is thus a genuine property of the data. It should thus be regarded as an important empirical clue for galactic dynamics. 
+
+It is important to recognize that the fits provided by conformal gravity (and likewise by MOND and MSTG) are predictions. Specifically, for all these theories the only input one needs is the optical data, and the only free parameter is the $M/L$ ratio for each given galaxy, with rotation velocities then being determined. Moreover, the $M/L$  ratios are constrained by the need to not overshoot the data in the inner rotation curve region, and as the Tables show, are all by and large found to be of order the solar $M_{\odot}/L_{\odot}$ ratio, just as one would want. It is important to stress this point since dark matter fitting to galactic data works very differently. There one first needs to know the velocities so that one can then ascertain the needed amount of dark matter, i.e. in its current formulation dark matter is only a parametrization of the velocity discrepancies that are observed and is not a prediction of them. Dark matter theory has yet to develop to the point where it is able to predict rotation velocities given a knowledge of the luminous distribution alone (or explain the near universality found for $v^2/c^2R_{\rm last}$). Thus dark matter theories, and in particular those theories that produce dark matter halos in the early universe, are currently unable to make an a priori determination as to which halo is to go with which particular luminous matter distribution, and need to fine-tune halo parameters to luminous parameters galaxy by galaxy. (In the FNW CDM simulations \cite{Navarro1996} for instance, one finds generic spherical halo profiles close in form to $\sigma(r)=\sigma_0/[r(r+r_0)^2]$ (as then cut off at $cr_0$), but with the halo parameters needing to be fixed galaxy by galaxy.) No such fine-tuning shortcomings appear in conformal gravity, and if standard gravity is to be the correct  description of gravity, then a universal formula akin to the one given in (\ref{E20}) would need to be derived by dark matter theory. However, since our study establishes that global physics has an influence on local galactic motions, the invoking of dark matter in galaxies could potentially be nothing more than an attempt to describe global physics effects in purely local galactic terms.
+
+
+
+
+
+
+
+
+
+The authors wish to thank Dr.~J.~R.~Brownstein, Dr.~W.~J.~G.~ de Blok, Dr.~J.~W.~Moffat, and Dr.~ S.~S.~McGaugh for helpful communications, and especially for providing their galactic data bases. This research has made use of the NASA/IPAC Extragalactic Database (NED) which is operated by the Jet Propulsion Laboratory, California Institute of Technology, under contract with the National Aeronautics and Space Administration. 
+
+\appendix
+\setcounter{equation}{0}
+\def\theequation{A\arabic{equation}}
+
+\section{Galaxies with  Bulges or without Photometry}
+
+\subsection{Spherical Bulge Formalism}
+
+
+For a spherically symmetric matter distribution with radial matter number density $\sigma(r)$
+and $N=4\pi \int  dr^{\prime}r^{\prime 2}\sigma(r^{\prime})$ stars, as follows directly from (\ref{E8}) and (\ref{E10}) the rotational velocities associated with  the Newtonian and linear potentials are given by
+% 
+\begin{eqnarray}
+v^2_{\beta}(r)&=&{4\pi\beta^* c^2\over r}\int_0^r
+dr^{\prime}\sigma(r^{\prime}) r^{\prime 2},
+\nonumber\\
+v^2_{\gamma}(r)&=&{2\pi\gamma^* c^2\over 3r}\int_0^r
+dr^{\prime}\sigma(r^{\prime}) (3r^2r^{\prime 2}-r^{\prime 4})
++{4\pi\gamma^* c^2r^2\over 3}\int_r^{\infty} dr^{\prime}\sigma(r^{\prime})
+r^{\prime }.
+\label{A30}
+\end{eqnarray} 
+% 
+Ordinarily it is not the 3-dimensional $\sigma(r)$ which is directly
+measured in spherical astronomical systems. Rather, it is only the
+two-dimensional surface matter distribution $I(R)$ which is measured,
+with $\sigma(r)$ having to be extracted from it via an Abel transform
+% 
+\begin{equation}
+\sigma(r)=-{1 \over \pi} \int _r^{\infty} dR{ I^{\prime}(R) 
+\over (R^2-r^2)^{1/2}},\qquad
+I(R)=2\int _R^{\infty} dr {\sigma(r) r \over (r^2-R^2)^{1/2}}.
+\label{A31}
+\end{equation} 
+% 
+In terms of $I(R)$ the Newtonian integral in (\ref{A30}) can be rewritten as \cite{Kent1986}
+% 
+\begin{equation}
+v^2_{\beta}(r)={2 \pi \beta^* c^2\over r} \int_0^rdRRI(R) 
++{4 \beta^* c^2\over r}\int_r^{\infty}dRRI(R)
+\left[ {\rm arcsin} \left({r \over R} \right) -{r \over
+(R^2-r^2)^{1/2}}\right],
+\label{A36}
+\end{equation} 
+% 
+while the linear potential integral reduces to  \cite{Mannheim2006}
+% 
+\begin{eqnarray}
+v^2_{\gamma}(r)&=&
+{\gamma^* c^2 \pi \over 2r} \int_0^rdRRI(R)(2r^2-R^2)
+\nonumber\\
+&+&{\gamma^* c^2  \over r}\int_r^{\infty}dRRI(R)
+\left[ (2r^2-R^2){\rm arcsin} \left({r \over R} \right)
++r(R^2-r^2)^{1/2}\right].
+\label{A37}
+\end{eqnarray} 
+% 
+
+For the very convenient exponential surface density
+%
+\begin{equation}
+I(R)=\frac{N}{2\pi t^2}e^{-R/t}
+\label{B5}
+\end{equation}
+% 
+considered in \cite{Andredakis1994}, the Abel transform can be performed analytically, to yield
+%
+\begin{equation}
+\sigma(r)=\frac{N}{2\pi^2 t^3}K_0(r/t).
+\label{B6}
+\end{equation}
+% 
+For particles orbiting such a spherical bulge at radius $r$ we immediately obtain circular velocities of the form
+% 
+\begin{equation}
+v^2_{\beta}(r)={2 N\beta^* c^2\over \pi r} \int_0^{r/t}dz z^2K_0(z)
+\label{B7}
+\end{equation} 
+% 
+% 
+\begin{eqnarray}
+v^2_{\gamma}(r)&=&{N\gamma^* c^2 r\over \pi} \int_0^{r/t}dz z^2K_0(z)
+\nonumber\\
+&-&{ N\gamma^* c^2 t^2 \over 3 \pi r} \int_0^{r/t}dz z^4K_0(z)
++{2 N\gamma^* c^2 r^2 \over 3\pi t}\int_{r/t}^{\infty}dz zK_0(z)
+\nonumber\\
+&=&{N\gamma^* c^2 r\over \pi} \int_0^{r/t}dz z^2K_0(z)
+\nonumber\\
+&-&{ N\gamma^* c^2 t^2 \over 3 \pi r} \int_0^{r/t}dz z^4K_0(z)
++{2 N\gamma^* c^2 r^3 \over 3\pi t^2}K_1(r/t).
+\label{B8}
+\end{eqnarray} 
+%
+
+\subsection{Applications to Galaxies with Spherical Bulges}
+
+
+For the bulges of NGC 801, NGC 2998 and UGC 2885, at our adopted distances the respective values for the bulge scale length $t$ are   $0.9$ kpc, $0.9$ kpc, and $0.6$ kpc \cite{Andredakis1994},  for NGC 5371, NGC 5533 and NGC 6674, the respective values for $t$ are  $1.7$ kpc, $0.4$ kpc, and $0.9$ kpc \cite{Sanders1996}, while for ESO 0140040 the bulge scale length is  $1.36$ kpc \cite{Beijersbergen1999}.  For NGC 5033, NGC 5055 and NGC 5907 we determined respective best values of $t=1.23$ kpc, $t=1.0$ kpc and $t=1.84$ kpc from fitting the rotation curve themselves, though the fitting could equally well accommodate fairly broad ranges around these particular values, and could do so without in any way affecting the fitting in the outer rotation curve region. (The expression for $v^2_{\beta}(r)$ given in (\ref{B7}) peaks at around $r=2.7t$ and becomes Keplerian by about $r=5t$. Thus for all but the innermost of the points on the rotation curve, $v^2_{\beta}(r)$ acts just like a point Newtonian source at the center of the galaxy. Moreover, just like a linear potential point source, in the innermost region the contribution of the $v^2_{\gamma}(r)$ term given in (\ref{B8}) is negligible.) With these bulge scale length values we obtained  fitted bulge masses  for the 10 galaxies that are respectively given by  7.84, 1.94, 5.03, 2.38, 11.12, 10.44, 2.84, 9.75, 0.73, and 7.71 (in units of $10^{10}M_{\odot}$). While there may be some uncertainties in bulge/disk decompositions, these uncertainties only affect the inner rotation curve region and do not impact at all on the behavior of rotation curves at the largest radial distances where the missing mass problem is the most pronounced and where the linear and quadratic potential terms are dominant.
+
+\subsection{Treatment of Galaxies with no Photometry}
+
+For four of the galaxies in our sample (NGC 7137, UGC 477, ESO 0840411 and ESO 1200211) there appears to be no surface photometry reported in the literature, while for three of them (ESO 3020120, ESO 3050090 and ESO 4880490) there is only a minimal amount. In the absence of any surface brightness photometry our strategy is to assume that the surface brightness can be described as a disk with exponential $\Sigma(R)=\Sigma_0e^{-R/R_0}$, and simply do a fit to the rotation curve data using $R_0$ and $N^*$ as two free parameters. To constrain such fits we follow \cite{Sanders1996} and require that $M/L$ not be less than $0.2M_{\odot}/L_{\odot}$. Additionally, we require that $R_0$ be less than the measured value of $R_{\rm last}$ at the last data point. On imposing these constraints,  we will regard a fit as acceptable, though of course only indicative, if we can find a range of such constrained values of $R_0$ and $N^*$ for which the fitting is reasonable.  Interestingly, this prescription is found to work for all seven of the galaxies, with there being a range of allowed values in each case. In the Tables we present some typical fitted values within the allowed ranges for each of the seven galaxies,  and then use these values to generate the associated figures. Just as with the spherical bulges, we should note that none of these photometry concerns affect the outer region rotation curve fitting.
+
+To support the $R_0$ values that we obtained this way, we note that for three of the galaxies some limited surface brightness data actually are available. Specifically, in the ESO Lauberts-Valentijn Archive (as accessed at  http://archive.eso.org/wdb/wdb/eso/esolv/form) both a red band total apparent magnitude $m_{\rm T}$ and a red band mean  central surface brightness $\bar{m}_0$ (in magnitudes per square arc second) are listed for each of the ESO 3020120 and ESO 4880490 galaxies, while a red band mean central surface brightness is listed for ESO 3050090. The quantity $\bar{m}_0$ is not precisely the apparent central surface brightness $m_0$ itself, but rather the average apparent surface brightness in a 10 arc second circular aperture. If we nonetheless now approximate $m_0$ by $\bar{m}_0$, then from $2.5{\rm log}_{10}(2\pi R_0^2)=m_0-m_{\rm T}$ (a quantity that conveniently is not affected by extinction corrections) we can extract an approximate value for $R_0$ in arc seconds. Doing this is found to yield red band scale lengths $R_0({\rm ESO}~3020120)=13.5''$   and $R_0({\rm ESO}~4880490) =11.1''$, and thus $R_0({\rm ESO}~3020120)=4.6$ kpc and $R_0({\rm ESO}~4880490)=1.6$ kpc at the adopted distances listed in the Tables.  For ESO 3050090 only a blue band total apparent magnitude of $13.08$ is listed. Taking the red band total apparent magnitude to be equal  to 13.5, 13.0 and 12.5 (i.e. to be within 0.5 magnitudes of the blue band value, a reasonable enough expectation) respectively yield $R_0({\rm ESO}~3050090)=15.9''$, $R_0({\rm ESO}~3050090)=20.0''$ and $R_0({\rm ESO}~3050090)=25''$, with the $20''$ value corresponding to $R_0({\rm ESO}~3050090)=1.3$ kpc  at the adopted distance listed in the Tables. For all three of these galaxies then, the $R_0$ values nicely fall within the allowed ranges of values for $R_0$ that we found from fitting the rotation curves. 
+
+
+
+
+
+
+\subsection{Double-Counting in the Bulge-Disk Overlap Region}
+
+Since bulges and disks of spiral galaxies overlap in the galactic center region, there could be some double counting. A possible way to allow for this would be to truncate the bulge contribution so that it is only non-zero in the galactic center region, and another possibility would be to truncate the disk contribution so that it is only non-zero outside the galactic center region. We describe the formalism for doing this in the case where there are both Newtonian and linear potentials. However, for the bulge galaxies of interest to us in this paper, we found that neither of the two truncation procedures had any significant impact on the fits (mainly because only the closest-in rotation curve points could be affected by the bulge/disk decomposition in the first place), and only present the formalism here for reference purposes.
+
+For bulges the most straightforward truncation is of the form 
+%
+\begin{equation}
+\sigma(r,t_0)=\frac{N}{2\pi^2 t^3}K_0\left(\frac{r}{t}\right)\theta(t_0-r),
+\label{B9}
+\end{equation}
+%
+with the volume density being truncated at $r=t_0$. (We truncate $\sigma(r)$ rather than $I(R)$ with a delta function since as noted in \cite{Mannheim1996}, truncating $I(R)$ with a delta function would generate singularities in the Abel transform.) Given the truncated (\ref{B9}) the orbital velocities are then  given by
+% 
+\begin{equation}
+v^2_{\beta}(r<t_0)={2 N\beta^* c^2\over \pi r} \int_0^{r/t}dz z^2K_0(z),\qquad
+v^2_{\beta}(r>t_0)={2 N\beta^* c^2\over \pi r} \int_0^{t_0/t}dz z^2K_0(z)
+\label{B10}
+\end{equation} 
+% 
+% 
+\begin{eqnarray}
+v^2_{\gamma}(r<t_0)&=&{N\gamma^* c^2 r\over \pi} \int_0^{r/t}dz z^2K_0(z)
+\nonumber\\
+&-&{ N\gamma^* c^2 t^2 \over 3 \pi r} \int_0^{r/t}dz z^4K_0(z)
++{2 N\gamma^* c^2 r^2 \over 3\pi t^2}\left[rK_1\left(\frac{r}{t}\right)-t_0K_1\left(\frac{t_0}{t}\right)\right],
+\nonumber\\
+v^2_{\gamma}(r>t_0)&=&{N\gamma^* c^2 r\over \pi} \int_0^{t_0/t}dz z^2K_0(z)
+-{N\gamma^* c^2 t^2 \over 3 \pi r} \int_0^{t_0/t}dz z^4K_0(z).
+\label{B11}
+\end{eqnarray} 
+%
+
+For disks the most straightforward truncation is to truncate the surface density according to $\Sigma(R)\theta(R-s_0)$ so that it starts at some minimum value $s_0$ near to the galactic center. Following the procedure described in \cite{Mannheim2006} for the arbitrary $\Sigma(R)$, we find that for a truncated $\Sigma(R)$ the Newtonian potential contribution is given by
+% 
+\begin{eqnarray}
+V_{\beta}(R)&=&-2 \pi \beta^* c^2\int_0^{\infty}dk\int_{s_0}^{\infty}dR^{\prime}R^{\prime}\Sigma(R^{\prime})J_0(kR^{\prime})J_0(kR)
+\nonumber\\
+&=&-2 \pi \beta^* c^2\int_0^{\infty}dk\int_{0}^{\infty}dR^{\prime}R^{\prime}\Sigma(R^{\prime})J_0(kR^{\prime})J_0(kR)
+\nonumber\\
+&&+2 \pi \beta^* c^2\int_0^{\infty}dk\int_{0}^{s_0}dR^{\prime}R^{\prime}\Sigma(R^{\prime})J_0(kR^{\prime})J_0(kR)
+\label{B12}
+\end{eqnarray} 
+% 
+For an exponential disk  with $\Sigma(R)=\Sigma_0e^{-R/R_0}$ (and thus a truncated number of stars $N^*_{\rm TR}=2\pi\Sigma_0(R_0^2+s_0R_0)e^{-s_0/R_0}$ in the $R>s_0$ region), the first of the last two integrals in (\ref{B12}) can be done analytically (and leads to the Newtonian term given in (\ref{E5})). However, the $dk$ integration range in the second of the last two integrals in (\ref{B12}) has to be broken into two separate $R<R^{\prime}$, $R>R^{\prime}$ regions. But when $s_0$ is less than the positions $R$ of the points of interest for the rotation curves (as would typically be the case) we only need the $R>R^{\prime}$ region,  with (\ref{B12}) then simplifying to
+%
+\begin{eqnarray}
+V_{\beta}(R>s_0)&=&-\pi \Sigma_0 \beta^*c^2 R\left[I_0\left(\frac{R}{2R_0}
+\right)K_1\left(\frac{R}{2R_0}\right)-
+I_1\left(\frac{R}{2R_0}\right)
+K_0\left(\frac{R}{2R_0}\right)\right]
+\nonumber\\
+&+&\frac{4 \Sigma_0\beta^* c^2}{R}\int_0^{s_0}dR^{\prime}R^{\prime}e^{-R^{\prime}/R_0}{\bf K}\left(\frac{R^{\prime 2}}{R^2}\right),
+\label{B13}
+\end{eqnarray} 
+%
+where ${\bf K}(x^2)=\int_0^{\pi/2}dy(1-x^2{\rm sin}^2y)^{-1/2}$ is the complete elliptic integral of the first kind. Finally, on differentiating (\ref{B13}) with respect to $R$ and recalling that
+%
+\begin{equation}
+\frac{d{\bf K}(x^2)}{dx}=\frac{{\bf E}(x^2)-(1-x^2){\bf K}(x^2)}{x(1-x^2)}
+\label{B14}
+\end{equation}
+%
+where  ${\bf E}(x^2)=\int_0^{\pi/2}dy(1-x^2{\rm sin}^2y)^{1/2}$ is the complete elliptic integral of the second kind, we then obtain for the Newtonian contribution to the orbital velocities
+%
+\begin{eqnarray}
+v^2_{\beta}(R > s_0)&=&\frac{\pi \Sigma_0 \beta^*c^2 R^2}{R_0}\left[I_0\left(\frac{R}{2R_0}
+\right)K_0\left(\frac{R}{2R_0}\right)-
+I_1\left(\frac{R}{2R_0}\right)
+K_1\left(\frac{R}{2R_0}\right)\right]
+\nonumber\\
+&-&\frac{4 \Sigma_0\beta^* c^2}{R}\int_0^{s_0}dR^{\prime}R^{\prime }e^{-R^{\prime}/R_0}\left[\frac{{\bf E}(x^2)}{(1-x^2)}\right]_{x=R^{\prime }/R}.
+\label{B15}
+\end{eqnarray} 
+%
+
+
+Similarly, again following \cite{Mannheim2006}, for the linear potential contribution we obtain the general
+% 
+\begin{eqnarray}
+V_{\gamma}(R)&=& \pi \gamma^* c^2\int_0^{\infty}dk\int_{s_0}^{\infty}dR^{\prime}R^{\prime}\Sigma(R^{\prime})\left[(R^2+R^{\prime 2})J_0(kR^{\prime})J_0(kR)
+-2RR^{\prime}J_1(kR^{\prime})J_1(kR)\right]
+\nonumber\\
+&=&\pi \gamma^* c^2\int_0^{\infty}dk\int_{0}^{\infty}dR^{\prime}R^{\prime}\Sigma(R^{\prime})\left[(R^2+R^{\prime 2})J_0(kR^{\prime})J_0(kR)
+-2RR^{\prime}J_1(kR^{\prime})J_1(kR)\right]
+\nonumber\\
+&-&\pi \gamma^* c^2\int_0^{\infty}dk\int_{0}^{s_0}dR^{\prime}R^{\prime}\Sigma(R^{\prime})\left[(R^2+R^{\prime 2})J_0(kR^{\prime})J_0(kR)
+-2RR^{\prime}J_1(kR^{\prime})J_1(kR)\right].
+\nonumber\\
+\label{B16}
+\end{eqnarray} 
+% 
+Thus for a truncated exponential disk we obtain
+% 
+\begin{eqnarray}
+V_{\gamma}(R>s_0)&=& \pi \Sigma_0 \gamma^*c^2 RR_0^2\left[I_0\left(\frac{R}{2R_0}
+\right)K_1\left(\frac{R}{2R_0}\right)-
+I_1\left(\frac{R}{2R_0}\right)
+K_0\left(\frac{R}{2R_0}\right)\right]
+\nonumber\\
+&+& \frac{\pi \Sigma_0 \gamma^*c^2 R^2R_0}{2}\left[I_0\left(\frac{R}{2R_0}
+\right)K_0\left(\frac{R}{2R_0}\right)+
+I_1\left(\frac{R}{2R_0}\right)
+K_1\left(\frac{R}{2R_0}\right)\right]
+\nonumber\\
+&-&2 \Sigma_0\gamma^* c^2\int_{0}^{s_0}dR^{\prime}R^{\prime}e^{-R^{\prime}/R_0}\left[\frac{(R^{\prime 2}-R^2)}{R}{\bf K}\left(\frac{R^{\prime 2}}{R^2}\right)
++2R{\bf E}\left(\frac{R^{\prime 2}}{R^2}\right)\right]
+\label{B17}
+\end{eqnarray} 
+% 
+for points with $R>s_0$. Finally, on differentiating (\ref{B17}) with respect to $R$ and recalling that
+%
+\begin{equation}
+\frac{d{\bf E}(x^2)}{dx}=\frac{{\bf E}(x^2)-{\bf K}(x^2)}{x},
+\label{B18}
+\end{equation}
+%
+we then obtain for the linear potential contribution to the orbital velocities
+% 
+\begin{eqnarray}
+v^2_{\gamma}(R>s_0)&=& \pi \Sigma_0 \gamma^*c^2 R^2R_0I_1\left(\frac{R}{2R_0}
+\right)K_1\left(\frac{R}{2R_0}\right)
+\nonumber\\
+&-&2 \Sigma_0\gamma^* c^2R\int_{0}^{s_0}dR^{\prime}R^{\prime}e^{-R^{\prime}/R_0}
+\left[{\bf E}(x^2)\right]_{x=R^{\prime }/R}.
+\label{B19}
+\end{eqnarray} 
+% 
+
+For most cases of interest the disk scale length $R_0$ will typically be much larger than the truncation point $s_0$, with the $e^{-R^{\prime}/R_0}$ term thus being very close to one in the integration ranges needed for both (\ref{B15}) and (\ref{B19}). Then, when we do approximate the $e^{-R^{\prime}/R_0}$ term to one, the integrals in (\ref{B15}) and (\ref{B19}) can be done analytically, and yield the simple and convenient expressions
+%
+\begin{eqnarray}
+v^2_{\beta}(R > s_0)&=&\frac{\pi \Sigma_0 \beta^*c^2 R^2}{R_0}\left[I_0\left(\frac{R}{2R_0}
+\right)K_0\left(\frac{R}{2R_0}\right)-
+I_1\left(\frac{R}{2R_0}\right)
+K_1\left(\frac{R}{2R_0}\right)\right]
+\nonumber\\
+&-&4 \Sigma_0\beta^* c^2R\left[{\bf K}(x^2)-{\bf E}(x^2)\right]_{x=s_0/R},
+\label{B20}
+\end{eqnarray} 
+%
+% 
+\begin{eqnarray}
+v^2_{\gamma}(R>s_0)&=& \pi \Sigma_0 \gamma^*c^2 R^2R_0I_1\left(\frac{R}{2R_0}
+\right)K_1\left(\frac{R}{2R_0}\right)
+\nonumber\\
+&-&\frac{2 \Sigma_0\gamma^* c^2R^3}{3}
+\left[(1+x^2){\bf E}(x^2)-(1-x^2){\bf K}(x^2)\right]_{x=s_0/R}.
+\label{B21}
+\end{eqnarray} 
+% 
+
+
+
+
+
+\begin{thebibliography}{}
+
+
+
+\bibitem{Mannheim2006} P.~D.~Mannheim,~Prog.~Part.~Nucl.~Phys.~{\bf 56},~340~(2006). 
+
+\bibitem{Mannheim2009} P.~D.~Mannheim,~{\it Comprehensive solution to the cosmological constant, zero-point energy, and quantum gravity problems}, September 2009 (arXiv:0909.0212 [hep-th]). Gen.~Rev.~Gravit.~in press.
+
+\bibitem{Mannheim2010a} P.~D.~Mannheim,~{\it Intrinsically quantum-mechanical gravity and the cosmological constant problem}, May 2010 (arXiv:1005.5108 [hep-th]). 
+
+\bibitem{Mannheim1989} P.~D.~Mannheim and D.~Kazanas,~Ap.~J.~{\bf 342}, 635 (1989).
+
+\bibitem{Mannheim1994} P.~D.~Mannheim and D.~Kazanas,~Gen.~Rel.~Gravit.~{\bf 26}, 337 (1994).
+
+\bibitem{Mannheim1992} P.~D.~Mannheim,~Ap.~J.~{\bf 391}, 429 (1992). 
+
+
+
+
+\bibitem{Vareschi2010} G.~U.~Varieschi, Gen.~Rel. Gravit,~{\bf 42}, 929 (2010).
+
+
+\bibitem{Mannheim1997} P.~D.~Mannheim,~Ap.~J.~{\bf 479}, 659 (1997).
+
+\bibitem{Mannheim2010b} P.~D.~Mannheim and J.~G.~O'Brien,~{\it Impact of a global quadratic potential on galactic rotation curves}, July 2010 (arXiv:1007.0970v1  [astro-ph.CO]). 
+
+
+
+\bibitem{deBlok2008} W.~J.~G.~de Blok, F.~Walter, E.~Brinks, C.~Trachternach, S.-H.~Oh, and R.~C.~Kennicutt,~A.~J.~{\bf 136}, 2648 (2008).
+
+\bibitem{Walter2008} F.~Walter, E.~Brinks, W.~J.~G.~de Blok, F.~Bigiel, R.~C.~Kennicutt, M.~D.~Thornley, and A.~Leroy, A.~J.~{\bf 136},  2563 (2008).
+
+\bibitem{Leroy2008} A.~K.~Leroy, F.~Walter, E.~Brinks, F.~Bigiel, W.~J.~G.~de Blok, B.~Madore, and M.~D.~Thornley, A.~J.~{\bf 136},  2782 (2008).
+
+
+
+\bibitem{Pasquali2008} A.~Pasquali, A.~Leroy, H.-W.~Rix, F.~Walter, T.~Herbst, E.~Giallongo, R.~Ragazzoni, A.~Baruffolo, R.~Speziali, J.~Hill, G.~Beccari, N.~Bouche, P.~Buschkamp, C.~Kochanek, E.~Skillman, and J.~Bechtold, Ap.~J.~{\bf  687}, 1004 (2008).
+
+\bibitem{Wevers1986} B.~M.~H.~R.~Wevers, P.~C.~van der Kruit and R.~J.~Allen,  A.~A.~Suppl.~Ser.~{\bf  66}, 505 (1986).
+
+\bibitem{Begeman1987} K.~G.~Begeman, Ph.~D.~Dissertation, Rijksuniversiteit Groningen (1987).
+
+\bibitem{Simon2003} J.~D.~Simon, A.~D.~Bolatto, A.~Leroy and L.~Blitz, Ap.~J.~{\bf 596}, 957 (2003).
+
+\bibitem{Murphy2008} E.~J.~Murphy, G.~Helou, J.~D.~P.~Kenney, L.~Armus and R.~Braun, 
+Ap.~J.~{\bf 678}, 828 (2008).
+
+\bibitem{Regan2006} M.~W.~Regan, M~D.~Thornley, S.~N.~Vogel, K.~Sheth, B.~T.~Draine,
+D.~J.~Hollenbach, M.~Meyer, D.~A. Dale, C.~W.~Engelbracht,
+R.~C.~Kennicutt, L.~Armus, B.~Buckalew, D.~Calzetti,
+K.~D.~Gordon, G.~Helou, C.~Leitherer, S.~Malhotra,
+E.~Murphy, G.~H.~Rieke, M.~J.~Rieke and J.~D.~Smith, Ap.~J.~{\bf 652}, 1112 (2006).
+
+
+
+
+
+\bibitem{Verheijen2001} M.~A.~W.~Verheijen and R.~ Sancisi, A.~A.~{\bf  370}, 765 (2001).
+
+\bibitem{Sanders1998} R.~H.~Sanders and M.~A.~W.~Verheijen, Ap.~J.~{\bf 503}, 97 (1998).
+
+
+\bibitem{Tully1997a} R.~B.~Tully, M.~A.~W.~Verheijen, M.~J.~Pierce, J.-S.~Huang and R.~J.~ Wainscoat, A.~J.~{\bf 112},  2471 (1996).
+
+\bibitem{Tully1997b}  R.~B.~Tully and M.~A.~W.~Verheijen, Ap.~J.~{\bf 484}, 145 (1997).
+
+
+
+
+
+\bibitem{Kuzio2008} R.~Kuzio de Naray, S.~S.~McGaugh and  W.~J.~G.~de Blok, Ap.~J.~{\bf 676}, 920 (2008).
+
+\bibitem{deBlok2002} W.~J.~G.~de Blok and A.~Bosma, A.~A.~{\bf 385}, 816 (2002).
+
+\bibitem{Stil2002} J.~M.~Stil and F.~P.~Israel, A.~A. {\bf  389}, 29 (2002).
+
+\bibitem{Kuzio2006} R.~Kuzio de Naray, S.~S.~McGaugh, W.~J.~G.~de Blok and A.~Bosma, Ap.~J.~Suppl.~Ser.~{\bf 165}, 461 (2006).
+
+
+
+\bibitem{deBlok1997} W.~J.~G.~de Blok and S.~S.~McGaugh, Mon.~Not.~R.~Astron.~Soc.~{\bf 290}, 533 (1997).
+
+\bibitem{deBlok1996} W.~J.~G.~de Blok, S.~S.~McGaugh and J.~M.~van der Hulst,
+Mon.~Not.~R.~Astron.~Soc.~{\bf 283}, 18 (1996).
+
+\bibitem{Fisher1981} J.~R.~Fisher and R.~B.~Tully, Ap.~J.~Suppl.~Ser. {\bf 47}, 139 (1981).
+
+
+
+
+\bibitem{Esipov1991}  V.~F.~Esipov, G.~A.~Kyazumov and A.~R.~Dzhafarov,  Sov.~Astr.~(tr.~Astron.~Zh.) {\bf 35}, 452 (1991).
+
+\bibitem{Swaters2002a} R.~A.~Swaters, T.~S.~van Albada, J.~M.~van der Hulst and R.~ Sancisi,
+A.~A.~{\bf 390}, 829 (2002); 
+
+
+
+\bibitem{Bieging1977} J.~H.~Bieging and P.~Biermann, A.~A.~{\bf 60}, 361(1977).
+
+
+
+
+
+\bibitem{Verheijen1999} M.~A.~W.~Verheijen and  W.~J.~G.~de Blok, As.~Sp.~Sc.~{\bf 269-270}, 673 (1999).
+
+\bibitem{vanderHulst1993} J.~M.~van der Hulst, E.~D.~Skillman, T.~R.~Smith, G.~D.~Bothun, S.~S.~McGaugh, and W.~J.~G.~de Blok, A.~J.~{\bf 106}, 548 (1993).
+
+\bibitem{vanZee2000}  L.~van Zee, A.~J.~{\bf 119}, 2757 (2000).
+
+
+
+\bibitem{vanZee1997}  L.~van Zee, M.~P.~Haynes, J.~J.~Salzer and A.~H.~Broeils, A.~J.~{\bf 113}, 1618 (1997).
+
+\bibitem{Swaters2002b} R.~A.~Swaters and M.~Balcells, A.~A.~{\bf 390}, 863 (2002). 
+
+
+\bibitem{deJong1996} R.~S.~de Jong, A.~A.~Suppl.~Ser.~{\bf 118}, 557 (1996).
+
+\bibitem{Kim2007} J.~H.~Kim, Ph.~D.~Dissertation, University of Maryland, 2007. 
+
+
+\bibitem{McGaugh2001} S.~S.~McGaugh, V.~C.~Rubin and W.~J.~G.~de Blok, A.~J.~{\bf 122}, 2381 (2001).
+
+\bibitem{deBlok2001}  W.~J.~G.~de Blok, S.~S.~McGaugh and V.~C.~Rubin, A.~J.~{\bf 122}, 2396 (2001).
+
+\bibitem{Beijersbergen1999} M.~Beijersbergen, W.~J.~G.~de Blok and J.~M.~van der Hulst, A.~A.~{\bf 351}, 903 (1999).
+
+\bibitem{Bell2000} E.~F.~Bell, D.~Barnaby, R.~G.~Bower, R.~S.~de Jong,
+D.~A.~Harper,  M.~Hereld, R.~F.~Loewenstein and B.~J.~Rauscher, Mon.~Not.~R.~Astron.~Soc.~{\bf 312}, 470 (2000).
+
+
+\bibitem{Bazarra2001} F.~D.~Barazza, B.~Binggeli and P.~Prugniel, A.~A.~{\bf 373},
+12 (2001).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\bibitem{Broeils1992} A.~H.~Broeils,  Ph.~D.~Dissertation, Rijksuniversiteit Groningen (1992).
+
+\bibitem{Lake1990} G.~Lake, R.~A.~Schommer and J.~H.~van Gorkom, A.~J.~{\bf 99}, 547 (1990).
+
+\bibitem{Rhee1996} M.-H.~Rhee, Ph.~D.~Dissertation, Rijksuniversiteit Groningen (1996).
+
+\bibitem{Kent1987b} S.~M.~Kent, A.~J.~{\bf 94}, 306 (1987).
+
+
+\bibitem{Puche1991} D.~Puche, C.~Carignan and R.~J.~Wainscoat,  A.~J.~{\bf 101},
+447 (1991).
+
+\bibitem{Carignan1990} C.~Carignan and D. Puche, A.~J.~{\bf 100}, 641 (1990).
+
+\bibitem{Carignan1985a} C.~Carignan, Ap.~J.~Suppl.~Ser.~{\bf  58}, 107 (1985).
+
+
+\bibitem{Puche1990} D.~Puche, C.~Carignan and A.~Bosma,  A.~J.~{\bf 100}, 1468 (1990).
+
+\bibitem{Kent1986} S.~M.~Kent, A.~J.~{\bf 91}, 1301 (1986).
+
+\bibitem{Broeils1991} A.~H.~Broeils and J.~H.~Knapen, A.~A.~Suppl.~Ser.~{\bf  91}, 469 (1991).
+
+\bibitem{Sanders1996} R.~H.~Sanders, Ap.~J.~{\bf 473}, 117 (1996).
+
+
+
+
+\bibitem{Casertano1991} S.~Casertano and J.~H.~van Gorkom,  A.~J. {\bf 101}, 1231 (1991).
+
+
+\bibitem{Kent1985} S.~M.~Kent, Ap.~J.~Suppl.~Ser.~{\bf 59}, 115 (1985).
+
+\bibitem{Jobin1990} M.~Jobin and C.~Carrignan, A.~J.~{\bf 100}, 648 (1990).
+
+\bibitem{Carignan1985b} C.~Carignan, Ap.~J.~{\bf  299}, 59 (1985).
+
+
+
+
+
+\bibitem{Cote1991} S.~Cote, C.~Carignan and R.~Sancisi, A.~J.~ {\bf 102}, 904 (1991).
+
+
+
+\bibitem{Barnaby1994} D.~Barnaby and H.~A.~Thronson, A.~J.~{\bf 107}, 1717 (1994).
+
+\bibitem{Carignan1988} C.~Carignan, R.~Sancisi and  T.~S.~van Albada, A.~J.~{\bf 95}, 37 (1988).
+
+\bibitem{Kent1987a} S.~M.~Kent, A.~J.~{\bf 93}, 816 (1987).
+
+\bibitem{Roelfsema1985} P.~R.~Roelfsema and R~J.~Allen, A.~A.~{\bf 146}, 213 (1985).
+
+\bibitem{Begeman1991} K.~G.~Begeman, A.~H.~Broeils  and R.~H.~Sanders, Mon.~Not.~R.~Astron.~Soc.~ {\bf 249}, 523 (1991).
+
+\bibitem{Carignan1989} C.~Carignan and  S.~Beaulieu, Ap.~J.~{\bf 347}, 760 (1989).
+
+	
+\bibitem{Hoffman1993} G.~L.~Hoffman, N.~Y.~Lu, E.~E.~Salpeter, B.~Farhat, C.~Lamphier and T.~Roos,  A.~J.~{\bf 106},  39 (1993).
+
+
+
+\bibitem{Rubin1980} V.~C.~Rubin,~W.~K.~Ford, and N.~Thonnard,~Ap.~J.~ {\bf 238},  471 (1980); 
+
+
+
+
+
+\bibitem{Mannheim1990} P.~D.~Mannheim,~Gen.~Rel.~Gravit.~{\bf 22}, 289 (1990).
+
+
+
+\bibitem{Milgrom1983} M.~Milgrom,~Ap.~J.~ {\bf 270}, 365, 371, 384 (1983).
+
+
+
+
+
+\bibitem{Moffat2005} J.~W.~Moffat, J.~Cos.~Ast.~Phys.~{\bf 05},~003 (2005);~{\bf 03},~004 (2006).
+
+
+
+
+
+\bibitem{deBlok1998} W.~J.~G.~de Blok and S.~S.~McGaugh, Ap.~J.~{\bf 508}, 132 (1998).
+
+\bibitem{Sanders2002} R.~H.~Sanders and S.~S.~McGaugh, Ann.~Rev.~Astron.~Ap. {\bf 40}, 263 (2002).
+
+
+\bibitem{Brownstein2006} J.~R.~Brownstein and  J.~W.~Moffat,~Ap.~J.~{\bf 636}, 721 (2006).
+
+\bibitem{Navarro1996} J. F. Navarro, C. S. Frenk and S. D. M. White,~Ap.~J.~{\bf 462}, 563 (1996); {\bf 490}, 493 (1997).
+
+
+\bibitem{Andredakis1994} Y.~C.~Andredakis and R.~H.~Sanders,~Mon.~Not.~R.~Astron.~Soc.~{\bf 267}, 283 (1994).
+
+
+
+
+
+
+
+\bibitem{Mannheim1996} P.~D.~Mannheim,~{\it Linear potentials in galaxies and clusters of galaxies},~astro-ph/9504022,~April~1995.
+
+
+
+
+
+\end{thebibliography}{}
+
+\vfill\eject
+
+\hoffset=-0.5in
+
+\begin{table}
+\caption{Properties of the THINGS 18 Galaxy Sample}
+\centering
+\begin{tabular}{l c c c c c c c c c c} 
+\hline\hline
+ \phantom{00}Galaxy  & \phantom{0}Type \phantom{0}&Distance  & $L_{\rm  B}$ & $R_0$  & $R_{\rm last} $ &  $M_{\rm HI} $ & $M_{\rm disk}$ &  $ 
+(M/L) _{\rm stars}$ & $v^2 / c^2 R_{\rm last}$ & Data~Sources \\  
+& &  (Mpc)  &  $(10^{10}{\rm L}_{\odot})$&(kpc) & (kpc) & {$(10^{10} M_\odot)$} & {$(10^{10}
+M_\odot)$} & ({$M_{\odot}/L_{\odot}$}) & {$(10^{-30}\texttt{cm}^{-1})$} & $v~~~~L~~~R_0~~{\rm HI}$\\
+\hline
+DDO 0154 &LSB& \phantom{0}4.2 &   0.007   & 0.8 & \phantom{0}8.1 & 0.03  &
+\phantom{0}0.003 & 0.45 & \phantom{0}1.12&\cite{deBlok2008} \cite{Walter2008}  \cite{Leroy2008}  \cite{Walter2008}  
+\\
+\phantom{NI}IC 2574 &LSB & \phantom{0}4.5  &  0.345    &4.2 & 13.1 &0.19 &
+\phantom{0}0.098 & 0.28 &\phantom{0}1.69&\cite{deBlok2008} \cite{Walter2008} \cite{Pasquali2008} \cite{Walter2008}   
+\\
+NGC 0925 &LSB& \phantom{0}8.7 &   1.444   & 3.9 & 12.4 & 0.41 & \phantom{0}1.372 & 0.95
+&\phantom{0}4.17&\cite{deBlok2008} \cite{Walter2008} \cite{Leroy2008} \cite{Walter2008}    
+ \\
+NGC 2403 & HSB &\phantom{0}4.3 &  1.647    & 2.7 & 23.9 & 0.46 & \phantom{0}2.370 &1.44 & \phantom{0}2.89&\cite{deBlok2008} \cite{Walter2008} \cite{Wevers1986} \cite{Walter2008}
+\\
+NGC 2841 &HSB& 14.1 &  4.742    & 3.5 & 51.6 & 0.86 & 19.552 & 4.12& \phantom{0}5.83&\cite{deBlok2008} \cite{Walter2008} \cite{Begeman1987} \cite{Walter2008}  
+\\
+NGC 2903 &HSB& \phantom{0}9.4 &  4.088    &  3.0 & 30.9 & 0.49 & \phantom{0}7.155 &
+1.75 &\phantom{0}3.75&\cite{deBlok2008} \cite{Walter2008} \cite{Wevers1986} \cite{Walter2008}
+\\
+NGC 2976 &LSB& \phantom{0}3.6 &  0.201   & 1.2 & \phantom{0}2.6 & 0.01 &
+\phantom{0}0.322 &1.60&10.43&\cite{deBlok2008} \cite{Walter2008} \cite{Simon2003} \cite{Walter2008}     
+\\
+NGC 3031 &HSB& \phantom{0}3.7 &   3.187  & 2.6 & 15.0 & 0.38 & \phantom{0}8.662 & 2.72
+&\phantom{0}9.31&\cite{deBlok2008} \cite{Walter2008} \cite{Murphy2008} \cite{Walter2008}
+\\
+NGC 3198 &HSB& 14.1 &   3.241   & 4.0 & 38.6 & 1.06 & \phantom{0}3.644 &1.12& \phantom{0}2.09&\cite{deBlok2008} \cite{Walter2008} \cite{Wevers1986} \cite{Walter2008}  
+\\
+NGC 3521 &HSB& 12.2&   4.769  & 3.3 & 35.3 & 1.03 & \phantom{0}9.245 & 1.94
+&\phantom{0}4.21&\cite{deBlok2008} \cite{Walter2008} \cite{Leroy2008} \cite{Walter2008}   
+\\
+NGC 3621 &HSB& \phantom{0}7.4 &   2.048   & 2.9 & 28.7 & 0.89 & \phantom{0}2.891 & 1.41
+&\phantom{0}3.18&\cite{deBlok2008} \cite{Walter2008} \cite{deBlok2008} \cite{Walter2008}
+\\
+NGC 3627 &HSB&10.2 &  3.700    & 3.1 &\phantom{0}8.2 & 0.10 & \phantom{0}6.622 & 1.79 &
+15.64&\cite{deBlok2008} \cite{Walter2008} \cite{Leroy2008} \cite{Walter2008}    
+\\
+NGC 4736 &HSB&\phantom{0}5.0 &    1.460  & 2.1 & 10.3 & 0.05 & \phantom{0}1.630 & 1.60
+&\phantom{0}4.66&\cite{deBlok2008} \cite{Walter2008} \cite{deBlok2008} \cite{Walter2008}   
+\\
+NGC 4826 &HSB& \phantom{0}5.4 &   1.441   & 2.6 & 15.8 & 0.03 & \phantom{0}3.640 & 2.53
+&\phantom{1}5.46&\cite{deBlok2008} \cite{Walter2008} \cite{Regan2006} \cite{Walter2008}
+\\
+NGC 5055 &HSB& \phantom{0}9.2&  3.622    &2.9 & 44.4 &0.76& \phantom{0}6.035 & 1.87& 
+\phantom{0}2.36&\cite{deBlok2008} \cite{Walter2008} \cite{Leroy2008} \cite{Walter2008}   
+\\
+NGC 6946 &HSB& \phantom{0}6.9 & 3.732     & 2.9 & 22.4 & 0.57 & \phantom{0}6.272 &
+1.68&\phantom{0}6.39 &\cite{deBlok2008} \cite{Walter2008} \cite{Leroy2008} \cite{Walter2008}   
+\\
+NGC 7331 &HSB& 14.2 &  6.773    & 3.2 & 24.4 & 0.85 & 12.086 & 1.78&\phantom{0}9.61&\cite{deBlok2008} \cite{Walter2008} \cite{Leroy2008} \cite{Walter2008}   
+\\
+NGC 7793 &HSB& \phantom{0}5.2 &   0.910   & 1.7 & 10.3 & 0.16 &\phantom{0}0.793 & 0.87
+&\phantom{1}3.61 &\cite{deBlok2008} \cite{Walter2008} \cite{Leroy2008} \cite{Walter2008} 
+\\
+\hline
+\end{tabular}
+\label{table:things}
+\end{table}
+
+
+
+
+
+
+
+\voffset=-0.5in
+
+
+\begin{table}
+\caption{Properties of the Ursa Major 30 Galaxy Sample}
+\centering
+\begin{tabular}{l c c c c c c c c c c} 
+\hline\hline
+\phantom{00}Galaxy  & \phantom{0}Type \phantom{0}&Distance  & $L_{\rm  B}$ & $R_0$  & $R_{\rm last} $ &  $M_{\rm HI} $ & $M_{\rm disk}$ &  $ 
+(M/L) _{\rm stars}$ & $v^2 / c^2 R_{\rm last}$ & Data~Sources \\  
+& &  (Mpc)  &  $(10^{10}{\rm L}_{\odot})$&(kpc) & (kpc) & {$(10^{10} M_\odot)$} & {$(10^{10}
+M_\odot)$} & ({$M_{\odot}/L_{\odot}$}) & {$(10^{-30}\texttt{cm}^{-1})$} & $v~~~~L~~~R_0~~{\rm HI}$\\
+\hline
+NGC 3726 &HSB& 17.4 & 3.340    & 3.2 & 31.5 & 0.60 & \phantom{0}3.82 & 1.15 &
+\phantom{0}3.19 &   \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}  \\
+NGC 3769 &HSB&15.5& 0.684   &1.5 & 32.2 &0.41 &\phantom{0}1.36 &1.99 &\phantom{0}1.43
+&   \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}    
+\\
+NGC 3877&HSB& 15.5 &   1.948   & 2.4 & \phantom{0}9.8 & 0.11& \phantom{0}3.44 & 1.76 &
+10.51 &     \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}  
+\\
+NGC 3893&HSB & 18.1 &   2.928   & 2.4 & 20.5 & 0.59& \phantom{0}5.00 & 1.71 &
+\phantom{0}3.85 &   \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}    \\
+NGC 3917&LSB& 16.9 &  1.334   &2.8 & 13.9 & 0.17 & \phantom{0}2.23 &1.67 &
+\phantom{0}4.85 &   \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}    \\
+NGC 3949&HSB& 18.4 &  2.327    & 1.7 & \phantom{0}7.2 & 0.35 & \phantom{0}2.37 &1.02
+&14.23&   \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}   
+ \\
+NGC 3953 &HSB& 18.7 &  4.236    & 3.9 & 16.3 & 0.31 &\phantom{0}9.79 &2.31& 10.23 &   \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}    
+\\
+NGC 3972&HSB& 18.6 &    0.978  & 2.0 &\phantom{0}9.0 & 0.13 & \phantom{0}1.49&1.53 &
+\phantom{0}7.18 &    \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}   
+\\
+NGC 3992 &HSB& 25.6 &   8.456   & 5.7 & 49.6 & 1.94 & 13.94 &  1.65 & \phantom{0}4.08 &   \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}    
+\\
+NGC 4010 &LSB& 18.4 &  0.883    & 3.4 &  10.6 & 0.29 &\phantom{0}2.03 & 2.30 &
+\phantom{0}5.03 &     \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998} 
+ \\
+NGC 4013&HSB & 18.6 &  2.088    & 2.1 & 33.1 & 0.32 & \phantom{0}5.58 & 2.67
+&\phantom{0}3.14 &   \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}    
+\\
+NGC 4051 &HSB& 14.6 &   2.281   & 2.3 &  \phantom{0}9.9& 0.18 & \phantom{0}3.17 & 1.39 &
+\phantom{0}8.52 &     \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997b} \cite{Sanders1998} 
+ \\
+NGC 4085&HSB& 19.0 &   1.212   &1.6 & \phantom{0}6.5 & 0.15 & \phantom{0}1.34 &1.11 &
+10.21 &    \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}   
+\\
+NGC 4088&HSB & 15.8 &   2.957  & 2.8 & 18.8 & 0.64 &\phantom{0}4.67 & 1.58 &
+\phantom{0}5.79&   \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}    \\
+NGC 4100&HSB & 21.4 &  3.388   & 2.9 & 27.1 & 0.44 & \phantom{0}5.74 & 1.69 &
+\phantom{0}3.35 &   \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}    \\
+NGC 4138 &LSB&15.6 &   0.827   & 1.2 & 16.1 & 0.11 & \phantom{0}2.97 & 3.59 &
+\phantom{0}5.04 &   \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}    \\
+NGC 4157&HSB & 18.7 &   2.901   & 2.6 & 30.9 & 0.88 & \phantom{0}5.83 & 2.01 &
+\phantom{0}3.99 &   \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}    \\
+NGC 4183 &HSB& 16.7 &    1.042 & 2.9 & 19.5 & 0.30 &\phantom{0}1.43 & 1.38 &
+\phantom{0}2.36 &    \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}   \\
+NGC 4217&HSB & 19.6 &   3.031   & 3.1 & 18.2 & 0.30 & \phantom{0}5.53 &1.83 &
+\phantom{0}6.28 &   \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}    \\
+NGC 4389&HSB& 15.5 &   0.610   & 1.2 & \phantom{0}4.6 &0.04 & \phantom{0}0.42 & 0.68 &
+\phantom{0}9.49 &    \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}   
+\\
+UGC 6399&LSB& 18.7 &   0.291  & 2.4 & \phantom{0}8.1 &0.07 & \phantom{0}0.59 &2.04 &
+\phantom{0}3.42&    \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}   \\
+UGC 6446&LSB &15.9 &  0.263    & 1.9 &13.6 &0.24 &\phantom{0}0.36 & 1.36 &
+\phantom{0}1.70 &    \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997b} \cite{Sanders1998}  
+\\
+UGC 6667&LSB& 19.8 &   0.422   &3.1& \phantom{0}8.6 &0.10 & \phantom{0}0.71 & 1.67&
+\phantom{0}3.09 &   \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}    \\
+UGC 6818&LSB& 21.7 &   0.352   &2.1 & \phantom{0}8.4 & 0.16 & \phantom{0}0.11 & 0.32 &
+\phantom{0}2.35 &   \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}    \\
+UGC 6917&LSB& 18.9 &  0.563    & 2.9 & 10.9 &0.22 &\phantom{0}1.24 &2.20
+&\phantom{0}4.05 &    \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}  
+ \\
+UGC 6923&LSB& 18.0 &  0.297    & 1.5 & \phantom{0}5.3 &0.08 & \phantom{0}0.35 & 1.18 &
+\phantom{0}4.43 &    \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997b} \cite{Sanders1998}  
+ \\
+UGC 6930 & LSB & 17.0 &   0.601  & 2.2 & 15.7 & 0.29 & \phantom{0}1.02 &
+1.69 & \phantom{0}2.68 &     \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}  
+\\
+UGC 6973&HSB & 25.3 &  1.647    & 2.2 & 11.0 & 0.35 & \phantom{0}3.99 & 2.42
+& 10.58&     \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997b} \cite{Sanders1998}  
+\\
+UGC 6983&LSB & 20.2&   0.577   & 2.9 &17.6 & 0.37 & \phantom{0}1.28 & 2.22 &
+\phantom{0}2.43 &   \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}    \\
+UGC 7089&LSB& 13.9 &   0.352   & 2.3 & \phantom{0}7.1 &0.07 & \phantom{0}0.35 & 0.98 &
+\phantom{0}3.18 &   \cite{Verheijen2001} \cite{Sanders1998} \cite{Tully1997a} \cite{Sanders1998}    \\
+\hline
+\end{tabular}
+\label{table:uma}
+\end{table}
+
+
+
+\begin{table}
+\caption{Properties of the LSB 20 Galaxy Sample}
+\centering
+\begin{tabular}{l c c c c c c c c c c} 
+\hline\hline
+\phantom{00}Galaxy  & \phantom{0}Type \phantom{0}&Distance  & $L_{\rm  B}$ & $R_0$  & $R_{\rm last} $ &  $M_{\rm HI} $ & $M_{\rm disk}$ &  $ 
+(M/L) _{\rm stars}$ & $v^2 / c^2 R_{\rm last}$ & Data~Sources \\  
+& &  (Mpc)  &  $(10^{10}{\rm L}_{\odot})$&(kpc) & (kpc) & {$(10^{10} M_\odot)$} & {$(10^{10}
+M_\odot)$} & ({$M_{\odot}/L_{\odot}$}) & {$(10^{-30}\texttt{cm}^{-1})$} & $v~~~~L~~~R_0~~{\rm HI}$\\
+\hline
+DDO 0064 &LSB &\phantom{0}6.8 &  0.015    & 1.3 & \phantom{0}2.1 & 0.02 & 0.04 & \phantom{0}2.87 &\phantom{0}6.05 &    \cite{Kuzio2008} \cite{deBlok2002} \cite{deBlok2002} \cite{Stil2002}  
+\\
+F563-1 &LSB &46.8 &   0.140  &2.9 & 18.2 & 0.29 & 1.35 & \phantom{0}9.65 & \phantom{0}2.44 &  \cite{Kuzio2006} \cite{deBlok1997} \cite{deBlok1997} \cite{deBlok1996}     
+\\
+F563-V2 &LSB & 57.8 &    0.266  & 2.0 &\phantom{0}7.1 & 0.20 & 0.66 & \phantom{0}2.48 & 10.80 &    \cite{Kuzio2006} \cite{deBlok1997} \cite{deBlok1997} \cite{deBlok1996}    
+\\
+F568-3 & LSB& 80.0 &   0.351   & 4.2 & 11.6 & 0.30 & 1.20 & \phantom{0}3.43 & \phantom{0}3.16 &    \cite{Kuzio2006} \cite{deBlok1997} \cite{deBlok1997} \cite{deBlok1996}   
+ \\
+F583-1 & LSB & 32.4 &  0.064    & 1.6 &  14.1 &0.18 &   0.15 & \phantom{0}2.32 & \phantom{0}1.92&  \cite{Kuzio2008} \cite{deBlok1997} \cite{deBlok1997} \cite{deBlok1996}      
+ \\
+F583-4 & LSB &50.8 &   0.096   & 2.8 & \phantom{0}7.0 & 0.06 & 0.31 & \phantom{0}3.25 & \phantom{0}2.52 &   \cite{Kuzio2006}  \cite{deBlok1997} \cite{deBlok1997} \cite{deBlok1996}    
+\\
+NGC 0959 & LSB & 13.5 & 0.333    & 1.3& \phantom{0}2.9 &   0.05 & 0.37 &\phantom{0}1.11&\phantom{0}7.43 &   \cite{Kuzio2008}  \cite{Fisher1981} \cite{Esipov1991}   \cite{Fisher1981} 
+\\
+NGC 4395 &LSB & \phantom{0}4.1 &0.374&2.7& \phantom{0}0.9 &   0.13 &0.83 &\phantom{0}2.21 &\phantom{0}2.29&\cite{Kuzio2006} \cite{Swaters2002a} \cite{deBlok2002} \cite{Swaters2002a}     
+\\
+NGC 7137 &LSB & 25.0 &  0.959    & 1.7 & \phantom{0}3.6 & 0.10 & 0.27 & \phantom{0}0.28 & \phantom{0}3.91 &   \cite{Kuzio2008}  \cite{Bieging1977} ~ES \cite{Bieging1977}  
+\\
+UGC 0128 &LSB&  64.6 &    0.597  &  6.9 & 54.8 & 0.73 & 2.75 & \phantom{0}4.60 & \phantom{0}1.03 &  \cite{Verheijen1999} \cite{deBlok1997} \cite{vanderHulst1993} \cite{vanderHulst1993}     
+\\
+UGC 0191 &LSB &15.9 &  0.129    & 1.7 & \phantom{0}2.2 & 0.26 & 0.49 &\phantom{0}3.81 &15.48 &   \cite{Kuzio2008} \cite{vanZee2000} \cite{vanZee2000} \cite{vanZee1997}    
+\\
+UGC 0477 & LSB &35.8 &  0.871    &3.5 &10.2 & 1.02& 1.00 & \phantom{0}1.14 & \phantom{0}4.42 &     \cite{Kuzio2006} \cite{Fisher1981} ~ES   \cite{Fisher1981}
+\\
+UGC 1230 &LSB& 54.1&   0.366   & 4.7 & 37.1 & 0.65 & 0.67 &\phantom{0}1.82 & \phantom{0}0.97 &    \cite{deBlok1997} \cite{deBlok1997} \cite{vanderHulst1993} \cite{vanderHulst1993}
+\\
+UGC 1281 & LSB & \phantom{0}5.1 &0.017& 1.6& \phantom{0}1.7 &0.03&0.01 & \phantom{0}0.53 &\phantom{0}3.02 &    \cite{Kuzio2006} \cite{deBlok2002} \cite{deBlok2002} \cite{Swaters2002a}    
+\\
+UGC 1551 &LSB & 35.6 &   0.780   & 4.2 & \phantom{0}6.6 & 0.44 & 0.16 &\phantom{0}0.20 & \phantom{0}3.69 &    \cite{Kuzio2008} \cite{Swaters2002b} \cite{deJong1996} \cite{Swaters2002b}    
+\\
+UGC 4325 &LSB& 11.9 &  0.373    & 1.9 & \phantom{0}3.4 & 0.10 &0.40 & \phantom{0}1.08 & \phantom{0}7.39&   \cite{Kuzio2008} \cite{Swaters2002a} \cite{deBlok2002} \cite{Swaters2002a}    
+\\
+UGC 5005 & LSB & 51.4 &   0.200   &  4.6 & 27.7 &0.28 &1.02&\phantom{0}5.11 &\phantom{0}1.30 &  \cite{deBlok1997} \cite{deBlok1997}  \cite{vanderHulst1993} \cite{vanderHulst1993}     
+\\
+UGC 5750 &LSB &56.1 &   0.472   &3.3 &\phantom{0}8.6 & 0.10 & 0.10 & \phantom{0}0.21 & \phantom{0}1.58 &\cite{Kuzio2006} \cite{deBlok1997}  \cite{vanderHulst1993}  \cite{vanderHulst1993}  
+\\
+UGC 5999 & LSB & 44.9 &   0.170   &4.4 & 15.0 & 0.18 & 3.36 &19.81 & \phantom{0}5.79 & \cite{deBlok1997} \cite{deBlok1997}  \cite{vanderHulst1993} \cite{vanderHulst1993}     
+\\
+UGC 11820 & LSB & 17.1 &   0.169   & 3.6 & \phantom{0}3.7 &0.40  & 2.51 & 14.88 &\phantom{0}8.44 &   \cite{Kuzio2008} \cite{vanZee1997} \cite{Kim2007}  \cite{vanZee1997}   
+\\
+\hline
+\end{tabular}
+\label{table:lsb20}
+\end{table}
+
+\begin{table}
+\caption{Properties of the LSB 21 Galaxy Sample}
+\centering
+\begin{tabular}{l c c c c c c c c c c} 
+\hline\hline
+\phantom{00}Galaxy  & \phantom{0}Type \phantom{0}&Distance  & $L_{\rm  B}$ & $R_0$  & $R_{\rm last} $ &  $M_{\rm HI} $ & $M_{\rm disk}$ &  $ 
+(M/L) _{\rm stars}$ & $v^2 / c^2 R_{\rm last}$ & Data~Sources \\  
+& &  (Mpc)  &  $(10^{10}{\rm L}_{\odot})$&(kpc) & (kpc) & {$(10^{10} M_\odot)$} & {$(10^{10}
+M_\odot)$} & ({$M_{\odot}/L_{\odot}$}) & {$(10^{-30}\texttt{cm}^{-1})$} & $v~~~~L~~~R_0~~{\rm HI}$\\
+\hline
+ESO 0140040&LSB& 217.8 &  \phantom{0}7.169   &10.1 & 30.0 & ~~ &20.70&\phantom{0}3.38 &8.29 & \cite{McGaugh2001} \cite{deBlok2001} \cite{Beijersbergen1999} NA     
+\\
+ESO 0840411 &LSB &\phantom{0}82.4 &  \phantom{0}0.287    &8.0 & \phantom{0}9.1 & ~~
+&\phantom{0}0.30 & \phantom{0}1.05 &1.49 & \cite{McGaugh2001} \cite{deBlok2001} ~ES NA    
+\\
+ESO 1200211 &LSB & \phantom{0}15.2 &   \phantom{0}0.028   &2.0 & \phantom{0}3.5 & ~~
+&\phantom{0}0.01 & \phantom{0}0.20 &0.66 & \cite{McGaugh2001} \cite{deBlok2001} ~ES NA   
+ \\
+ESO 1870510 & LSB& \phantom{0}16.8 &    \phantom{0}0.054  & 2.1 & \phantom{0}2.8 &~~
+&\phantom{0}0.09 & \phantom{0}1.62 &2.02 & \cite{McGaugh2001} \cite{deBlok2001} \cite{Bell2000} NA    
+\\
+ESO 2060140 & LSB & \phantom{0}59.6 &    \phantom{0}0.735 & 5.1 & 11.6 & ~~ &  \phantom{0}3.51 & \phantom{0}4.78 & 4.34 & \cite{McGaugh2001} \cite{deBlok2001} \cite{Beijersbergen1999} NA    
+\\
+ESO 3020120 & LSB & \phantom{0}70.9 &   \phantom{0}0.717   & 3.4 & 11.2 & ~~ & \phantom{0}0.77 & \phantom{0}1.07 & 2.37 &\cite{McGaugh2001} \cite{deBlok2001} ~ES NA   
+\\
+ESO 3050090 & LSB & \phantom{0}13.2 &  \phantom{0}0.186    &1.3& \phantom{0}5.6 & ~~ &
+\phantom{0}0.06 & \phantom{0}0.32 & 1.87 & \cite{McGaugh2001} \cite{deBlok2001} ~ES NA   
+\\
+ESO 4250180 & LSB & \phantom{0}88.3 &  \phantom{0}2.600    & 7.3 & 14.6 & ~~ &\phantom{0}4.79 &\phantom{0}1.84 &5.17 
+& \cite{McGaugh2001} \cite{deBlok2001} \cite{Beijersbergen1999} NA   
+\\
+ESO 4880490 &LSB & \phantom{0}28.7 &  \phantom{0}0.139    & 1.6 & 7.8 & ~~ &\phantom{0}0.43 &\phantom{0}3.07 & 4.34 & \cite{McGaugh2001} \cite{deBlok2001} ~ES NA     
+\\
+F571-8 & LSB & \phantom{0}50.3 &   \phantom{0}0.191   & 5.4 & 14.6 & 0.16& \phantom{0}4.48 &
+ 23.49& 5.10 & \cite{McGaugh2001} \cite{deBlok1996} \cite{deBlok1997} \cite{deBlok1996}     
+  \\
+F579-V1 & LSB & \phantom{0}86.9&   \phantom{0}0.557   & 5.2 & 14.7 & 0.21 & \phantom{0}3.33 &
+\phantom{0}5.98 &  3.18 & \cite{McGaugh2001} \cite{deBlok1996} \cite{deBlok1997} \cite{deBlok1996}    
+\\
+F730-V1 &LSB & 148.3 &    \phantom{0}0.756 & 5.8 & 12.2 & ~~ & \phantom{0}5.95 & \phantom{0}7.87 & 6.22 & \cite{McGaugh2001} \cite{Kim2007} \cite{Kim2007} NA   
+ \\
+UGC 04115& LSB & \phantom{00}5.5 &  \phantom{0}0.004    & 0.3 & \phantom{0}1.7 & ~~ & \phantom{0}0.01 & \phantom{0}0.97 & 3.42&\cite{McGaugh2001} \cite{deBlok2001} \cite{Bazarra2001} NA 
+\\
+UGC 06614 &LSB&\phantom{0}86.2 &    \phantom{0}2.109 & 8.2 & 62.7 & 2.07 & \phantom{0}9.70 &\phantom{0}4.60& 2.39 &\cite{McGaugh2001} \cite{deBlok2001} \cite{vanderHulst1993} \cite{vanderHulst1993} 
+\\
+UGC 11454 & LSB & \phantom{0}93.9 &   \phantom{0}0.456   & 3.4 & 12.3 &~~ & \phantom{0}3.15 & \phantom{0}6.90& 6.79&     \cite{McGaugh2001} \cite{deBlok2001} \cite{Kim2007} NA   
+\\
+UGC 11557 & LSB & \phantom{0}23.7 &   \phantom{0}1.806   & 3.0 & \phantom{0}6.7 &0.25 &\phantom{0}0.37& \phantom{0}0.20& 3.49 &  \cite{McGaugh2001} \cite{deBlok2001} \cite{Swaters2002a} \cite{Swaters2002a}    
+\\
+UGC 11583&LSB & \phantom{00}7.1 &  \phantom{0}0.012    & 0.7 & \phantom{0}2.1 & ~~
+&\phantom{0}0.01 & \phantom{0}0.96 & 2.15&    \cite{McGaugh2001} \cite{deBlok2001} \cite{Kim2007} NA     
+ \\
+UGC 11616 &LSB&\phantom{0}74.9 &   \phantom{0}2.159   &3.1 & \phantom{0}9.8 & ~~ & \phantom{0}2.43 &\phantom{0}1.13 & 7.49 &     \cite{McGaugh2001} \cite{deBlok2001} \cite{Kim2007} NA  
+\\
+UGC 11648 &LSB & \phantom{0}49.0 &  \phantom{0}4.073    &4.0 &13.0 &~~ &\phantom{0}2.57 &\phantom{0}0.63 & 5.79&    \cite{McGaugh2001} \cite{deBlok2001} \cite{Kim2007} NA    
+\\
+UGC 11748 &LSB &\phantom{0}75.3 &  23.930  & 2.6 & 21.6 & ~~ &\phantom{0}9.67 &\phantom{0}0.40 &1.01 &     \cite{McGaugh2001} \cite{deBlok2001} \cite{Kim2007} NA  
+\\
+UGC 11819 &LSB &\phantom{0}61.5 &    \phantom{0}2.155  & 4.7 & 11.9 & ~~ &\phantom{0}4.83 & \phantom{0}2.24& 7.03 &   \cite{McGaugh2001} \cite{deBlok2001} \cite{Kim2007} NA    
+\\
+\hline
+\end{tabular}
+\label{table:lsb21}
+\end{table}
+
+
+
+
+
+\begin{table}
+\caption{Properties of the Miscellaneous 21 Galaxy Sample}
+\centering
+\begin{tabular}{l c c c c c c c c c c} 
+\hline\hline
+ \phantom{00}Galaxy  & \phantom{0}Type \phantom{0}&Distance  & $L_{\rm  B}$ & $R_0$  & $R_{\rm last} $ &  $M_{\rm HI} $ & $M_{\rm disk}$ &  $ 
+(M/L) _{\rm stars}$ & $v^2 / c^2 R_{\rm last}$ & Data~Sources \\  
+& &  (Mpc)  &  $(10^{10}{\rm L}_{\odot})$&(kpc) & (kpc) & {$(10^{10} M_\odot)$} & {$(10^{10}
+M_\odot)$} & ({$M_{\odot}/L_{\odot}$}) & {$(10^{-30}\texttt{cm}^{-1})$} & $v~~~~L~~~R_0~~{\rm HI}$\\
+\hline
+DDO 0168 & LSB&\phantom{0}4.5& \phantom{0}0.032    &1.2 & \phantom{0}4.4 & 0.03 &
+\phantom{0}0.06 & 2.03& 2.22 & \cite{Broeils1992} \cite{Broeils1992} \cite{Broeils1992} \cite{Broeils1992}
+\\
+DDO 0170 & LSB& 16.6 &  \phantom{0}0.023    & 1.9 & 13.3 & 0.09 &
+\phantom{0}0.05 & 1.97 &1.18 & \cite{Lake1990} \cite{Lake1990} \cite{Lake1990} \cite{Lake1990}
+\\
+\phantom{CC}M 0033& HSB &\phantom{0}0.9 &  \phantom{0}0.850   &2.5 & \phantom{0}8.9 & 0.11 &\phantom{0}1.13 &1.33& 4.62 &\cite{Rhee1996} \cite{Rhee1996} \cite{Kent1987b} \cite{Rhee1996}
+\\
+NGC 0055 & LSB& \phantom{0}1.9 &  \phantom{0}0.588  & 1.9 & 12.2 & 0.13 &  \phantom{0}0.30 & 0.50 & 2.22 & \cite{Puche1991}  \cite{Puche1991}  \cite{Puche1991}  \cite{Puche1991}
+\\
+NGC 0247 & LSB & \phantom{0}3.6 &  \phantom{0}0.512    & 4.2 & 14.3 & 0.16 &
+\phantom{0}1.25 & 2.43 & 2.94& \cite{Carignan1990} \cite{Carignan1985a} \cite{Carignan1985a} \cite{Carignan1990}
+\\
+NGC 0300 &LSB &\phantom{0}2.0&   \phantom{0}0.270  &2.1&11.7& 0.08 &\phantom{0}0.65
+&2.41 & 2.69& \cite{Puche1990} \cite{Carignan1985a} \cite{Carignan1985a} \cite{Puche1990}
+\\
+NGC 0801 & HSB &63.0 &   \phantom{0}4.746   & 9.5 & 46.7 & 1.39 & \phantom{0}6.93 &
+2.37 & 3.59 & \cite{Broeils1992} \cite{Broeils1992} \cite{Kent1986} \cite{Broeils1992} 
+\\
+NGC 1003 &LSB& 11.8 &  \phantom{0}1.480    & 1.9 & 31.2 & 0.63 &  \phantom{0}0.66 &0.45 & 1.53& \cite{Rhee1996} \cite{Rhee1996} \cite{Broeils1991} \cite{Sanders1996} 
+\\
+NGC 1560 & LSB & \phantom{0}3.7 &  \phantom{0}0.053    & 1.6 & 10.3 & 0.12 &
+\phantom{0}0.17 & 3.16 & 2.16& \cite{Broeils1992}  \cite{Broeils1992}  \cite{Broeils1992}  \cite{Broeils1992}
+\\
+NGC 2683 &HSB& 10.2 &   \phantom{0}1.882   & 2.4 & 36.0 &0.15 & \phantom{0}6.03 & 3.20
+& 2.28 & \cite{Casertano1991} \cite{Casertano1991} \cite{Kent1985} \cite{Sanders1996}
+\\
+NGC 2998 &HSB& 59.3&   \phantom{0}5.186   &4.8 & 41.1 & 1.78 & \phantom{0}7.16 & 1.75
+& 3.43  & \cite{Broeils1992}  \cite{Broeils1992}  \cite{Kent1986}  \cite{Broeils1992}
+\\
+NGC 3109 & LSB &\phantom{0}1.5 &  \phantom{0}0.064    & 1.3 & \phantom{0}7.1 & 0.06 &
+\phantom{0}0.02 &0.35 & 2.29& \cite{Jobin1990}  \cite{Carignan1985b}  \cite{Carignan1985b} \cite{Jobin1990}
+\\
+NGC 5033 & HSB & 15.3&   \phantom{0}3.058   & 7.5 & 45.6& 1.07 & \phantom{0}0.27 &
+3.28 & 3.16 & \cite{Begeman1987}  \cite{Begeman1987}  \cite{Wevers1986} \cite{Begeman1987}
+\\
+NGC 5371 &HSB& 35.3 &   \phantom{0}7.593   & 4.4 & 41.0 & 0.89 & \phantom{0}8.52 & 1.44 & 3.98 & \cite{Begeman1987} \cite{Begeman1987} \cite{Wevers1986} \cite{Begeman1987}
+\\
+NGC 5533 &HSB& 42.0 &  \phantom{0}3.173    & 7.4 & 56.0 & 1.39 & \phantom{0}2.00 &4.14  &3.31 & \cite{Broeils1992} \cite{Broeils1992}  \cite{Kent1985}  \cite{Broeils1992}
+\\
+NGC 5585 & HSB &\phantom{0}9.0 &   \phantom{0}0.333   & 2.0 & 14.0 & 0.28 &
+\phantom{0}0.36 & 1.09 & 2.06 & \cite{Cote1991} \cite{Cote1991} \cite{Cote1991} \cite{Cote1991}
+\\
+NGC 5907 & HSB & 16.5      &  \phantom{0}5.400&5.5 & 48.0 & 1.90 &\phantom{0}2.49 &1.89 & 3.44& \cite{Barnaby1994} \cite{Sanders1996} \cite{Barnaby1994} \cite{Sanders1996}
+\\
+NGC 6503 & HSB&\phantom{0}5.5 &  \phantom{0}0.417   & 1.6 & 20.7 & 0.14 &
+\phantom{0}1.53 & 3.66 & 2.30 & \cite{Begeman1987} \cite{Begeman1987} \cite{Wevers1986} \cite{Begeman1987}
+\\
+NGC 6674 & HSB & 42.0 &   \phantom{0}4.935   &7.1 & 59.1 & 2.18 & \phantom{0}2.00
+&2.52 & 3.57 & \cite{Broeils1992} \cite{Broeils1992}  \cite{Broeils1991}  \cite{Broeils1992}
+\\
+UGC 2259 &LSB& 10.0 &   \phantom{0}0.110   & 1.4 & \phantom{0}7.8 &0.04 &
+\phantom{0}0.47 & 4.23 & 3.76 & \cite{Carignan1988} \cite{Carignan1988} \cite{Kent1987a} \cite{Carignan1988}
+\\
+UGC 2885 &HSB& 72.3 &   19.372   & 8.2 & 66.7 &3.22 &12.23 & 0.89 & 4.80& \cite{Roelfsema1985} \cite{Kent1986} \cite{Kim2007} \cite{Sanders1996}
+\\
+\hline 
+\end{tabular}
+\label{table:Misc} 
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{figure}[t]
+\epsfig{file=ddo154.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ic2574.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc925.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ngc2403.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc2841.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc2903.eps, width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ngc2976.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc3031.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc3198.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ngc3521.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc3621.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc3627.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ngc4736.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc4826.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc5055.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ngc6946.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc7331.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc7793.eps,width=2.11in,height=1.2in}\\
+\medskip
+FIG.~1:~Fitting to the rotational velocities (in ${\rm km}~{\rm sec}^{-1}$) of  the THINGS 18 galaxy sample with their quoted errors as plotted as a function of radial distance (in ${\rm kpc}$). For each galaxy we have exhibited the contribution due to the luminous Newtonian term alone (dashed curve), the contribution from the two linear terms alone (dotted curve), the contribution from the two 
+linear terms and the quadratic terms combined (dash dot curve), with the full curve showing the total contribution. No dark matter is assumed.
+\label{Fig. (1)}
+\end{figure}
+
+
+
+\begin{figure}[t]
+\epsfig{file=ngc3726.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc3769.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc3877.eps,  width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ngc3893.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc3917.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc3949.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ngc3953.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc3972.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc3992.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ngc4010.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc4013.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc4051.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ngc4085.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc4088.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc4100.eps,width=2.11in,height=1.2in}\\
+\medskip
+FIG.~2:~Fitting to the rotational velocities of the Ursa Major 30 galaxy sample -- Part 1
+\label{Fig. (2.1)}
+\end{figure}
+
+\begin{figure}[t]
+\epsfig{file=ngc4138.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc4157.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc4183.eps,  width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ngc4217.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc4389.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ugc6399.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ugc6446.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ugc6667.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ugc6818.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ugc6917.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ugc6923.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ugc6930.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ugc6973.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ugc6983.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ugc7089.eps,width=2.11in,height=1.2in}\\
+\medskip
+FIG.~2:~Fitting to the rotational velocities of the Ursa Major 30 galaxy sample -- Part 2
+\label{Fig. (2.2)}
+\end{figure}
+
+
+
+\begin{figure}[t]
+\epsfig{file=ddo64.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=f5631.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=f5632.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=f5683.eps,  width=2.11in,height=1.2in}~~~
+\epsfig{file=f5831.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=f5834.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ngc959.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc4395.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc7137.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ugc128.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ugc191.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ugc477.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ugc1230.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ugc1281.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ugc1551.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ugc4325.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ugc5005.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ugc5750.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ugc5999.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ugc11820.eps,width=2.11in,height=1.2in}\\
+\medskip
+FIG.~3:~Fitting to the rotational velocities of the LSB 20 galaxy sample 
+\label{Fig. (3)}
+\end{figure}
+
+
+
+\begin{figure}[t]
+\epsfig{file=e140040.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=e840411.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=e1200211.eps,  width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=e1870510.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=e2060140.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=e3020120.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=e3050090.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=e4250180.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=e4880490.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=f5718.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=f5791.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=f7301.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ugc4115.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ugc6614.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ugc11454.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ugc11557.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ugc11583.eps,  width=2.11in,height=1.2in}~~~
+\epsfig{file=ugc11616.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ugc11648.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ugc11748.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ugc11819.eps,width=2.11in,height=1.2in}\\
+\medskip
+FIG.~4:~Fitting to the rotational velocities of the LSB 21 galaxy sample 
+\label{Fig. (4)}
+\end{figure}
+
+
+
+\begin{figure}[t]
+\epsfig{file=ddo168.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ddo170.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=m33.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ngc55.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc247.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc300.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ngc801.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc1003.eps,width=2.11in,height=1.2in}~~
+\epsfig{file=ngc1560.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ngc2683.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc2998.eps,  width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc3109.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ngc5033.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc5371.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc5533.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ngc5585.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc5907.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ngc6503.eps,width=2.11in,height=1.2in}\\
+\smallskip
+\epsfig{file=ngc6674.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ugc2259.eps,width=2.11in,height=1.2in}~~~
+\epsfig{file=ugc2885.eps,width=2.11in,height=1.2in}\\
+\medskip
+FIG.~5:~Fitting to the rotational velocities of the Miscellaneous 21 galaxy sample 
+\label{Fig. (5)}
+\end{figure}
+
+
+
+\begin{figure}[t]
+\epsfig{file=ddo154large.eps, width=3.23in,height=1.2in}~~~
+\epsfig{file=ugc128large.eps, width=3.23in,height=1.2in}\\
+\medskip
+FIG.~6:~Extended distance predictions for DDO 154 and UGC 128.
+\label{Fig. (6)}
+\end{figure}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\bibitem{deBlok1998a} S.~S.~McGaugh and W.~J.~G.~ de Blok,  Ap.~J.~{\bf 499}, 41 (1998).
+
+
+
+
+
+\bibitem{deBlok1996a} W.~J.~G.~de Blok and S.~S.~McGaugh, Ap.~J.~{\bf 469}, L89 (1996).
+
+
+
+
+\bibitem{James2004} P.~A.~James, N.~S.~Shane, J.~E.~Beckman, A.~Cardwell, C.~A.~Collins, J.~Etherton, R.~S.~de Jong, K.~Fathi, J.~H.~Knapen, R.~F.~Peletier, S.~M.~Percival, D.~L.~Pollacco, M.~S.~Seigar, S.~Stedman and I.~A.~Steele, A.~A.~{\bf 414}, 23 (2004).
+
+
+
+
+
+
+
+\bibitem{refl}R.~Sancisi and  T.~S.~van Albada, in IAU Symp. {\bf 117} {\it Dark
+Matter in the Universe}, ed. J.~Kormendy and G.~R.~Knapp (Dordrecht: Reidel, 1987).
+
+
+
+
+
+
+\bibitem{vanZee2006}  L.~van Zee and M.~P.~Haynes, Ap.~J.~{\bf  636}, 214 (2006).
+
+
+
+
+  As such, this universality goes beyond, and thus extends, the basic idea behind MOND, namely that when accelerations drop below the critical $a_0$, one sees departures from the luminous Newtonian expectation. Specifically, in and of itself the MOND idea does not require the near universality of the centripetal accelerations at the last data points should they actually be below $a_0$.
+ 18 galaxies from THINGS: The HI Nearby Galaxy Survey \cite{deBlok2008}, 
+30 galaxies from a study of the Ursa Major  Cluster of Galaxies \cite{Verheijen2001}, 
+20 galaxies from a study of LSB galaxies \cite{Kuzio2007,deBlok1997,deBlok1995} as augmented by an extended distance study of UGC 128 \cite{Verheijen1999},
+21 galaxies from a second study of LSB galaxies \cite{deBlok2001,Kuzio2007}, 
+and also included some 21 miscellaneous galaxies 
+\cite{Begeman1987,Broeils1992,Lake1990,Rhee1996,Puche1991,Carignan1990,Puche1990,
+Casertano1991,Jobin1990,Cote1991,Barnaby1994,Carignan1988,Roelfsema1985}. 
