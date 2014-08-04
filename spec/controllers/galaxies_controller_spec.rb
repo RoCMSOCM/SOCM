@@ -4,7 +4,6 @@ describe GalaxiesController do
   include Devise::TestHelpers
 
   let!(:galaxy) { FactoryGirl.create(:galaxy) }
-  let!(:galaxy_post) { FactoryGirl.create(:galaxy_post) }
 
   before (:each) do
     @current_admin = FactoryGirl.create(:admin)
@@ -24,7 +23,6 @@ describe GalaxiesController do
       before(:each) do
         Galaxy.stub(:find).and_return(galaxy)
         Galaxy.stub(:save).and_return(true)
-        #galaxy = FactoryGirl.create
       end
 
       it "returns a galaxy" do
@@ -62,24 +60,11 @@ describe GalaxiesController do
 
   context "POST create" do
     context "with valid params" do
-      before(:each) do
-        #Galaxy.stub(:save).and_return(true)
-        post :create, galaxy: galaxy_post.attributes
-      end
-
       it "creates a new Galaxy" do
-        expect(galaxy_post.id).should_not be_nil
-        expect(galaxy_post.galaxy_name).to eq("newest galaxy")
-        expect(galaxy_post.galaxy_type).to eq("LSB")
-        expect(galaxy_post.distance).to eq(2.1)
-        expect(galaxy_post.luminosity).to eq(3.1)
-        expect(galaxy_post.scale_length).to eq(4.1)
-        expect(galaxy_post.mass_hydrogen).to eq(5.1)
-        expect(galaxy_post.mass_disk).to eq(6.1)
-      end
-
-      it "returns 200 when successfully creating a new galaxy" do
-        expect(response.status).to eq(200)
+        galaxy_post = FactoryGirl.attributes_for(:galaxy_post)
+        expect{
+            post :create, galaxy: galaxy_post
+        }.to change(Galaxy, :count)
       end
     end
 
@@ -88,7 +73,7 @@ describe GalaxiesController do
         @invalid_galaxy = FactoryGirl.attributes_for(:invalid_galaxy)
       end
 
-      it "does not save the new contact" do
+      it "does not save the new galaxy" do
         expect{
             post :create, galaxy: @invalid_galaxy
         }.to_not change(Galaxy, :count)
@@ -153,7 +138,7 @@ describe GalaxiesController do
   end
 
   context "DELETE destroy" do
-    it "deletes the contact" do
+    it "deletes the galaxy" do
       expect{
         delete :destroy, id: galaxy
       }.to change(Galaxy, :count).by(-1)

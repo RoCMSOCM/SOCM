@@ -1,4 +1,3 @@
-#require 'bibtex'
 class Citation < ActiveRecord::Base
   attr_accessor :galaxy_ids_array
 
