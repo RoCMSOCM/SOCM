@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :citation do
+  factory :valid_citation, parent: :citation do
     author "some author"
     title "some title"
     journal "some journal"
@@ -30,11 +30,11 @@ FactoryGirl.define do
     title nil
     journal nil
     year nil
-    volume "volume"
-    pages "pages"
-    month 1
-    note 1
-    key 1
+    volume nil
+    pages nil
+    month nil
+    note nil
+    key nil
     bibtex ""
   end
 end

@@ -3,8 +3,7 @@ require 'spec_helper'
 describe CitationsController do
   include Devise::TestHelpers
 
-  let!(:citation) { FactoryGirl.create(:citation) }
-  #let!(:citation_post) { FactoryGirl.create(:citation_post) }
+  let!(:valid_citation) { FactoryGirl.create(:valid_citation) }
 
   before (:each) do
     @current_admin = FactoryGirl.create(:admin)
@@ -22,12 +21,12 @@ describe CitationsController do
   context "GET show" do
     context "with valid ID" do
       before(:each) do
-        Citation.stub(:find).and_return(citation)
+        Citation.stub(:find).and_return(valid_citation)
         Citation.stub(:save).and_return(true)
       end
 
       it "returns a citation" do
-        Citation.should_receive(:find).with(1).and_return(citation)
+        Citation.should_receive(:find).with(1).and_return(valid_citation)
         citation = Citation.find(1)
 
         expect(citation.id).should_not be_nil
@@ -43,12 +42,12 @@ describe CitationsController do
       end
 
       it "assigns the returned citation to @citation" do
-        get :show, id: citation
-        assigns(:citation).should eq(citation)
+        get :show, id: valid_citation
+        assigns(:citation).should eq(valid_citation)
       end
 
       it 'renders the show view' do
-        get :show, id: citation
+        get :show, id: valid_citation
         response.should render_template :show
       end
     end
@@ -99,45 +98,46 @@ describe CitationsController do
       end
 
       it "updates an existing Citation and gets a redirect response" do
-        put :update, :id => citation.id, :citation => @attr
-        citation.reload
+        put :update, :id => valid_citation.id, :citation => @attr
+        valid_citation.reload
 
         expect(response.status).to eq(302)
       end
 
       it "updates an existing Citation" do
-        put :update, :id => citation.id, :citation => @attr
-        citation.reload
+        put :update, :id => valid_citation.id, :citation => @attr
+        valid_citation.reload
 
-        expect(citation.author).to eq("author")
-        expect(citation.title).to eq("title")
-        expect(citation.journal).to eq("journal")
-        expect(citation.year).to eq(2014)
-        expect(citation.volume).to eq(1)
-        expect(citation.pages).to eq(1)
-        expect(citation.month).to eq("Dec")
-        expect(citation.note).to eq("note")
-        expect(citation.key).to eq("key")
+        expect(valid_citation.author).to eq("author")
+        expect(valid_citation.title).to eq("title")
+        expect(valid_citation.journal).to eq("journal")
+        expect(valid_citation.year).to eq(2014)
+        expect(valid_citation.volume).to eq(1)
+        expect(valid_citation.pages).to eq(1)
+        expect(valid_citation.month).to eq("Dec")
+        expect(valid_citation.note).to eq("note")
+        expect(valid_citation.key).to eq("key")
       end
     end
 
     context "with invalid attributes" do
       it "does not update the citation attributes" do
-        put :update, id: citation, citation: FactoryGirl.attributes_for(:invalid_citation)
-        citation.reload
+        put :update, id: valid_citation, citation: FactoryGirl.attributes_for(:invalid_citation)
+        valid_citation.reload
 
-        #citation.should_not be_valid
-        # citation.author.should_not eq(nil)
-        # galaxy.galaxy_type.should_not eq(nil)
-        # galaxy.distance.should_not eq("abc")
-        # galaxy.luminosity.should_not eq("abc")
-        # galaxy.scale_length.should_not eq("abc")
-        # galaxy.mass_hydrogen.should_not eq("abc")
-        # galaxy.mass_disk.should_not eq("abc")
+        valid_citation.author.should_not eq(nil)
+        valid_citation.title.should_not eq(nil)
+        valid_citation.journal.should_not eq(nil)
+        valid_citation.year.should_not eq(nil)
+        valid_citation.volume.should_not eq(nil)
+        valid_citation.pages.should_not eq(nil)
+        valid_citation.month.should_not eq(nil)
+        valid_citation.note.should_not eq(nil)
+        valid_citation.key.should_not eq(nil)
       end
 
       it "renders the edit view when receiving invalid attributes" do
-        put :update, id: citation, citation: FactoryGirl.attributes_for(:invalid_citation)
+        put :update, id: valid_citation, citation: FactoryGirl.attributes_for(:invalid_citation)
         response.should render_template :edit
       end
     end
@@ -146,12 +146,12 @@ describe CitationsController do
   context "DELETE destroy" do
     it "deletes the citation" do
       expect{
-        delete :destroy, id: citation
+        delete :destroy, id: valid_citation
       }.to change(Citation, :count).by(-1)
     end
 
     it "redirects to citation#index" do
-      delete :destroy, id: citation
+      delete :destroy, id: valid_citation
       response.should redirect_to citations_url
     end
   end
