@@ -30,6 +30,27 @@
   <strong>Disk Mass (10<sup>10</sup> M<sub>☉</sub> kg):</strong>
   <%= @galaxy.mass_disk %>
 </p>
+
+<p>
+  <strong>Velocities Citation:</strong>
+  <%= @galaxy.velocities_citation %>
+</p>
+
+<p>
+  <strong>Luminosity Citation:</strong>
+  <%= @galaxy.luminosity_citation %>
+</p>
+
+<p>
+  <strong>Scale Length Citation:</strong>
+  <%= @galaxy.scale_length_citation %>
+</p>
+
+<p>
+  <strong>Hydrogen Mass Citation:</strong>
+  <%= @galaxy.mass_hydrogen_citation %>
+</p>
+
 <p>
   <strong>Citations:</strong>
   <% @galaxy.citations.each do |citation| %>
