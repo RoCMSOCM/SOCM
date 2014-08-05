@@ -7,10 +7,16 @@ FactoryGirl.define do
     scale_length 4.1
     mass_hydrogen 5.1
     mass_disk 6.1
+
+    factory :galaxy_with_velocities do
+      after(:create) do |galaxy, evaluator|
+        create_list(:velocity, 1, galaxy: galaxy)
+      end
+    end
   end
 
   factory :invalid_galaxy, parent: :galaxy do
-    galaxy_name nil #if you put an int, Rails will convert it to a string
+    galaxy_name nil
     galaxy_type nil
     distance "abc"
     luminosity "abc"
@@ -29,16 +35,10 @@ FactoryGirl.define do
     mass_disk 6.1
   end
 
-  factory :admin do
-    email "some_admin@herpderp.com"
-    password "herpderp"
-    approved true
-  end
-
-  factory :super_user, parent: :admin do
-    email "super_user@herpderp.com"
-    password "herpderp"
-    approved true
-    super_user true
+  factory :velocity do
+    r 1
+    vrot_data 2
+    vrot_data_error 3
+    galaxy
   end
 end
