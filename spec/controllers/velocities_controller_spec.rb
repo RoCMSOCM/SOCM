@@ -4,7 +4,7 @@ describe VelocitiesController do
   include Devise::TestHelpers
 
   let!(:galaxy_with_velocities) { FactoryGirl.create(:galaxy_with_velocities) }
-  let!(:valid_velocity) { FactoryGirl.create(:valid_velocity, :galaxy => galaxy_with_velocities) }
+  let!(:valid_velocity) { galaxy_with_velocities.velocities.first }
 
   before (:each) do
     @current_admin = FactoryGirl.create(:admin)
@@ -75,49 +75,48 @@ describe VelocitiesController do
     end
   end
 
-  # context "PUT update/:id" do
-  #   context "with valid attributes" do
-  #     before(:each) do
-  #       Velocity.stub(:save).and_return(true)
-  #       @attr = {:r => 1.1, :vrot_data => 1.2,
-  #                 :vrot_data_error => 1.3 }
-  #     end
+  context "PUT update/:id" do
+    context "with valid attributes" do
+      it "updates an existing Velocity and gets a redirect response" do
+        Velocity.stub(:save).and_return(true)
+        @attr = {:r => 1.1, :vrot_data => 1.2,
+                  :vrot_data_error => 1.3 }
 
-  #     it "updates an existing Velocity and gets a redirect response" do
-  #       put :update, {:galaxy_id => galaxy_with_velocities.id, :id => velocity.id, :velocity => @attr}
-  #       velocity.reload
+        put :update, {:galaxy_id => galaxy_with_velocities.id,
+                      :id => valid_velocity.id,
+                      :velocity => @attr
+                    }
+        valid_velocity.reload
 
-  #       expect(velocity.author).to eq(1.1)
-  #       expect(velocity.title).to eq(1.2)
-  #       expect(velocity.journal).to eq(1.3)
+        expect(valid_velocity.r).to eq(1.1)
+        expect(valid_velocity.vrot_data).to eq(1.2)
+        expect(valid_velocity.vrot_data_error).to eq(1.3)
 
-  #       expect(response.status).to eq(302)
-  #     end
-  #   end
+        expect(response.status).to eq(302)
+      end
+    end
 
-  #   context "with invalid attributes" do
-  #     it "does not update the velocity attributes" do
-  #       citation = FactoryGirl.attributes_for(:invalid_velocity)
-  #       put :update, { :galaxy_id => galaxy_with_velocities.id, :id => velocity, citation:  citation }
-  #       velocity.reload
+    context "with invalid attributes" do
+      it "does not update the velocity attributes and re-renders the 'edit' view" do
+        invalid_attrs = FactoryGirl.attributes_for(:invalid_velocity)
+        put :update, { :galaxy_id => galaxy_with_velocities.id, :id => valid_velocity.id, :velocity => invalid_attrs }
+        valid_velocity.reload
 
-  #       velocity.should_not be_valid
-  #     end
+        valid_velocity.r.should_not eq(nil)
+        valid_velocity.vrot_data.should_not eq(nil)
+        valid_velocity.vrot_data_error.should_not eq(nil)
 
-  #     it "renders the edit view when receiving invalid attributes" do
-  #       put :update, id: velocity, velocity: FactoryGirl.attributes_for(:invalid_velocity)
-  #       response.should render_template :edit
-  #     end
-  #   end
-  # end
+        response.should render_template :edit
+      end
+    end
+  end
 
-  # context "DELETE" do
-  #   it "deletes the velocity and redirects to velocity#index" do
-  #     galaxy_with_velocities.velocities.reload
-  #     expect{
-  #       delete :destroy, galaxy_id: galaxy_with_velocities.id, id: velocity
-  #     }.to change(Velocity, :count).by(-1)
-  #     response.should redirect_to velocities_url
-  #   end
-  # end
+  context "DELETE" do
+    it "deletes the velocity and redirects to velocity#index" do
+      expect{
+        delete :destroy, galaxy_id: galaxy_with_velocities.id, id: valid_velocity.id
+      }.to change(Velocity, :count).by(-1)
+      response.should redirect_to galaxy_path(:id => galaxy_with_velocities.id)
+    end
+  end
 end

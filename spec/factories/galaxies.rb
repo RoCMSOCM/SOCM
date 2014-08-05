@@ -41,18 +41,4 @@ FactoryGirl.define do
     vrot_data_error 3
     galaxy
   end
-
-  factory :citation do
-    author "some author"
-    title "some title"
-    journal "some journal"
-    year 2014
-    volume 1
-    pages 1
-    month "December"
-    note "some note"
-    key "some key"
-    bibtex ""
-    #galaxy
-  end
 end

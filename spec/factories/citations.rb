@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :valid_citation, parent: :citation do
+  factory :citation do
     author "some author"
     title "some title"
     journal "some journal"

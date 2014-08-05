@@ -31,7 +31,7 @@ class CitationsController < ApplicationController
   def show
     @citation = Citation.find(params[:id])
     @galaxies = @citation.galaxies
-    @citation.set_galaxy_ids_array
+    @citation.galaxy_ids_array
 
     respond_to do |format|
       format.html { render :show }

@@ -25,7 +25,7 @@ class Citation < ActiveRecord::Base
               "}"
   end
 
-  def set_galaxy_ids_array
+  def galaxy_ids_array
     self.galaxy_ids_array = self.galaxies.collect(&:id)
   end
 end
