@@ -8,7 +8,7 @@
 require 'csv'
 
 
-paramsPath = "#{Rails.root}/db/PARAMS_TABLE.csv"
+paramsPath = "#{Rails.root}/db/latex citations/PARAMS_TABLE.csv"
 velocitiesPath = "#{Rails.root}/db/velocity_data/"
 
 velocityFiles = Dir.entries(velocitiesPath)
