@@ -6,7 +6,7 @@ require 'rspec/rails'
 require 'simplecov'
 
 puts "===================================================================================="
-puts "Running code coverage. Please check coverage/index.html after all specs are passing!"
+puts "Running code coverage. Please check /coverage/index.html"
 puts "===================================================================================="
 SimpleCov.start
 
