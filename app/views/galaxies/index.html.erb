@@ -70,6 +70,10 @@
           <td><%= galaxy.scale_length %></td>
           <td><%= galaxy.mass_hydrogen %></td>
           <td><%= galaxy.mass_disk %></td>
+          <td><%= galaxy.velocities_citation%></td>
+          <td><%= galaxy.luminosity_citation%></td>
+          <td><%= galaxy.scale_length_citation%></td>
+          <td><%= galaxy.mass_hydrogen_citation%></td>
           <td><%= galaxy.velocities.size %></td>
           <td style="max-width: 150px;">
             <% citation_ids = galaxy.citations.collect(&:id) %>
