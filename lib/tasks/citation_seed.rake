@@ -21,7 +21,7 @@ namespace :citation_importer do
     end
   end
 
-  task :give_galaxies_citations => :environment do 
+  task :give_galaxies_citations => :environment do
     CSV.foreach("#{Rails.root}/db/latex citations/citation_matrix.csv") do |row|
       galaxy = row[0]
       velocities_citation = row[1]
@@ -37,9 +37,25 @@ namespace :citation_importer do
         valHash = {:velocities_citation => velocities_citation_id, :luminosity_citation => luminosity_citation_id, :scale_length_citation => scale_length_citation_id, :mass_hydrogen_citation => mass_hydrogen_citation_id}
 
         if galaxyObject == nil
-        else 
-          puts valHash
+        else
           galaxyObject.update_attributes(valHash)
+          if velocities_citation_id > 0
+            velocities_citation_obj = Citation.find(velocities_citation_id)
+            galaxyObject.citations << velocities_citation_obj
+          end
+          if luminosity_citation_id > 0
+            luminosity_citation_obj = Citation.find(luminosity_citation_id)
+            galaxyObject.citations << luminosity_citation_obj
+          end
+
+          if scale_length_citation_id > 0
+            scale_length_citation_obj = Citation.find(scale_length_citation_id)
+            galaxyObject.citations << scale_length_citation_obj
+          end
+          if mass_hydrogen_citation_id > 0
+            mass_hydrogen_citation_obj = Citation.find(mass_hydrogen_citation_id)
+            galaxyObject.citations << mass_hydrogen_citation_obj
+          end
           galaxyObject.save!
         end
       end
@@ -49,10 +65,10 @@ namespace :citation_importer do
 def find_citation(key)
   retval = -1
   if key == "NA"
-    retval = -1 
+    retval = -1
   elsif key == "ES"
     retval = -2
-  else 
+  else
     citation = Citation.where(:key => key).first
     if citation
       retval = citation.id
