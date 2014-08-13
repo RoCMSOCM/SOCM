@@ -43,10 +43,13 @@ Database initialization
   - Run this after creating DEV, Test, and Prod databases (Prod if necessary)
 
 
-Run Tests
+Running Tests & Code Coverage
 =========================
 
     bundle exec rspec spec
+
+  - Running the command above runs all unit tests and will also generate a code coverage report.
+  - **/coverage/index.html** is the main coverage page. Open with a browser to view the current test coverage for SOCM.
 
 Seeding the DB w/Data
 =====================
@@ -69,7 +72,6 @@ Deployment instructions
     a.approved = true
     a.super_user = true
     a.save!
-  - As long as a.save! doesn't return any errors, you've created your Super User!
   - This Super User can approve and destroy other admin accounts
   - Without a Super User, you cannot approve any other admins that sign up
 
