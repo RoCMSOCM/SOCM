@@ -4,7 +4,7 @@ class Citation < ActiveRecord::Base
   has_many :galaxy_citations, dependent: :delete_all
   has_many :galaxies, :through => :galaxy_citations, :foreign_key => :galaxy_id
 
-  validates :author, :title, :journal, :year, presence: true
+  validates :author, :journal, :year, presence: true
 
   before_save :set_bibtex
 

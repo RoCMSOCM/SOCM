@@ -1,5 +1,5 @@
 class CreateGalaxies < ActiveRecord::Migration
-  def change
+  def up
     create_table :galaxies do |t|
       t.string :galaxy_name
       t.string :galaxy_type
@@ -17,5 +17,9 @@ class CreateGalaxies < ActiveRecord::Migration
       change_column :galaxies, :scale_length, :float, :null => false
       change_column :galaxies, :mass_hydrogen, :float, :null => false
       change_column :galaxies, :mass_disk, :float, :null => false
+  end
+
+  def down
+    drop_table :galaxies
   end
 end

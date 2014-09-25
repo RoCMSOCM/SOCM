@@ -46,10 +46,19 @@
             <%= f.search_field :mass_disk_eq, :class => "search-field" %>
           </th>
           <th>
-            Number of observed velocity points
+            Velocities Citation
           </th>
           <th>
-            Citations
+            Luminosity Citation
+          </th>
+          <th>
+            Scale Length Citation
+          </th>
+          <th>
+            Mass Hydrogen Citation
+          </th>
+          <th>
+            Number of observed velocity points
           </th>
           <th colspan="3" width="250px;">
             <%= f.submit "Search" %>
@@ -70,17 +79,11 @@
           <td><%= galaxy.scale_length %></td>
           <td><%= galaxy.mass_hydrogen %></td>
           <td><%= galaxy.mass_disk %></td>
+          <td><%= link_to "#{galaxy.velocities_citation}", citation_path(galaxy.velocities_citation.to_i) %></td>
+          <td><%= link_to "#{galaxy.luminosity_citation}", citation_path(galaxy.luminosity_citation.to_i) %></td>
+          <td><%= link_to "#{galaxy.scale_length_citation}", citation_path(galaxy.scale_length_citation.to_i) %></td>
+          <td><%= link_to "#{galaxy.mass_hydrogen_citation}", citation_path(galaxy.mass_hydrogen_citation.to_i) %></td>
           <td><%= galaxy.velocities.size %></td>
-          <td style="max-width: 150px;">
-            <% citation_ids = galaxy.citations.collect(&:id) %>
-            <% citation_ids.each_with_index do |id, i| %>
-              <% if i != citation_ids.size-1 %>
-                <%= link_to "#{id},", citation_path(id) %>
-              <% else %>
-                <%= link_to "#{id}", citation_path(id) %>
-              <% end %>
-            <% end %>
-          </td>
           <td><%= link_to 'Show', galaxy, :method => :get %></td>
           <% if current_admin %>
             <td><%= link_to 'Edit', edit_galaxy_path(galaxy) %></td>

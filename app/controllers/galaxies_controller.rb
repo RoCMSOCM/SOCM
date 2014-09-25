@@ -20,7 +20,7 @@ class GalaxiesController < ApplicationController
       format.html { render :index }
       format.json { render :json => @galaxies.to_json(
          :only => [:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length,
-                      :mass_hydrogen, :mass_disk],
+                      :mass_hydrogen, :mass_disk, :velocities_citation, :luminosity_citation, :mass_hydrogen_citation, :scale_length_citation],
           :methods => [:citation_ids_array, :r_last, :vrot_data_last, :velocities_count]
         )
       }
@@ -38,10 +38,10 @@ class GalaxiesController < ApplicationController
     respond_to do |format|
       format.html { render :show }
       format.json { render :json => @galaxy.to_json(
-          :only => [:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length,
-                      :mass_hydrogen, :mass_disk, :citation_ids_array],
-          :methods => [:citation_ids_array, :r_last, :vrot_data_last, :velocities_count]
-        )
+        :only => [:id, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length,
+                  :mass_hydrogen, :mass_disk, :citation_ids_array, :velocities_citation, :luminosity_citation, :mass_hydrogen_citation, :scale_length_citation],
+                  :methods => [:citation_ids_array, :r_last, :vrot_data_last, :velocities_count]
+      )
       }
     end
   end
@@ -122,7 +122,7 @@ class GalaxiesController < ApplicationController
     def galaxy_params
       # includes params for all velocities attributes - used with ransack search for galaxy_velocities
       params.require(:galaxy).permit(:id, :q, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length, :mass_hydrogen, :mass_disk,
-                                     :galaxy_id, :r, :vrot_data, :vrot_data_error,
-                                     :page, :citation_ids => [])
+                                     :galaxy_id, :r, :vrot_data, :vrot_data_error, :page, :luminosity_citation, 
+                                     :scale_length_citation, :velocities_citation, :mass_hydrogen_citation, :citation_ids => [])
     end
 end
