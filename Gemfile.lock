@@ -114,8 +114,6 @@ GEM
       activesupport (>= 3.0)
       i18n
       polyamorous (~> 1.0.0)
-    rdoc (4.1.1)
-      json (~> 1.4)
     rspec-core (3.0.3)
       rspec-support (~> 3.0.0)
     rspec-expectations (3.0.3)
@@ -138,9 +136,6 @@ GEM
       sass (~> 3.2.0)
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
-    sdoc (0.4.0)
-      json (~> 1.8)
-      rdoc (~> 4.0, < 5.0)
     sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -195,7 +190,6 @@ DEPENDENCIES
   rspec-core
   rspec-rails (~> 3.0.0)
   sass-rails (~> 4.0.3)
-  sdoc (~> 0.4.0)
   thin
   turbolinks
   tzinfo-data

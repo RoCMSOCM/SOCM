@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140723001033) do
+ActiveRecord::Schema.define(version: 20140805012611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 20140723001033) do
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "citations", force: true do |t|
-    t.string   "author",     null: false
-    t.string   "title",      null: false
+    t.text     "author",     null: false
+    t.string   "title"
     t.text     "bibtex",     null: false
     t.string   "journal",    null: false
     t.integer  "year",       null: false
@@ -54,15 +54,19 @@ ActiveRecord::Schema.define(version: 20140723001033) do
   end
 
   create_table "galaxies", force: true do |t|
-    t.string   "galaxy_name",   null: false
-    t.string   "galaxy_type",   null: false
-    t.float    "distance",      null: false
-    t.float    "luminosity",    null: false
-    t.float    "scale_length",  null: false
-    t.float    "mass_hydrogen", null: false
-    t.float    "mass_disk",     null: false
+    t.string   "galaxy_name",            null: false
+    t.string   "galaxy_type",            null: false
+    t.float    "distance",               null: false
+    t.float    "luminosity",             null: false
+    t.float    "scale_length",           null: false
+    t.float    "mass_hydrogen",          null: false
+    t.float    "mass_disk",              null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "velocities_citation"
+    t.integer  "luminosity_citation"
+    t.integer  "scale_length_citation"
+    t.integer  "mass_hydrogen_citation"
   end
 
   create_table "galaxy_citations", force: true do |t|

@@ -1,10 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# This file is used to load in all of the galaxy and velocity data for an initial load.
+# Please use 'rake db:seed', after setting up the database to load in all of the original 
+# data used by SOCM.
 require 'csv'
 
 
