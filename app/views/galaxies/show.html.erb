@@ -33,26 +33,38 @@
 
 <p>
   <strong>Velocities Citation:</strong>
-  <%= link_to "#{@galaxy.velocities_citation}", citation_path(@galaxy.velocities_citation.to_i) %><br>
-  <%= "#{Citation.find(@galaxy.velocities_citation.to_i).author}" %>
+  <%= link_to "#{@galaxy.velocities_citation}", citation_path(@galaxy.velocities_citation.to_i) %>
+  <% if !@galaxy.velocities_citation.nil? %>
+    <br>
+    <%= "#{Citation.find(@galaxy.velocities_citation.to_i).author}" %>
+  <% end %>
 </p>
 
 <p>
   <strong>Luminosity Citation:</strong>
-  <%= link_to "#{@galaxy.luminosity_citation}", citation_path(@galaxy.luminosity_citation.to_i) %><br>
-  <%= "#{Citation.find(@galaxy.luminosity_citation.to_i).author}" %>
+  <%= link_to "#{@galaxy.luminosity_citation}", citation_path(@galaxy.luminosity_citation.to_i) %>
+  <% if !@galaxy.luminosity_citation.nil? %>
+    <br>
+    <%= "#{Citation.find(@galaxy.luminosity_citation.to_i).author}" %>
+  <% end %>
 </p>
 
 <p>
   <strong>Scale Length Citation:</strong>
-  <%= link_to "#{@galaxy.scale_length_citation}", citation_path(@galaxy.scale_length_citation.to_i) %><br>
-  <%= "#{Citation.find(@galaxy.scale_length_citation.to_i).author}" %>
+  <%= link_to "#{@galaxy.scale_length_citation}", citation_path(@galaxy.scale_length_citation.to_i) %>
+  <% if !@galaxy.scale_length_citation.nil? %>
+    <br>
+    <%= "#{Citation.find(@galaxy.scale_length_citation.to_i).author}" %>
+  <% end %>
 </p>
 
 <p>
   <strong>Hydrogen Mass Citation:</strong>
-  <%= link_to "#{@galaxy.mass_hydrogen_citation}", citation_path(@galaxy.mass_hydrogen_citation.to_i) %><br>
-  <%= "#{Citation.find(@galaxy.mass_hydrogen_citation.to_i).author}" %>
+  <%= link_to "#{@galaxy.mass_hydrogen_citation}", citation_path(@galaxy.mass_hydrogen_citation.to_i) %>
+  <% if !@galaxy.mass_hydrogen_citation.nil? %>
+    <br>
+    <%= "#{Citation.find(@galaxy.mass_hydrogen_citation.to_i).author}" %>
+  <% end %>
 </p>
 
 <br>
