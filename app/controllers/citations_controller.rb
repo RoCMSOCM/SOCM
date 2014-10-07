@@ -1,9 +1,9 @@
 class CitationsController < ApplicationController
   before_action :set_citation, only: [:show, :edit, :update, :destroy]
 
-  before_filter except: [:index, :show, :search] do
-    render "errors/401" unless current_admin
-  end
+  # before_filter except: [:index, :show, :search] do
+  #   render "errors/401" unless current_admin
+  # end
 
   # GET /citations
   # GET /citations.json
@@ -85,7 +85,16 @@ class CitationsController < ApplicationController
   # DELETE /citations/1
   # DELETE /citations/1.json
   def destroy
-    @citation.destroy
+    if @citation.destroy
+      # deletes all references to this citation in any Galaxy's referential ID int
+      Galaxy.all.each do |galaxy|
+        galaxy.luminosity_citation = nil if galaxy.luminosity_citation == @citation.id
+        galaxy.scale_length_citation = nil if galaxy.scale_length_citation == @citation.id
+        galaxy.velocities_citation = nil if galaxy.velocities_citation == @citation.id
+        galaxy.mass_hydrogen_citation = nil if galaxy.mass_hydrogen_citation == @citation.id
+        galaxy.save
+      end
+    end 
     respond_to do |format|
       format.html { redirect_to @citation, notice: 'Citation was successfully destroyed.' }
       format.json { head :no_content }

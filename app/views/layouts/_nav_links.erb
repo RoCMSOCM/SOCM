@@ -1,0 +1,34 @@
+<ul class="nav navbar-nav">
+  <li class="<%= 'active' if params[:controller] == 'galaxies'%>" ><%= link_to 'Galaxies', galaxies_path, :method => :get %></li>
+</ul>
+<ul class="nav navbar-nav">
+  <li class="<%= 'active' if params[:controller] == 'citations'%>" ><%= link_to 'Citations', citations_path, :method => :get %></li>
+</ul>
+<ul class="nav navbar-nav">
+  <li class="<%= 'active' if params[:controller] == 'welcome' && params[:action] == 'developers' %>" ><%= link_to 'Developing with SOCM', '/development', :method => :get %></li>
+</ul>
+<% if current_admin %>
+  <ul class="nav navbar-nav">
+    <% if @unapproved_admin_count > 0  %>
+      <li>
+        <%= link_to "Admin Page (#{@unapproved_admin_count})", "/admin" %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to "Admin Page", "/admin" %>
+      </li>
+    <% end %>
+  </ul>
+  <ul class="nav navbar-nav">
+    <li>
+      <%= link_to "Account", edit_admin_registration_path %>
+    </li>
+  </uL>
+<% end %>
+<ul class="nav navbar-nav navbar-right">
+  <% if current_admin %>
+    <li class="<%= 'active' if params[:controller] == 'devise/sessions' %>" ><%= link_to 'Logout', destroy_admin_session_path, :method => :delete %></li>
+  <% else %>
+    <li class="<%= 'active' if params[:controller] == 'devise/sessions' %>"><%= link_to 'Login', new_admin_session_path, :method => :get %></li>
+  <% end %>
+</ul>

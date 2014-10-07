@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '4.1.1'
 
@@ -13,8 +13,6 @@ gem 'bibtex-ruby'
 
 gem 'bootstrap-sass', "~> 3.1.1.0"
 
-gem 'quiet_assets', :group => :development
-
 group :test do
   gem 'simplecov'
   gem 'rspec-core'
@@ -23,12 +21,17 @@ group :test do
 end
 
 gem 'kaminari'
-gem 'pg'
 gem 'devise'
 gem 'ransack'
 
 gem 'tzinfo-data'
 
+group :development do
+  gem 'quiet_assets'
+  gem 'sqlite3'
+end
+
 group :production do
+  gem 'pg'
   gem 'thin'
 end

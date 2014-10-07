@@ -10,8 +10,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require_tree .
  */
 
 @import "bootstrap";
@@ -51,3 +51,5 @@ a:visited {
 .search-field {width: 50px;}
 td{text-align: center;}
 th{text-align: center;}
+
+.dev-header{ color: #58D3F7; }

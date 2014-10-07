@@ -1,0 +1,54 @@
+<h1>Interested in building off this data?</h1>
+
+<p class="indent-p"> 
+  SOCM provides a simple RESTful API for Galaxy, Velocity, and Citation data.
+<p>
+
+<br>
+
+<h2>RESTful routes for SOCM</h2>
+
+<p class="indent-p">
+  To use SOCM's API, prefix routes with: <b>socm.herokuapp.com</b>
+</p>
+
+<div class="indent-p">
+  <h3 class="dev-header"><b>GALAXIES</b></h3>
+  <p class="indent-p"><b>ALL</b> galaxies. This will show all of the galaxies and their associated information in json.</p>
+  <p class="indent-p"><b>GET:</b> /galaxies.json </p>
+  <p class="indent-p"><%= @galaxies.to_json %></p>
+  <p class="indent-p"><b>...</b></p>
+  <br><br>
+  <p class="indent-p"><b>SINGLE</b> galaxy. This is a GET request to show a particular galaxy where the <b>#galaxyId</b> is the ID of the galaxy you want.</p>
+  <p class="indent-p"><b>GET:</b> /galaxies/<b>#galaxyId</b>.json </p>
+  <p class="indent-p"><b>Example:</b> /galaxies/<%= @galaxy_id %>.json</p>
+  <br><br>
+</div>
+
+<div class="indent-p">
+  <h3 class="dev-header"><b>GALAXY'S VELOCITIES</b></h3>
+  <p class="indent-p"><b>ALL</b> galaxy's velocities. This will show all of the velocities and their associated information in json.</p>
+  <p class="indent-p"><b>GET:</b> /galaxies/<b>#galaxyId</b>/velocities.json </p>
+  <p class="indent-p"><b>Example:</b> /galaxies/<%= @galaxy_id %>/velocities.json</p>
+  <p class="indent-p"><%= @galaxy_velocities.to_json %></p>
+  <p class="indent-p"><b>...</b></p>
+  <br><br>
+  <p class="indent-p"><b>SINGLE</b> galaxy's velocity. This is a GET request to show a particular Galaxy (specified by <b>#galaxyId</b>) and a specific velocity specified by <b>#velocityId</b></p>
+  <p class="indent-p"><b>GET:</b> /galaxies/<b>#galaxyId</b>/velocities/<b>#velocityId</b>.json </p>
+  <p class="indent-p"><b>Example:</b> /galaxies/<%= @galaxy_id %>/velocities/<%= @galaxy_velocity_id %>.json</p>
+  <p class="indent-p"><%= @galaxy_velocity.to_json %></p>
+  <br><br>
+</div>
+
+<div class="indent-p">
+  <h3 class="dev-header"><b>CITATIONS</b></h3>
+  <p class="indent-p"><b>ALL</b> citations. This shows all of the citation information.</p>
+  <p class="indent-p"><b>GET:</b> /citations.json </p>
+  <p class="indent-p"><%= @citations.to_json %></p>
+  <p class="indent-p"><b>...</b></p>
+  <br><br>
+  <p class="indent-p"><b>SINGLE</b> citation. This is a GET request to show a particular Citation where the #citationId is the ID of the Citation you want.</p>
+  <p class="indent-p"><b>GET:</b> /citations/<b>#citationId</b>.json </p>
+  <p class="indent-p"><b>Example:</b> /citations/<%= @citation_id %>.json</p>
+  <p class="indent-p"><%= @citation.to_json %></p>
+</div>
