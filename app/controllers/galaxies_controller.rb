@@ -35,6 +35,12 @@ class GalaxiesController < ApplicationController
     @citations = @galaxy.citations
     @galaxy.citation_ids_array
 
+    #for view galaxy _citation reference
+    #@author_vel_citation = Citation.find_by_id(@galaxy.velocities_citation).author if Citation.find_by_id(@galaxy.velocities_citation)
+    @author_lum_citation = Citation.find_by_id(@galaxy.luminosity_citation).author if Citation.find_by_id(@galaxy.luminosity_citation)
+    @author_scl_citation = Citation.find_by_id(@galaxy.scale_length_citation).author if Citation.find_by_id(@galaxy.scale_length_citation)
+    @author_hyd_citation = Citation.find_by_id(@galaxy.mass_hydrogen_citation).author if Citation.find_by_id(@galaxy.mass_hydrogen_citation)
+
     respond_to do |format|
       format.html { render :show }
       format.json { render :json => @galaxy.to_json(
