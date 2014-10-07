@@ -17,7 +17,7 @@ Ruby version
 System dependencies
 ===================
   - Ruby 2.0.0
-  - Rails 4
+  - Rails 4.1.1
 
 Initial Setup
 =============
@@ -31,17 +31,24 @@ Configuration
 
 Database creation
 =================
-  - Use the data in **/db/database.yml** file to create databases and database users
-  - Use **PostgreSQL** commandline or Admin tool to create users and databases
-  - **Note:** This application was developed using PostgreSQL 9.3
+  - Use configurations in **/db/database.yml** file to create databases and database users via rake db:create when running SQLite3.
+  - **SQLite3:** useful to use for development. Uncomment the section in database.yml and comment out the Postgres section to use it.
+  - **PostgreSQL:** use commandline or Admin tool to create users and databases.
+  - **PostgreSQL in Dev:** to use Postgres in development, copy the line **gem 'pg'** in Gemfile out of **:production** and the into **:development** section.
 
 Database initialization
 =======================
+.
 
-    rake db:migrate
+    1. Choose database. If **SQLite3**, move to #2. If **Postgres**, see **Database creation** section of this readme.
 
-  - Run this after creating DEV, Test, and Prod databases (Prod if necessary)
+.
 
+    2. rake db:create
+
+.
+
+    3. rake db:migrate
 
 Running Tests & Code Coverage
 =========================
@@ -53,11 +60,24 @@ Running Tests & Code Coverage
 
 Seeding the DB w/Data
 =====================
+.
+  - Create all Galaxies and their velocities
+
 
     rake db:seed
 
-  - In **/db/seeds.rb**, there's syntax to load in all Galaxy and Observed Velocity data from .CSV files. Citation data is also included
-  - This will load in all data to SOCM
+.
+  - Create all Citations
+
+
+    rake citation\_importer:import\_citations
+
+.
+  - Create relationships between Galaxies and their Citations
+
+
+    rake citation\_importer:give\_galaxies_citations
+
 
 Deployment instructions
 =======================
