@@ -8,7 +8,6 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'sqlite3', '~> 1.3.3'
 
 gem 'bibtex-ruby'
 
@@ -28,6 +27,7 @@ gem 'ransack'
 gem 'tzinfo-data'
 
 group :development do
+  gem 'sqlite3', '~> 1.3.3'
   gem 'quiet_assets'
 end
 
