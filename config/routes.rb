@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   match 'admin' => "admin#index", via: [:get, :put]
 
   resources :galaxies do
+    collection { post :import_galaxy, :import_galaxy_velocities }
     resources :velocities
     collection do
       match 'search' => 'galaxies#search', via: [:get, :post], as: :search

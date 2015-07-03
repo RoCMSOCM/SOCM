@@ -1,29 +1,29 @@
 #sqlite3
-# development:
-#   adapter: sqlite3
-#   host: localhost
-#   database: socm_dev
-#   username: socm_dev
-#   password: socm_dev_pass
+ development:
+   adapter: sqlite3
+   host: localhost
+   database: socm_dev
+   username: socm_dev
+   password: socm_dev_pass
 
-# test:
-#   adapter: sqlite3
-#   host: localhost
-#   database: socm_test
-#   username: socm_test
-#   password: socm_test_pass
+ test:
+   adapter: sqlite3
+   host: localhost
+   database: socm_test
+   username: socm_test
+   password: socm_test_pass
 
 #postgres
-development:
-  adapter: postgresql
-  host: localhost
-  database: socm_dev
-  username: socm_dev
-  password: s0cm_d3v
-
-test:
-  adapter: postgresql
-  host: localhost
-  database: socm_test
-  username: socm_test
-  password: s0cm_t3st
+#development:
+#  adapter: postgresql
+#  host: localhost
+#  database: socm_dev
+#  username: socm_dev
+#  password: s0cm_d3v
+#
+#test:
+#  adapter: postgresql
+#  host: localhost
+#  database: socm_test
+#  username: socm_test
+#  password: s0cm_t3st

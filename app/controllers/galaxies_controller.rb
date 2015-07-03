@@ -117,6 +117,17 @@ class GalaxiesController < ApplicationController
     render 'galaxy_citations_index'
   end
 
+  # POST /import
+  def import_galaxy
+    Galaxy.import_csv(params[:file])
+    redirect_to galaxies_url, notice: "Galaxies has been imported thank you very much!!!"
+  end
+
+  def import_galaxy_velocities
+    Velocity.import_csv(params[:file])
+    redirect_to galaxies_url, notice: "Velocities have been imported thank you very much!!!"
+  end
+
   private
     def set_galaxy
       @galaxy = Galaxy.find(params[:id]) if params[:id]
