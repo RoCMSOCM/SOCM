@@ -3,7 +3,27 @@
 <p id="notice"><%= notice %></p>
 
 <% if current_admin %>
-  <%= link_to 'New Galaxy', new_galaxy_path %>
+    <div>
+        <h3>CSV Import</h3>
+        <div class="import-csv-button-galaxies" style="padding-left: 50px">
+            <h4>Import Galaxy Parameters CSV</h4>
+            <%= form_tag import_galaxy_galaxies_path, multipart: true do %>
+                <%= file_field_tag :file %>
+                <%= submit_tag "Import Galaxy Paramaters" %>
+            <% end %>
+        </div>
+        <div class="import-csv-button-velocities" style="padding-left: 50px">
+            <h4>Import Velocity Information</h4>
+            <%= form_tag import_galaxy_velocities_galaxies_path, multipart: true do %>
+                <%= file_field_tag :file %>
+                <%= submit_tag "Import Velocity Information" %>
+            <% end %>
+        </div>
+    </div>
+    <h3>Manually Import Galaxy Information</h3>
+    <div class="manually-import" style="padding-left: 50px">
+        <%= link_to 'New Galaxy', new_galaxy_path %>
+    </div>
 <% end %>
 
 <% if @galaxies.size > 0 %>

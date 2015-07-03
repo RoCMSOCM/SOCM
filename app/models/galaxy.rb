@@ -1,3 +1,4 @@
+require 'csv'
 class Galaxy < ActiveRecord::Base
   attr_accessor :citation_ids_array, :r_last, :vrot_data_last, :velocities_count, :ref_citations
 
@@ -40,5 +41,15 @@ class Galaxy < ActiveRecord::Base
       :hyd_citation => (author_hyd_citation ? author_hyd_citation : "NA"),
      }
      ref_citations
+  end
+
+
+  def self.import_csv(file)
+    CSV.foreach(file.path) do |row|
+      galaxy = Galaxy.new(:galaxy_name => row[0], :galaxy_type => row[1], :distance => row[2].to_f,
+                          :luminosity => row[3].to_f, :scale_length => row[4].to_f, :mass_hydrogen => row[5].to_f, :mass_disk => row[6].to_f)
+
+      galaxy.save!
+    end
   end
 end
