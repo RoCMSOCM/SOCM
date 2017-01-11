@@ -13,8 +13,6 @@ gem 'bibtex-ruby'
 
 gem 'bootstrap-sass', "~> 3.1.1.0"
 
-gem "recaptcha", require: "recaptcha/rails"
-
 group :test do
   gem 'simplecov'
   gem 'rspec-core'

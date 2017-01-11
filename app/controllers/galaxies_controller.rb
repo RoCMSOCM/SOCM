@@ -66,7 +66,7 @@ class GalaxiesController < ApplicationController
   def create
     @galaxy = Galaxy.new(galaxy_params)
     respond_to do |format|
-      if verify_recaptcha(model: @galaxy) && @galaxy.save
+      if @galaxy.save
         format.html { redirect_to @galaxy, notice: 'Galaxy was successfully created.' }
         format.json { render :show, status: :created, location: @galaxy }
       else
