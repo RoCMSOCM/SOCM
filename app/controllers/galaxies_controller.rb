@@ -1,7 +1,7 @@
 class GalaxiesController < ApplicationController
   before_action :set_galaxy, only: [:show, :edit, :update, :destroy, :index_galaxy_citations]
 
-  before_filter except: [:index, :show, :index_galaxy_citations, :search] do
+  before_filter except: [:index, :show, :index_galaxy_citations, :search, :new, :create] do
     render "errors/401", :status => :unauthorized unless current_admin
   end
 
@@ -139,7 +139,7 @@ class GalaxiesController < ApplicationController
     def galaxy_params
       # includes params for all velocities attributes - used with ransack search for galaxy_velocities
       params.require(:galaxy).permit(:id, :q, :galaxy_name, :galaxy_type, :distance, :luminosity, :scale_length, :mass_hydrogen, :mass_disk,
-                                     :galaxy_id, :r, :vrot_data, :vrot_data_error, :page, :luminosity_citation, 
+                                     :galaxy_id, :r, :vrot_data, :vrot_data_error, :page, :luminosity_citation,
                                      :scale_length_citation, :velocities_citation, :mass_hydrogen_citation, :citation_ids => [])
     end
 end
