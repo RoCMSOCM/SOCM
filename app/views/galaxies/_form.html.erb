@@ -63,6 +63,7 @@
 
   <%= f.collection_check_boxes :citation_ids, Citation.all, :id, :key%>
 
+  <div class="g-recaptcha" data-sitekey="<%= ENV["RECAPTCHA_PUBLIC_KEY"] %>"></div>
   <div class="actions">
     <%= f.submit %>
   </div>
