@@ -21,7 +21,7 @@ group :test do
 end
 
 gem 'kaminari'
-gem 'devise'
+gem 'devise', '3.5.1'
 gem 'ransack'
 
 gem 'tzinfo-data'
