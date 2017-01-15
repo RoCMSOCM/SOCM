@@ -52,8 +52,15 @@
     <%= f.text_field :key %>
   </div>
 
-  <%= f.collection_check_boxes :galaxy_ids, Galaxy.all, :id, :galaxy_name %>
+  <div class="checkbox">
+  <%= f.collection_check_boxes(:galaxy_ids, Galaxy.all, :id, :galaxy_name) do |b| %>
+    <%= b.label class: "checkbox-inline" do %>
+      <%= b.check_box + b.text %>
+    <% end %>
+  <% end %>
+  </div>
 
+  <div class="g-recaptcha" data-sitekey="<%= ENV["RECAPTCHA_PUBLIC_KEY"] %>"></div>
   <div class="actions">
     <%= f.submit %>
   </div>

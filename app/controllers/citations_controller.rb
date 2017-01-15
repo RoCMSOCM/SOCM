@@ -58,7 +58,7 @@ class CitationsController < ApplicationController
   def create
     @citation = Citation.new(citation_params)
     respond_to do |format|
-      if @citation.save
+      if verify_recaptcha(model: @citation) && @citation.save
         format.html { redirect_to @citation, notice: 'Citation was successfully created.' }
         format.json { render :show, status: :created, location: @citation }
       else
