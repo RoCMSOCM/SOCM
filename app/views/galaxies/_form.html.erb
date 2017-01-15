@@ -61,7 +61,17 @@
     <%= f.collection_select :mass_hydrogen_citation, Citation.all, :id, :key %>
   </div>
 
-  <%= f.collection_check_boxes :citation_ids, Citation.all, :id, :key%>
+  <div class="field">
+    <%= button_tag "Create New Citation", :type => 'button', :onclick => "location.href = '#{new_citation_path}'" %>
+  </div>
+
+  <div class="checkbox">
+  <%= f.collection_check_boxes(:citation_ids, Citation.all, :id, :key) do |b| %>
+    <%= b.label class: "checkbox-inline" do %>
+      <%= b.check_box + b.text %>
+    <% end %>
+  <% end %>
+  </div>
 
   <div class="g-recaptcha" data-sitekey="<%= ENV["RECAPTCHA_PUBLIC_KEY"] %>"></div>
   <div class="actions">
